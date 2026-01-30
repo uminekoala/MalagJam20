@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bvtk738l6c50b"]
+
+[node name="CasillaBaile" type="Node2D" unique_id=2109904252]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1499780848]
+offset_right = 40.0
+offset_bottom = 40.0
