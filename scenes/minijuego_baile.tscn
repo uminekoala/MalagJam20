@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gm282uy0w2w3"]
 
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_atubg"]
+[ext_resource type="Script" uid="uid://dm0kemuv2m836" path="res://scripts/minijuego_baile.gd" id="1_yyeyp"]
 [ext_resource type="PackedScene" uid="uid://ccgdh5bbdqgkd" path="res://scenes/pjbaile.tscn" id="2_y7ah2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7ah2"]
@@ -80,6 +81,7 @@ size = Vector2(47.9375, 7.625)
 size = Vector2(8, 47.8125)
 
 [node name="MinijuegoBaile" type="Node2D" unique_id=1772075878]
+script = ExtResource("1_yyeyp")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=785177358]
 texture_filter = 1
