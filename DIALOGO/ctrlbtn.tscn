@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bomsrp8a8yq4n"]
 
+[ext_resource type="Script" uid="uid://r4f3k7epbiva" path="res://DIALOGO/ctrlbtn.gd" id="1_ahrur"]
+
 [node name="Node" type="Node" unique_id=845499186]
+script = ExtResource("1_ahrur")
+
+[node name="Timer" type="Timer" parent="." unique_id=1369483492]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
