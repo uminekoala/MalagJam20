@@ -8,18 +8,23 @@ extends Node
 @onready var btn3=$"Button3"
 func _ready():
 	pass
+func _process(delta: float) -> void:
+	pass
 func _on_button_1_pressed() -> void:
 	btn2.disabled=true
 	btn2.visible=false
 	btn3.disabled=true
 	btn3.visible=false
+	Global.option_pressed.emit(0)
 func _on_button_2_pressed() -> void:
 	btn1.disabled=true
 	btn1.visible=false
 	btn3.disabled=true
 	btn3.visible=false
+	Global.option_pressed.emit(1)
 func _on_button_3_pressed() -> void:
 	btn1.disabled=true
 	btn1.visible=false
 	btn2.disabled=true
 	btn2.visible=false
+	Global.option_pressed.emit(2)
