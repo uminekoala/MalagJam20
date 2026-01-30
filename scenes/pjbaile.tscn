@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ccgdh5bbdqgkd"]
 
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_hj2wp"]
+[ext_resource type="Script" uid="uid://c1mb4iyvb74tm" path="res://scripts/pjmovimientobaile.gd" id="1_ujnbw"]
 
-[node name="PJbaile" type="Node2D" unique_id=581735157]
+[node name="PJbaile" type="CharacterBody2D" unique_id=1069341549]
+script = ExtResource("1_ujnbw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441209124]
 texture = ExtResource("1_hj2wp")
