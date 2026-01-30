@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gm282uy0w2w3"]
 
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_atubg"]
+[ext_resource type="PackedScene" uid="uid://ccgdh5bbdqgkd" path="res://scenes/pjbaile.tscn" id="2_y7ah2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7ah2"]
 texture = ExtResource("1_atubg")
@@ -79,3 +80,7 @@ tile_set = SubResource("TileSet_yyeyp")
 rendering_quadrant_size = 9
 format = 2
 layer_0/tile_data = PackedInt32Array(983055, 0, 0, 0, 0, 0, 1, 65536, 0, 2, 458752, 0, 65536, 0, 4, 131072, 0, 7, 65537, 65536, 1, 65538, 458752, 2, 131074, 458752, 7, 131073, 262144, 7)
+
+[node name="PJbaile" parent="TileMap" unique_id=581735157 instance=ExtResource("2_y7ah2")]
+position = Vector2(24, 39.000004)
+scale = Vector2(0.1, 0.1)
