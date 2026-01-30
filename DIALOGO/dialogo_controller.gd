@@ -6,26 +6,51 @@ extends Node
 # 4 lanzar señal de texto de los siguientes tres botones
 
 var all_dialogue = {}
-# ... i wrote very refactorable code 
-# oh my god granpa can we not talk about refactorable code today?
 var dialogue_state = 0
 # 0,1,2,3,4... se refleja en el .cfg con las secciones
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_dialogues()
+	Global.option_pressed.connect("option_pressed", on_option_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
+
+func end_dialogue_phase():
+	Global.end_dialogue.emit()
+
+# ... i wrote very refactorable code 
+# oh my god granpa can we not talk about refactorable code today?
 func on_option_pressed(option_id):
+	print("ENTRAMOS!!!")
 	var respuesta
+	var valor
+	var final = all_dialogue[dialogue_state][9]
+
+	if (final):
+		end_dialogue_phase()
 
 	match option_id:
-		0: respuesta = all_dialogue[dialogue_state][6]
-		1: respuesta = all_dialogue[dialogue_state][7]
-		2: respuesta = all_dialogue[dialogue_state][8]
+		0: 
+			respuesta = all_dialogue[dialogue_state][6]
+			valor = all_dialogue[dialogue_state][3]
+		1: 
+			valor = all_dialogue[dialogue_state][4]
+			respuesta = all_dialogue[dialogue_state][7]
+		2: 
+			valor = all_dialogue[dialogue_state][5]
+			respuesta = all_dialogue[dialogue_state][8]
+			
+	dialogue_state += 1
+	var option1 = all_dialogue[dialogue_state][0]
+	var option2 = all_dialogue[dialogue_state][1]
+	var option3 = all_dialogue[dialogue_state][2]
+
+	Global.response.emit(respuesta)
+	Global.send_text_buttons.emit(option1, option2, option3)
 
 
 
@@ -53,5 +78,3 @@ func load_dialogues():
 
 		all_dialogue[i] = [option1,option2,option3,valor1,valor2,valor3,respuesta1,respuesta2,respuesta3,final]
 		i += 1
-
-		

@@ -3,6 +3,7 @@ extends Node
 signal option_pressed(id)
 signal response(line)
 signal send_text_buttons(line0,line1,line2)
+signal end_dialogue()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
