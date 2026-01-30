@@ -13,18 +13,21 @@ offset_left = 674.0
 offset_top = 187.0
 offset_right = 751.0
 offset_bottom = 312.0
+text = "1"
 
 [node name="Button2" type="Button" parent="." unique_id=361573828]
 offset_left = 1238.0
 offset_top = 132.0
 offset_right = 1315.0
 offset_bottom = 824.0
+text = "2"
 
 [node name="Button3" type="Button" parent="." unique_id=2034669585]
 offset_left = 259.0
 offset_top = 135.0
 offset_right = 433.0
 offset_bottom = 221.0
+text = "3"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
