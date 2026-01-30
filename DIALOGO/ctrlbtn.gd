@@ -28,3 +28,5 @@ func _on_button_3_pressed() -> void:
 	btn2.disabled=true
 	btn2.visible=false
 	Global.option_pressed.emit(2)
+func text():
+	pass #funcion de meter textos que de 050 e ir sustituyendo en lso botoness
