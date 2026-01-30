@@ -73,14 +73,41 @@ texture = ExtResource("1_atubg")
 [sub_resource type="TileSet" id="TileSet_yyeyp"]
 sources/0 = SubResource("TileSetAtlasSource_y7ah2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ah2"]
+size = Vector2(47.9375, 7.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyeyp"]
+size = Vector2(8, 47.8125)
+
 [node name="MinijuegoBaile" type="Node2D" unique_id=1772075878]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=785177358]
+texture_filter = 1
+texture_repeat = 2
 tile_set = SubResource("TileSet_yyeyp")
 rendering_quadrant_size = 9
+collision_animatable = true
 format = 2
 layer_0/tile_data = PackedInt32Array(983055, 0, 0, 0, 0, 0, 1, 65536, 0, 2, 458752, 0, 65536, 0, 4, 131072, 0, 7, 65537, 65536, 1, 65538, 458752, 2, 131074, 458752, 7, 131073, 262144, 7)
 
 [node name="PJbaile" parent="TileMap" unique_id=581735157 instance=ExtResource("2_y7ah2")]
-position = Vector2(24, 39.000004)
-scale = Vector2(0.1, 0.1)
+position = Vector2(24, 40.000004)
+scale = Vector2(0.12, 0.12)
+
+[node name="ColAbajo" type="CollisionShape2D" parent="TileMap" unique_id=1465033670]
+position = Vector2(24.03125, 52.1875)
+shape = SubResource("RectangleShape2D_y7ah2")
+
+[node name="ColDer" type="CollisionShape2D" parent="TileMap" unique_id=633835668]
+position = Vector2(52, 24.09375)
+shape = SubResource("RectangleShape2D_yyeyp")
+
+[node name="ColIzq" type="CollisionShape2D" parent="TileMap" unique_id=1022452726]
+position = Vector2(-4, 24)
+shape = SubResource("RectangleShape2D_yyeyp")
+
+[node name="ColArriba" type="CollisionShape2D" parent="TileMap" unique_id=2102609282]
+position = Vector2(24, -4)
+shape = SubResource("RectangleShape2D_y7ah2")
+
+[node name="Area2D" type="Area2D" parent="TileMap/ColArriba" unique_id=1641833766]
