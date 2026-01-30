@@ -1,11 +1,8 @@
 extends Node
 
-# 1 Extraer texto
-# 2 Recibir señal de botones (id 0, 1, 2...)
-# 3 Lanzar señal de respuesta dependiendo de la señal del boton 
-# 4 lanzar señal de texto de los siguientes tres botones
-
-
+signal option_pressed(id)
+signal response(line)
+signal send_text_buttons(line0,line1,line2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
