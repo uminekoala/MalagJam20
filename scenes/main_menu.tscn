@@ -250,7 +250,7 @@ offset_left = 113.0
 offset_top = 153.0
 offset_right = 243.0
 offset_bottom = 184.0
-text = "CONTROLES
+text = "Tutorial
 "
 
 [node name="btnSalir" type="Button" parent="PanelbotonesPrincipales" unique_id=2072437338]
@@ -363,6 +363,7 @@ position = Vector2(446, 565)
 texture = ExtResource("4_wu84c")
 
 [connection signal="pressed" from="PanelbotonesPrincipales/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelbotonesPrincipales/btnControles" to="." method="_on_btn_controles_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales/btnSalir" to="." method="_on_btn_salir_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales2/btnVolver" to="." method="_on_btn_volver_pressed"]

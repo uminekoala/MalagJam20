@@ -18,7 +18,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !blackout.is_playing():
-		print("MAMAHUEOOO")
 		panelbotones_principales.z_index =5
 		panelbotones_principales_2.z_index =5
 		texture_button.z_index = 5
@@ -28,7 +27,6 @@ func _process(delta: float) -> void:
 		
 		
 func _on_btn_salir_pressed() -> void:
-	print("MAMAHUEOOO")
 	get_tree().quit()
 	pass # Replace with function body.
 
@@ -48,6 +46,11 @@ func _on_texture_button_pressed() -> void:
 
 func _on_button_pressed() -> void:
 
-	print("MAMAHUEOOO")
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	pass # Replace with function body.
+
+
+func _on_btn_controles_pressed() -> void:
+	
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 	pass # Replace with function body.
