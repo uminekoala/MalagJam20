@@ -434,7 +434,7 @@ scale = Vector2(1.92, 1.92)
 position = Vector2(0, 4)
 scale = Vector2(4.1, 4.1)
 
-[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="8" unique_id=2006634766]
+[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="9" unique_id=2006634766]
 position = Vector2(0, 0)
 
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
