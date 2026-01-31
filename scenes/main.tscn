@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p0s1d1ywes1q"]
 
 [ext_resource type="Script" uid="uid://clg60vi8dyunr" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="3_o6xl0"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
@@ -433,13 +433,17 @@ visible = false
 scale = Vector2(1.92, 1.92)
 
 [node name="Sprite2D" parent="MinijuegoBaile/PJbaile" index="0" unique_id=1441209124]
-position = Vector2(0, 4)
+position = Vector2(1, 0)
 scale = Vector2(4.1, 4.1)
+
+[node name="AudioStreamPlayer2D" parent="MinijuegoBaile/PJbaile" index="8" unique_id=714600341]
+bus = &"Master"
 
 [node name="AudioStreamPlayer2D2" parent="MinijuegoBaile/PJbaile" index="9" unique_id=1338234348]
 stream = ExtResource("7_85g3d")
+bus = &"Master"
 
-[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="10" unique_id=2006634766]
+[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="11" unique_id=2006634766]
 position = Vector2(0, 0)
 
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
@@ -525,6 +529,7 @@ pitch_scale = 0.74
 autoplay = true
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
+[connection signal="noTeMuevas" from="MinijuegoBaile/PJbaile" to="dialogo_labels" method="_on_p_jbaile_no_te_muevas"]
 [connection signal="timeout" from="TrailTimer" to="." method="_on_trail_timer_timeout"]
 [connection signal="timeout" from="TrailLeftTimer" to="." method="_on_trail_left_timer_timeout"]
 
