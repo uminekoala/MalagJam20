@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var col_arriba: CollisionShape2D = $"../ColArriba"
+@onready var pisada: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var moverse:bool = false
 
@@ -12,18 +13,22 @@ func _physics_process(delta: float) -> void:
 		if global_position.y > 400 && moverse:
 			position.y -= 256
 			moverse = false
+			pisada.play()
 	if Input.is_action_just_pressed("tilemapAbajo"):
 		if global_position.y < 680 && moverse:
 			position.y += 256
 			moverse = false
+			pisada.play()
 	if Input.is_action_just_pressed("tilemapDerecha"):
 		if global_position.x < 680 && moverse:
 			position.x += 256
 			moverse = false
+			pisada.play()
 	if Input.is_action_just_pressed("tilemapIzquierda"):
 		if global_position.x > 380 && moverse:
 			position.x -= 256
 			moverse = false
+			pisada.play()
 	if Input.is_action_just_pressed("espacio"):
 		$AnimatedSprite2D.visible = true
 		$AnimatedSprite2D2.visible = true
