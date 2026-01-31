@@ -2,7 +2,7 @@ extends Node2D
 var posicion: int = 0
 var dondeAndaras: Vector2
 var funcionar: bool = false
-var casillasPrimeraFase: int = 1
+var casillasPrimeraFase: int = 10
 var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
 var fase: int = 0
 @onready var feedback: Label = $PJbaile/Label
@@ -42,10 +42,11 @@ func _process(delta: float) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if posicion < casillasPrimeraFase:
-		print("no deberia existir")
 		print(%PJbaile.global_position)
 		dondeAndaras = tuMovimiento(%PJbaile.global_position)
+		print("a veer : " + str(dondeAndaras))
 		%CasillaBaile.global_position = Vector2(dondeAndaras.x * 256, (dondeAndaras.y * 256)+ 156)
+		print("a veer transformao: " + str(%CasillaBaile.global_position))
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
 		%CasillaBaile.visible = true
@@ -61,8 +62,8 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 		$CasillaBaile/AnimationPlayer/Timer.start()
 		
 func tuMovimiento(movimiento: Vector2):
-	movimiento = Vector2((movimiento.x-128) / 256, (movimiento.y - 284) / 256)
-	print(movimiento)
+	movimiento = Vector2((movimiento.x) / 256, (movimiento.y - 20) / 256) - Vector2(1,1)
+	print("este es el mov: " + str(movimiento))
 	if movimiento == Vector2(2,2):
 		movimiento = [Vector2(1,2),Vector2(2,1),Vector2(2,0),Vector2(1,1),Vector2(0,2)].pick_random()
 		return movimiento

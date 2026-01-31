@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://djm5n863jp1te" path="res://scripts/minijuego_baile_2.gd" id="1_4nte5"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_qfoj6"]
 [ext_resource type="PackedScene" uid="uid://ccgdh5bbdqgkd" path="res://scenes/pjbaile.tscn" id="2_ebdji"]
+[ext_resource type="Texture2D" uid="uid://bjkom3av20imw" path="res://ASSETS/TABLERO.png" id="3_frukt"]
 [ext_resource type="AudioStream" uid="uid://dhovaev2i6xfl" path="res://ASSETS/MUSICA/FASE 1.mp3" id="3_ghm1a"]
 [ext_resource type="PackedScene" uid="uid://bvtk738l6c50b" path="res://scenes/casilla_baile.tscn" id="5_ghm1a"]
 
@@ -76,8 +77,76 @@ texture = ExtResource("1_qfoj6")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38hs4"]
+texture = ExtResource("3_frukt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_4nte5"]
 sources/0 = SubResource("TileSetAtlasSource_ebdji")
+sources/1 = SubResource("TileSetAtlasSource_38hs4")
 pattern_0 = SubResource("TileMapPattern_ebdji")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nte5"]
@@ -88,17 +157,19 @@ script = ExtResource("1_4nte5")
 
 [node name="Escenario" type="TileMapLayer" parent="." unique_id=115395887]
 unique_name_in_owner = true
-position = Vector2(0, 156)
-scale = Vector2(16, 16)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAcAAAABAAAAAAAFAAAAAAABAAEAAAABAAEAAAABAAIAAAAEAAcAAAACAAAAAAAHAAAAAAACAAEAAAAHAAEAAAACAAIAAAAHAAcAAAA=")
+texture_filter = 1
+position = Vector2(0, 28)
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AAAAAPb/AQAAAAAAAAAAAPf/AQAAAAEAAAAAAPj/AQAAAAIAAAABAPb/AQABAAAAAAACAPb/AQACAAAAAAADAPb/AQADAAAAAAAEAPb/AQAEAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAIAAAAAAAMAAQAAAAMAAAAAAAQAAQAAAAQAAAAAAAUAAQAAAAUAAAAAAAYAAQAAAAYAAAAAAAcAAQAAAAcAAAABAAAAAQABAAAAAAABAAEAAQABAAEAAAABAAIAAQABAAIAAAABAAMAAQABAAMAAAABAAQAAQABAAQAAAABAAUAAQABAAUAAAABAAYAAQABAAYAAAABAAcAAQABAAcAAAACAAAAAQACAAAAAAACAAEAAQACAAEAAAACAAIAAQACAAIAAAACAAMAAQACAAMAAAACAAQAAQACAAQAAAACAAUAAQACAAUAAAACAAYAAQACAAYAAAACAAcAAQACAAcAAAADAAAAAQADAAAAAAADAAEAAQADAAEAAAADAAIAAQADAAIAAAADAAMAAQADAAMAAAADAAQAAQADAAQAAAADAAUAAQADAAUAAAADAAYAAQADAAYAAAADAAcAAQADAAcAAAAEAAAAAQAEAAAAAAAEAAEAAQAEAAEAAAAEAAIAAQAEAAIAAAAEAAMAAQAEAAMAAAAEAAQAAQAEAAQAAAAEAAUAAQAEAAUAAAAEAAYAAQAEAAYAAAAEAAcAAQAEAAcAAAAFAAAAAQAFAAAAAAAFAAEAAQAFAAEAAAAFAAIAAQAFAAIAAAAFAAMAAQAFAAMAAAAFAAQAAQAFAAQAAAAFAAUAAQAFAAUAAAAFAAYAAQAFAAYAAAAFAAcAAQAFAAcAAAAGAAAAAQAGAAAAAAAGAAEAAQAGAAEAAAAGAAIAAQAGAAIAAAAGAAMAAQAGAAMAAAAGAAQAAQAGAAQAAAAGAAUAAQAGAAUAAAAGAAYAAQAGAAYAAAAGAAcAAQAGAAcAAAAHAAAAAQAHAAAAAAAHAAEAAQAHAAEAAAAHAAIAAQAHAAIAAAAHAAMAAQAHAAMAAAAHAAQAAQAHAAQAAAAHAAUAAQAHAAUAAAAHAAYAAQAHAAYAAAAHAAcAAQAHAAcAAAA=")
 tile_set = SubResource("TileSet_4nte5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1629616640]
 stream = ExtResource("3_ghm1a")
+bus = &"Musica"
 
 [node name="PJbaile" parent="." unique_id=581735157 instance=ExtResource("2_ebdji")]
 unique_name_in_owner = true
-position = Vector2(384, 796)
+position = Vector2(512, 788)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PJbaile" unique_id=2006634766]
@@ -113,9 +184,13 @@ offset_bottom = -63.5
 
 [node name="CasillaBaile" parent="." unique_id=2109904252 instance=ExtResource("5_ghm1a")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(0, 412)
-scale = Vector2(16, 16)
+
+[node name="ColorRect" parent="CasillaBaile" index="0" unique_id=1499780848]
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 375.0
+offset_bottom = 247.0
 
 [node name="AnimationPlayer" parent="CasillaBaile" index="1" unique_id=1439832419]
 autoplay = &""
@@ -124,12 +199,14 @@ autoplay = &""
 wait_time = 3.0
 
 [node name="Label" type="Label" parent="." unique_id=1122484614]
+visible = false
 offset_left = 851.0
 offset_top = 171.0
 offset_right = 1124.0
 offset_bottom = 224.0
 
 [node name="Label2" type="Label" parent="." unique_id=1414841466]
+visible = false
 offset_left = 879.0
 offset_top = 279.0
 offset_right = 1173.0

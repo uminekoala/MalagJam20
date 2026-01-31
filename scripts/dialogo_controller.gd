@@ -44,11 +44,6 @@ func on_option_pressed(option_id):
 	var valor
 	var final = all_dialogue[dialogue_state][9]
 
-	if (final):
-		final = false
-		end_dialogue_phase()
-		return
-
 	match option_id:
 		0: 
 			respuesta = all_dialogue[dialogue_state][6]
@@ -66,9 +61,15 @@ func on_option_pressed(option_id):
 	option3 = all_dialogue[dialogue_state][2]
 
 	Global.dialogue_feedback.emit(valor)
-	Global.response.emit(respuesta)
+	
+	if (final):
+		Global.response.emit(respuesta, true)
+		final = false
+	else:
+		Global.response.emit(respuesta, false)
 	
 	dialogue_state += 1
+		
 
 
 func load_dialogues():

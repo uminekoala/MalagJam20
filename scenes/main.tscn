@@ -423,6 +423,7 @@ libraries/ = SubResource("AnimationLibrary_o6xl0")
 one_shot = true
 
 [node name="TrailLeftTimer" type="Timer" parent="." unique_id=886599565]
+one_shot = true
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="TrailTimer" to="." method="_on_trail_timer_timeout"]
