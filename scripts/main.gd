@@ -1,11 +1,5 @@
 extends Node
 
-signal option_pressed(id)
-signal response(line)
-signal send_text_buttons(line0,line1,line2)
-signal end_dialogue()
-signal first_response()
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_button_pressed() -> void:
+	Global.first_response.emit()

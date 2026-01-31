@@ -32,6 +32,7 @@ func on_option_pressed(option_id):
 
 	if (final):
 		end_dialogue_phase()
+		return
 
 	match option_id:
 		0: 
