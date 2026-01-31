@@ -11,6 +11,7 @@ func _ready() -> void:
 	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
 	$pulso.play("pulso")
+	$susurros.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +24,8 @@ func on_dialogue_feedback(value):
 		feedback = preload("res://scenes/dialogo_bad.tscn").instantiate()
 	elif value == 2:
 		feedback = preload("res://scenes/dialogo_good.tscn").instantiate()
+	elif value == 1:
+		feedback = preload("res://scenes/dialogo_meh.tscn").instantiate()
 	
 	$LunaPositionLeft.add_child(feedback)
 
