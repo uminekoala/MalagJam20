@@ -7,7 +7,7 @@ var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FAS
 var fase: int = 0
 @onready var feedback: Label = $PJbaile/Label
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
+var enArea: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,27 +18,26 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#if !funcionar:
 	#	Global.connect("change_scene_to_dance", _on_global_change_scene_to_dance())
-	if funcionar:
-		$Label2.text = str(Global.puntos)
-		$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
-		if Input.is_action_just_pressed("espacio"):
-			if %PJbaile.global_position == (%CasillaBaile.global_position +Vector2(128,128)):
-				print("SUPER NICE COCK")
-				if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
-					%CasillaBaile.visible = false
-					feedback.text = "OMEGA GIGA NICE COCK"
-					Global.puntos += 2
-				elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
-					%CasillaBaile.visible = false
-					Global.puntos += 1
-					feedback.text = "Only little GIGA NICE COCK"
-					print("only little GIGA NICE COCK")
-			else:
+	
+	$Label2.text = str(Global.puntos)
+	$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
+	if Input.is_action_just_pressed("espacio"):
+		if funcionar && enArea:
+			print("probando mi amor por ti")
+			print("SUPER NICE COCK")
+			if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
 				%CasillaBaile.visible = false
-				feedback.text = "SAD COCK"
-				
-			print(%PJbaile.global_position)
-			print(%CasillaBaile.global_position +Vector2(128,128))
+				feedback.text = "OMEGA GIGA NICE COCK"
+				Global.puntos += 2
+			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
+				%CasillaBaile.visible = false
+				Global.puntos += 1
+				feedback.text = "Only little GIGA NICE COCK"
+				print("only little GIGA NICE COCK")
+		else:
+			%CasillaBaile.visible = false
+			print("jauja")
+			feedback.text = "SAD COCK"
 
 		
 
@@ -58,6 +57,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		#	%CasillaBaileAnimationPlayer.play.visible = true
 	else:
 		Global.emit_signal("transition_to_dialogue")
+		posicion = 0
 	print("funciona")
 
 
@@ -116,3 +116,13 @@ func _on_global_change_scene_to_dance():
 	$CasillaBaile/AnimationPlayer.play("fade_in")
 	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
 	return funcionar
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	enArea = true
+	
+
+
+func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("te piraste del area")
+	enArea = false

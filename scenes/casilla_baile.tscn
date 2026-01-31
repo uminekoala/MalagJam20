@@ -37,6 +37,9 @@ _data = {
 &"fade_in": SubResource("Animation_u1ss3")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xim1x"]
+size = Vector2(16, 16)
+
 [node name="CasillaBaile" type="Node2D" unique_id=2109904252]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1499780848]
@@ -45,6 +48,11 @@ offset_bottom = 16.0
 color = Color(1, 1, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1439832419]
-active = false
 libraries/ = SubResource("AnimationLibrary_5vbaq")
 autoplay = &"fade_in"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1938711099]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1951563535]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_xim1x")

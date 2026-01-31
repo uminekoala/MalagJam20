@@ -150,7 +150,7 @@ sources/1 = SubResource("TileSetAtlasSource_38hs4")
 pattern_0 = SubResource("TileMapPattern_ebdji")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nte5"]
-size = Vector2(128, 128)
+size = Vector2(124.47923, 125.00012)
 
 [node name="MinijuegoBaile" type="Node2D" unique_id=1772075878]
 script = ExtResource("1_4nte5")
@@ -172,7 +172,12 @@ unique_name_in_owner = true
 position = Vector2(512, 788)
 scale = Vector2(2, 2)
 
+[node name="Sprite2D" parent="PJbaile" index="0" unique_id=1441209124]
+position = Vector2(0.49999762, 4.5)
+scale = Vector2(0.92968756, 0.9296875)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PJbaile" unique_id=2006634766]
+position = Vector2(0.25, 3.9999695)
 scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_4nte5")
 
@@ -198,6 +203,10 @@ autoplay = &""
 [node name="Timer" type="Timer" parent="CasillaBaile/AnimationPlayer" index="0" unique_id=550172142]
 wait_time = 3.0
 
+[node name="Area2D" parent="CasillaBaile" index="2" unique_id=1938711099]
+position = Vector2(128, 0)
+scale = Vector2(16, 16)
+
 [node name="Label" type="Label" parent="." unique_id=1122484614]
 visible = false
 offset_left = 851.0
@@ -214,6 +223,8 @@ offset_bottom = 310.0
 
 [connection signal="animation_finished" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="body_shape_entered" from="CasillaBaile/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="CasillaBaile/Area2D" to="." method="_on_area_2d_body_shape_exited"]
 
 [editable path="PJbaile"]
 [editable path="CasillaBaile"]
