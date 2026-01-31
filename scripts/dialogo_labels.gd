@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		Global.transition_to_dance.emit()
 		is_first_scene = false
 		is_final = false
-	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && finished_sentence && !is_first_scene:
+	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && finished_sentence && !is_first_scene && !is_final:
 		finished_sentence = false
 		DialogoController.launch_buttons_flag = true
 	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_final && Input.is_action_just_pressed("accion"):

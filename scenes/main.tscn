@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p0s1d1ywes1q"]
 
 [ext_resource type="Script" uid="uid://clg60vi8dyunr" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="3_o6xl0"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
@@ -434,7 +434,7 @@ scale = Vector2(1.92, 1.92)
 position = Vector2(0, 4)
 scale = Vector2(4.1, 4.1)
 
-[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="8" unique_id=2006634766]
+[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="10" unique_id=2006634766]
 position = Vector2(0, 0)
 
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
@@ -512,6 +512,8 @@ libraries/ = SubResource("AnimationLibrary_ya4ey")
 
 [node name="pulso" type="AnimationPlayer" parent="." unique_id=143790670]
 libraries/ = SubResource("AnimationLibrary_a8y0u")
+
+[node name="susurros" type="AudioStreamPlayer2D" parent="." unique_id=846445666]
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="TrailTimer" to="." method="_on_trail_timer_timeout"]
