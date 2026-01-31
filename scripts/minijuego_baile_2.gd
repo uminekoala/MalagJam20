@@ -33,11 +33,14 @@ func _process(delta: float) -> void:
 				Global.puntos += 1
 				feedback.text = "Only little GIGA NICE COCK"
 				print("only little GIGA NICE COCK")
+			$CasillaBaile/AnimationPlayer/Timer.stop()
 		else:
 			print("jauja")
 			feedback.text = "SAD COCK"
+			$CasillaBaile/AnimationPlayer/Timer.stop()
+			
 		%CasillaBaile.visible = false
-
+		$CasillaBaile/Area2D/CollisionShape2D.disabled = true
 		
 
 
@@ -51,6 +54,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
 		%CasillaBaile.visible = true
+		
 		#if %CasillaBaile.visible == false:
 		#	print("helo")
 		#	%CasillaBaileAnimationPlayer.play.visible = true
@@ -62,6 +66,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 		$CasillaBaile/AnimationPlayer/Timer.start()
+		$CasillaBaile/Area2D/CollisionShape2D.disabled = false
 		
 func tuMovimiento(movimiento: Vector2):
 	movimiento = Vector2((movimiento.x) / 256, (movimiento.y - 20) / 256) - Vector2(1,1)
