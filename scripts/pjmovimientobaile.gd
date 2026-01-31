@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -400.0
 @onready var pisada: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 @onready var pisoton: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var error: AnimationPlayer = $Error
-
+signal noTeMuevas
 var moverse:bool = false
 
 func _physics_process(delta: float) -> void:
@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 				moverse = false				
 			else:
 				error.play("Error")
+				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("tilemapAbajo"):
 			if global_position.y < 680 && moverse:
 				position.y += 256
@@ -26,6 +27,7 @@ func _physics_process(delta: float) -> void:
 				pisada.play()
 			else:
 				error.play("Error")
+				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("tilemapDerecha"):
 			if global_position.x < 680 && moverse:
 				position.x += 256
@@ -33,6 +35,7 @@ func _physics_process(delta: float) -> void:
 				pisada.play()
 			else:
 				error.play("Error")
+				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("tilemapIzquierda"):
 			if global_position.x > 380 && moverse:
 				position.x -= 256
@@ -40,6 +43,7 @@ func _physics_process(delta: float) -> void:
 				pisada.play()
 			else:
 				error.play("Error")
+				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("espacio"):
 			pisoton.play()
 			$AnimatedSprite2D.visible = true
