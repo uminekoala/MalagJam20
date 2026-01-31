@@ -6,8 +6,10 @@ var tween_visible
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
-	Global.connect("transition_to_dance", on_transition_to_dialogue)
+	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
+	$TrailAnimatorLeft.connect("animation_finished", send_change_scene_to_dialogue_signal)
+	$TrailAnimator.connect("animation_finished", send_change_scene_to_dance_signal)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,15 +55,14 @@ func send_change_scene_to_dialogue_signal():
 
 
 func send_change_scene_to_dance_signal():
+	print("AWFwafaf")
 	Global.change_scene_to_dance.emit()
 
 func move_luna(is_right):
 	if (is_right):
 		$TrailAnimator.play("trail")
-		$TrailAnimator.animation_finished.connect(send_change_scene_to_dance_signal)
 	else:
-		$TrailAnimator.play("trail_left")
-		$TrailAnimator.animation_finished.connect(send_change_scene_to_dialogue_signal)
+		$TrailAnimatorLeft.play("trail_left")
 	
 
 

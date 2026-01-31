@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="3_o6xl0"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://gm282uy0w2w3" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="6_tefeu"]
 
@@ -84,57 +84,6 @@ tracks/3/keys = {
 "values": [Vector2(126, 20)]
 }
 
-[sub_resource type="Animation" id="Animation_tefeu"]
-resource_name = "trail"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Luna:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(126, 20), Vector2(1120, 20)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LunaTrailRed:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(126, 20), Vector2(1120, 20)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LunaTrailPurple:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(126, 20), Vector2(1120, 20)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("LunaTrailBlue:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(126, 20), Vector2(1120, 20)]
-}
-
 [sub_resource type="Animation" id="Animation_o6xl0"]
 resource_name = "trail_left"
 tracks/0/type = "value"
@@ -189,7 +138,6 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
 _data = {
 &"RESET": SubResource("Animation_tbgi4"),
-&"trail": SubResource("Animation_tefeu"),
 &"trail_left": SubResource("Animation_o6xl0")
 }
 
@@ -249,6 +197,9 @@ visible = false
 [node name="PJbaile" parent="MinijuegoBaile" index="2" unique_id=581735157]
 scale = Vector2(1.92, 1.92)
 
+[node name="AnimationPlayer" parent="MinijuegoBaile/CasillaBaile" parent_id_path=PackedInt32Array(1772075878, 2109904252) index="1" unique_id=1439832419]
+autoplay = &"fade_in"
+
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
 modulate = Color(0, 0, 0.8039216, 0.26666668)
 anchors_preset = -1
@@ -258,7 +209,7 @@ anchor_right = 0.45000002
 anchor_bottom = 0.77000004
 offset_left = -0.7200012
 offset_top = -0.52000046
-offset_right = -0.9747925
+offset_right = -0.973938
 offset_bottom = 0.39996338
 texture = ExtResource("5_tefeu")
 
@@ -271,7 +222,7 @@ anchor_right = 0.45000002
 anchor_bottom = 0.77000004
 offset_left = -0.7200012
 offset_top = -0.52000046
-offset_right = -0.9711304
+offset_right = -0.9684448
 offset_bottom = 0.39996338
 texture = ExtResource("5_tefeu")
 
@@ -284,7 +235,7 @@ anchor_right = 0.45000002
 anchor_bottom = 0.77000004
 offset_left = -0.7200012
 offset_top = -0.52000046
-offset_right = -0.9603882
+offset_right = -0.95806885
 offset_bottom = 0.39996338
 texture = ExtResource("5_tefeu")
 
@@ -297,11 +248,14 @@ anchor_right = 0.45000002
 anchor_bottom = 0.77000004
 offset_left = -0.7200012
 offset_top = -0.52000046
-offset_right = -0.9725952
+offset_right = -0.9717407
 offset_bottom = 0.39996338
 texture = ExtResource("5_tefeu")
 
 [node name="TrailAnimator" type="AnimationPlayer" parent="." unique_id=254827598]
+libraries/ = SubResource("AnimationLibrary_o6xl0")
+
+[node name="TrailAnimatorLeft" type="AnimationPlayer" parent="." unique_id=2015370140]
 libraries/ = SubResource("AnimationLibrary_o6xl0")
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
