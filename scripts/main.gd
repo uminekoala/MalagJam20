@@ -7,11 +7,21 @@ var tween_visible
 func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
 	Global.connect("transition_to_dance", on_transition_to_dance)
+	Global.connect("dialogue_feedback", on_dialogue_feedback)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func on_dialogue_feedback(value):
+	var feedback
+	if value == 0:
+		feedback = preload("res://scenes/dialogo_bad.tscn").instantiate()
+	elif value == 2:
+		feedback = preload("res://scenes/dialogo_good.tscn").instantiate()
+	
+	$LunaPositionLeft.add_child(feedback)
 
 
 func on_transition_to_dialogue():
@@ -48,18 +58,11 @@ func send_change_scene_to_dance_signal():
 	Global.change_scene_to_dance.emit()
 
 func move_luna(is_right):
-	if (tween_movement_luna):
-		tween_movement_luna.kill()
-	tween_movement_luna = get_tree().create_tween()
-	var pos
-	
-	if is_right:
-		pos = $LunaPositionRight.position
+	if (is_right):
+		$TrailAnimator.play("trail")
 	else:
-		pos = $LunaPositionLeft.position
- 
+		$TrailAnimator.play("trail_left")
 	
-	tween_movement_luna.tween_property($Luna, "position", pos, 1.0)
 
 
 func _on_button_pressed() -> void:
