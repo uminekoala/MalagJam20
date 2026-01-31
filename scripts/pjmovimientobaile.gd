@@ -8,13 +8,17 @@ const JUMP_VELOCITY = -400.0
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("tilemapArriba"):
-		position.y -= 16
+		if global_position.y > 228:
+			position.y -= 256
 	if Input.is_action_just_pressed("tilemapAbajo"):
-		position.y +=16
+		if global_position.y < 540:
+			position.y += 256
 	if Input.is_action_just_pressed("tilemapDerecha"):
-		position.x += 16
+		if global_position.x < 540:
+			position.x += 256
 	if Input.is_action_just_pressed("tilemapIzquierda"):
-		position.x -=16
+		if global_position.x > 228:
+			position.x -= 256
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
