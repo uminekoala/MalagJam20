@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://clg60vi8dyunr" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="3_o6xl0"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://gm282uy0w2w3" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="6_tefeu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
 
@@ -193,6 +195,24 @@ _data = {
 
 [node name="Node2D" type="Node" unique_id=757001741]
 script = ExtResource("1_jyhfs")
+
+[node name="FONDO" type="TextureRect" parent="." unique_id=1626399317]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_tefeu")
+
+[node name="ARCOS" type="TextureRect" parent="." unique_id=1006324974]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_o6xl0")
 
 [node name="dialogo_labels" parent="." unique_id=1587499215 instance=ExtResource("2_sugp2")]
 anchor_left = 0.257

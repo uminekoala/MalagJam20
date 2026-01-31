@@ -6,7 +6,7 @@ var tween_visible
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
-	Global.connect("transition_to_dance", on_transition_to_dance)
+	Global.connect("transition_to_dance", on_transition_to_dialogue)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
 
 
@@ -29,11 +29,10 @@ func on_transition_to_dialogue():
 	# Animar sprite para que se mueva a la izquierda
 	move_luna(false)
 	# llamar al dialogo
-	if (tween_visible):
-		tween_visible.kill()
-	tween_visible = get_tree().create_tween()
+	var botones = preload("res://DIALOGO/ctrlbtn.tscn").instantiate()
+	$LunaPositionRight.add_child(botones)
+
 	# escena de los botones
-	tween_visible.connect("finished",send_change_scene_to_dance_signal)
 
 func on_transition_to_dance():
 	# apagar todo lo que sea de dialogos
@@ -47,8 +46,7 @@ func on_transition_to_dance():
 	if (tween_visible):
 		tween_visible.kill()
 	tween_visible = get_tree().create_tween()
-	tween_visible.tween_property($MinijuegoBaile, "visible", true, 1.0)
-	tween_visible.connect("finished",send_change_scene_to_dialogue_signal)
+	tween_visible.tween_property($MinijuegoBaile, "visible", true, 1.5)
 
 func send_change_scene_to_dialogue_signal():
 	Global.change_scene_to_dialogue.emit()
@@ -60,8 +58,10 @@ func send_change_scene_to_dance_signal():
 func move_luna(is_right):
 	if (is_right):
 		$TrailAnimator.play("trail")
+		$TrailAnimator.animation_finished.connect(send_change_scene_to_dance_signal)
 	else:
 		$TrailAnimator.play("trail_left")
+		$TrailAnimator.animation_finished.connect(send_change_scene_to_dialogue_signal)
 	
 
 

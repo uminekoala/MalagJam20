@@ -52,8 +52,8 @@ func on_option_pressed(option_id):
 		2: 
 			valor = all_dialogue[dialogue_state][5]
 			respuesta = all_dialogue[dialogue_state][8]
-			
-	dialogue_state += 1
+
+	
 	var option1 = all_dialogue[dialogue_state][0]
 	var option2 = all_dialogue[dialogue_state][1]
 	var option3 = all_dialogue[dialogue_state][2]
@@ -61,7 +61,7 @@ func on_option_pressed(option_id):
 	Global.dialogue_feedback.emit(valor)
 	Global.response.emit(respuesta)
 	Global.send_text_buttons.emit(option1, option2, option3)
-
+	dialogue_state += 1
 
 
 func load_dialogues():
@@ -85,6 +85,7 @@ func load_dialogues():
 		var respuesta2 = config.get_value(section,"respuesta2")
 		var respuesta3 = config.get_value(section,"respuesta3")
 		var final = config.get_value(section,"final")
+		print("uno")
 
 		all_dialogue[i] = [option1,option2,option3,valor1,valor2,valor3,respuesta1,respuesta2,respuesta3,final]
 		i += 1
