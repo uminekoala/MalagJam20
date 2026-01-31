@@ -431,8 +431,8 @@ visible = false
 scale = Vector2(1.92, 1.92)
 
 [node name="Sprite2D" parent="MinijuegoBaile/PJbaile" index="0" unique_id=1441209124]
-position = Vector2(0, 0)
-scale = Vector2(1, 1)
+position = Vector2(0, 4)
+scale = Vector2(4.1, 4.1)
 
 [node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="8" unique_id=2006634766]
 position = Vector2(0, 0)
