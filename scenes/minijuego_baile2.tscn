@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bq1ywsuahngiw"]
 
+[ext_resource type="Script" uid="uid://djm5n863jp1te" path="res://scripts/minijuego_baile_2.gd" id="1_4nte5"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_qfoj6"]
 [ext_resource type="PackedScene" uid="uid://ccgdh5bbdqgkd" path="res://scenes/pjbaile.tscn" id="2_ebdji"]
 [ext_resource type="AudioStream" uid="uid://b6qb50d2x66d" path="res://ASSETS/VALS 180.mp3" id="4_4nte5"]
@@ -111,6 +112,7 @@ pattern_0 = SubResource("TileMapPattern_ebdji")
 size = Vector2(128, 128)
 
 [node name="MinijuegoBaile" type="Node2D" unique_id=1772075878]
+script = ExtResource("1_4nte5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=115395887]
 scale = Vector2(16, 16)
