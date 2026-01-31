@@ -264,27 +264,27 @@ text = "SAL DE AQUI TRAIDOR
 "
 
 [node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
-modulate = Color(1, 1, 1, 0.6509804)
+modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 points = PackedVector2Array(109, 65, 110, 64)
 closed = true
 width = 420.0
 width_curve = SubResource("Curve_vue75")
-default_color = Color(1, 1, 0.007843138, 1)
+default_color = Color(1, 0.84313726, 0.007843138, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 sharp_limit = 30.0
 round_precision = 24
 
 [node name="LuzFoco" type="Line2D" parent="." unique_id=1557391889]
-modulate = Color(1, 1, 1, 0.6509804)
+modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 position = Vector2(1762, 953)
 points = PackedVector2Array(109, 65, 110, 64)
 closed = true
 width = 420.0
 width_curve = SubResource("Curve_vue75")
-default_color = Color(1, 1, 0.007843138, 1)
+default_color = Color(1, 0.84313726, 0.007843138, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 sharp_limit = 30.0
