@@ -137,6 +137,7 @@ offset_top = 83.0
 offset_right = 30.250633
 offset_bottom = 83.00319
 theme_override_fonts/font = ExtResource("2_6oria")
+theme_override_font_sizes/font_size = 32
 text = "1"
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="Button1" unique_id=1649639441]
@@ -155,6 +156,7 @@ offset_top = 8.999992
 offset_right = -70.20126
 offset_bottom = 8.998291
 theme_override_fonts/font = ExtResource("2_6oria")
+theme_override_font_sizes/font_size = 32
 text = "2"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Button2" unique_id=350640200]
@@ -173,6 +175,7 @@ offset_top = -15.000015
 offset_right = 341.69452
 offset_bottom = -15.000366
 theme_override_fonts/font = ExtResource("2_6oria")
+theme_override_font_sizes/font_size = 32
 text = "3"
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="Button3" unique_id=741766413]
