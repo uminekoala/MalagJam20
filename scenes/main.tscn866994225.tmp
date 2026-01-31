@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://p0s1d1ywes1q"]
+[gd_scene format=3 uid="uid://ssi28wcdun7g"]
 
 [ext_resource type="Script" uid="uid://clg60vi8dyunr" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
@@ -422,7 +422,7 @@ text = "¿Me concede este baile?"
 position = Vector2(136, 32)
 
 [node name="LunaPositionRight" type="Marker2D" parent="." unique_id=483600380]
-position = Vector2(950, 32)
+position = Vector2(1020, 32)
 
 [node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("5_tbgi4")]
 visible = false

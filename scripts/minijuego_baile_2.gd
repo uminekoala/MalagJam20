@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	$Label2.text = str(Global.puntos)
 	$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
 	if Input.is_action_just_pressed("espacio"):
+		print(str(funcionar) + ", " + str(enArea))
 		if funcionar && enArea:
 			print(" mi amor por ti")
 			print("SUPER NICE COCK")
@@ -114,6 +115,7 @@ func _on_global_change_scene_to_dance():
 
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("holaaa estas dentro")
 	enArea = true
 	
 

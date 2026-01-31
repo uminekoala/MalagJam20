@@ -208,7 +208,9 @@ wait_time = 3.0
 
 [node name="Area2D" parent="CasillaBaile" index="3" unique_id=1938711099]
 visible = true
-position = Vector2(128, 0)
+
+[node name="CollisionShape2D" parent="CasillaBaile/Area2D" index="0" unique_id=1951563535]
+position = Vector2(256, 128)
 scale = Vector2(16, 16)
 
 [node name="Label" type="Label" parent="." unique_id=1122484614]
@@ -224,6 +226,8 @@ offset_left = 879.0
 offset_top = 279.0
 offset_right = 1173.0
 offset_bottom = 310.0
+
+[node name="AudioPJ" type="AudioStreamPlayer2D" parent="." unique_id=1876835820]
 
 [connection signal="animation_finished" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
