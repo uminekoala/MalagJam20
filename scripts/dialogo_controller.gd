@@ -13,6 +13,7 @@ var dialogue_state = 0
 func _ready() -> void:
 	load_dialogues()
 	Global.connect("option_pressed", on_option_pressed)
+	Global.connect("change_scene_to_dialogue", on_change_scene_to_dialogue)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,6 +22,13 @@ func _process(delta: float) -> void:
 
 func end_dialogue_phase():
 	Global.end_dialogue.emit()
+
+func on_change_scene_to_dialogue():
+	var option1 = all_dialogue[dialogue_state][0]
+	var option2 = all_dialogue[dialogue_state][1]
+	var option3 = all_dialogue[dialogue_state][2]
+
+	Global.send_text_buttons.emit(option1, option2, option3)
 
 # ... i wrote very refactorable code 
 # oh my god granpa can we not talk about refactorable code today?

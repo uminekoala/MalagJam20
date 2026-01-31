@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if $VBoxContainer/MoonDialogueLabel.visible_characters == -1 && is_first_scene:
-		Global.change_scene_to_dance.emit()
+		Global.transition_to_dance.emit()
 		is_first_scene = false
 		
 	pass
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 func on_first_response():
 	is_first_scene = true
 	$VBoxContainer/MoonNameLabel.visible_characters = -1
-	$VBoxContainer/MoonDialogueLabel.text = "HAZ TU MAGIA ANDREA + TRANSICION + BAILE + SHADERS!!!!!"
+	$VBoxContainer/MoonDialogueLabel.text = "¿Aún no ha salido Épicamente el niñó?  HAZ TU MAGIA ANDRÉA + TRANSICIóN + BAILE + SHADERS!!!!!"
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 
 func on_response(line):
