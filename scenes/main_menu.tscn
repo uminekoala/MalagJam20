@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://drx543miwsje4"]
 
-[ext_resource type="Script" uid="uid://bh1wkox7kltma" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://73b1wiwl8nx1" path="res://ASSETS/images/cortinicas.png" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bnx6lp0t1iv6f" path="res://ASSETS/images/cuidaTrigger.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dqndp2q5chvw8" path="res://ASSETS/images/cortina central.png" id="4_wu84c"]
 
 [sub_resource type="Curve" id="Curve_vue75"]
 _data = [Vector2(0.12350598, 1), 0.0, 0.0, 0, 0]
@@ -78,6 +79,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Telon2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(446, 565)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Telon:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1351, 572)]
+}
 
 [sub_resource type="Animation" id="Animation_bqqt6"]
 resource_name = "blackout"
@@ -105,6 +130,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Telon2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(446, 572), Vector2(446, -366)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Telon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1351, 572), Vector2(1351, -366)]
 }
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
@@ -163,15 +212,33 @@ _data = {
 &"focoMover": SubResource("Animation_ekxnf")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqqt6"]
-
 [node name="MainMenu" type="Node2D" unique_id=1085622922]
 script = ExtResource("1_ekxnf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1682949456]
-offset_right = 1956.0
-offset_bottom = 1103.0
+offset_left = 134.0
+offset_top = 47.0
+offset_right = 2090.0
+offset_bottom = 1150.0
 color = Color(0.43137255, 0.19607843, 0.14901961, 1)
+
+[node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
+z_index = 1
+offset_left = 771.0
+offset_top = 322.0
+offset_right = 1141.0
+offset_bottom = 688.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="PanelbotonesPrincipales" unique_id=915208593]
+z_index = 1
+layout_mode = 0
+offset_left = 111.0
+offset_top = 60.0
+offset_right = 241.0
+offset_bottom = 91.0
+text = "JUGAR
+"
 
 [node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
 modulate = Color(1, 1, 1, 0.6509804)
@@ -210,40 +277,6 @@ position = Vector2(963.8625, 541.00006)
 scale = Vector2(3.2152267, 1.9111235)
 texture = ExtResource("1_l6cm7")
 
-[node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
-z_index = 1
-offset_left = 771.0
-offset_top = 322.0
-offset_right = 1141.0
-offset_bottom = 688.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bqqt6")
-
-[node name="btnJugar" type="Button" parent="PanelbotonesPrincipales" unique_id=93221851]
-layout_mode = 0
-offset_left = 99.0
-offset_top = 38.0
-offset_right = 254.0
-offset_bottom = 123.0
-text = "JUEGARRL"
-
-[node name="btnControles" type="Button" parent="PanelbotonesPrincipales" unique_id=736722827]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 144.0
-offset_right = 262.0
-offset_bottom = 229.0
-text = "CONTROLS
-"
-
-[node name="btnSalir" type="Button" parent="PanelbotonesPrincipales" unique_id=135042306]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 246.0
-offset_right = 275.0
-offset_bottom = 331.0
-text = "SAL DE AQUI COJONES
-"
-
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2019304349]
 z_index = 1
 offset_left = 1393.0
@@ -256,10 +289,10 @@ texture_normal = ExtResource("3_bqqt6")
 [node name="PanelbotonesPrincipales2" type="Panel" parent="." unique_id=656709545]
 visible = false
 z_index = 1
-offset_left = 771.0
-offset_top = 322.0
-offset_right = 1141.0
-offset_bottom = 688.0
+offset_left = 721.0
+offset_top = 288.0
+offset_right = 1091.0
+offset_bottom = 654.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelbotonesPrincipales2" unique_id=1977871413]
 layout_mode = 0
@@ -287,6 +320,7 @@ offset_bottom = 53.0
 text = "TRIGGER WARNINGS"
 
 [node name="fundidoNegro" type="ColorRect" parent="." unique_id=898226042]
+visible = false
 z_index = 2
 offset_right = 1932.0
 offset_bottom = 1090.0
@@ -296,7 +330,18 @@ color = Color(0, 0, 0, 1)
 libraries/ = SubResource("AnimationLibrary_bqqt6")
 autoplay = &"blackout"
 
-[connection signal="pressed" from="PanelbotonesPrincipales/btnJugar" to="." method="_on_btn_jugar_pressed"]
-[connection signal="pressed" from="PanelbotonesPrincipales/btnSalir" to="." method="_on_btn_salir_pressed"]
+[node name="Telon" type="Sprite2D" parent="." unique_id=1501062602]
+visible = false
+z_index = 2
+position = Vector2(1351, 572)
+texture = ExtResource("4_wu84c")
+
+[node name="Telon2" type="Sprite2D" parent="." unique_id=1105778588]
+visible = false
+z_index = 2
+position = Vector2(446, 565)
+texture = ExtResource("4_wu84c")
+
+[connection signal="pressed" from="PanelbotonesPrincipales/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales2/btnVolver" to="." method="_on_btn_volver_pressed"]
