@@ -10,6 +10,7 @@ func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
 	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
+	$pulso.play("pulso")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
