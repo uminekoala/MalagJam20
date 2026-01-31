@@ -212,14 +212,32 @@ _data = {
 &"focoMover": SubResource("Animation_ekxnf")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqqt6"]
-
 [node name="MainMenu" type="Node2D" unique_id=1085622922]
 script = ExtResource("1_ekxnf")
 
+[node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
+z_index = 1
+offset_left = 771.0
+offset_top = 322.0
+offset_right = 1141.0
+offset_bottom = 688.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="PanelbotonesPrincipales" unique_id=915208593]
+z_index = 1
+layout_mode = 0
+offset_left = 111.0
+offset_top = 60.0
+offset_right = 241.0
+offset_bottom = 91.0
+text = "JUGAR
+"
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1682949456]
-offset_right = 1956.0
-offset_bottom = 1103.0
+offset_left = 134.0
+offset_top = 47.0
+offset_right = 2090.0
+offset_bottom = 1150.0
 color = Color(0.43137255, 0.19607843, 0.14901961, 1)
 
 [node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
@@ -259,40 +277,6 @@ position = Vector2(963.8625, 541.00006)
 scale = Vector2(3.2152267, 1.9111235)
 texture = ExtResource("1_l6cm7")
 
-[node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
-z_index = 1
-offset_left = 771.0
-offset_top = 322.0
-offset_right = 1141.0
-offset_bottom = 688.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bqqt6")
-
-[node name="btnJugar" type="Button" parent="PanelbotonesPrincipales" unique_id=93221851]
-layout_mode = 0
-offset_left = 99.0
-offset_top = 38.0
-offset_right = 254.0
-offset_bottom = 123.0
-text = "JUEGARRL"
-
-[node name="btnControles" type="Button" parent="PanelbotonesPrincipales" unique_id=736722827]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 144.0
-offset_right = 262.0
-offset_bottom = 229.0
-text = "CONTROLS
-"
-
-[node name="btnSalir" type="Button" parent="PanelbotonesPrincipales" unique_id=135042306]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 246.0
-offset_right = 275.0
-offset_bottom = 331.0
-text = "SAL DE AQUI COJONES
-"
-
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2019304349]
 z_index = 1
 offset_left = 1393.0
@@ -305,10 +289,10 @@ texture_normal = ExtResource("3_bqqt6")
 [node name="PanelbotonesPrincipales2" type="Panel" parent="." unique_id=656709545]
 visible = false
 z_index = 1
-offset_left = 771.0
-offset_top = 322.0
-offset_right = 1141.0
-offset_bottom = 688.0
+offset_left = 721.0
+offset_top = 288.0
+offset_right = 1091.0
+offset_bottom = 654.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelbotonesPrincipales2" unique_id=1977871413]
 layout_mode = 0
@@ -336,6 +320,7 @@ offset_bottom = 53.0
 text = "TRIGGER WARNINGS"
 
 [node name="fundidoNegro" type="ColorRect" parent="." unique_id=898226042]
+visible = false
 z_index = 2
 offset_right = 1932.0
 offset_bottom = 1090.0
@@ -346,16 +331,17 @@ libraries/ = SubResource("AnimationLibrary_bqqt6")
 autoplay = &"blackout"
 
 [node name="Telon" type="Sprite2D" parent="." unique_id=1501062602]
+visible = false
 z_index = 2
 position = Vector2(1351, 572)
 texture = ExtResource("4_wu84c")
 
 [node name="Telon2" type="Sprite2D" parent="." unique_id=1105778588]
+visible = false
 z_index = 2
 position = Vector2(446, 565)
 texture = ExtResource("4_wu84c")
 
-[connection signal="pressed" from="PanelbotonesPrincipales/btnJugar" to="." method="_on_btn_jugar_pressed"]
-[connection signal="pressed" from="PanelbotonesPrincipales/btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="pressed" from="PanelbotonesPrincipales/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales2/btnVolver" to="." method="_on_btn_volver_pressed"]
