@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://oyek0ru0lfdl"
+path="res://.godot/imported/FASE 3.mp3-adea549eaac79f39c82b394e3eb00f1f.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/MUSICA/FASE 3.mp3"
+dest_files=["res://.godot/imported/FASE 3.mp3-adea549eaac79f39c82b394e3eb00f1f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
