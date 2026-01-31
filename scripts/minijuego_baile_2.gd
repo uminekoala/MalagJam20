@@ -1,8 +1,10 @@
 extends Node2D
-signal bailar
 var posicion: int = 0
 var dondeAndaras: Vector2
+var funcionar: bool = false
 var casillasPrimeraFase: int = 10
+var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
+var fase: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,22 +12,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Label2.text = str(Global.puntos)
-	$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
-	if Input.is_action_just_pressed("espacio"):
-		if %PJbaile.global_position == (%CasillaBaile.global_position +Vector2(128,128)):
-			print("SUPER NICE COCK")
-			if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
-				print("OMEGA GIGA NICE COCK")
-				Global.puntos += 2
-			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
-				Global.puntos += 1
-				print("only little GIGA NICE COCK")
-		else:
-			%CasillaBaile.visible = false
-			print("SAD COCK")
-		print(%PJbaile.global_position)
-		print(%CasillaBaile.global_position +Vector2(128,128))
+	if funcionar:
+		$Label2.text = str(Global.puntos)
+		$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
+		if Input.is_action_just_pressed("espacio"):
+			if %PJbaile.global_position == (%CasillaBaile.global_position +Vector2(128,128)):
+				print("SUPER NICE COCK")
+				if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
+					print("OMEGA GIGA NICE COCK")
+					Global.puntos += 2
+				elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
+					Global.puntos += 1
+					print("only little GIGA NICE COCK")
+			else:
+				%CasillaBaile.visible = false
+				print("SAD COCK")
+			print(%PJbaile.global_position)
+			print(%CasillaBaile.global_position +Vector2(128,128))
 
 		
 
@@ -75,3 +78,16 @@ func tuMovimiento(movimiento: Vector2):
 	if movimiento == Vector2(0,0):
 		movimiento = [Vector2(0,1),Vector2(1,0),Vector2(2,0),Vector2(1,1),Vector2(0,2)].pick_random()
 		return movimiento
+
+func _on_global_transition_to_dialogue() -> void:
+	$CasillaBaile/AnimationPlayer.stop("fade_in")
+	funcionar = false
+
+func _on_global_change_scene_to_dance() -> void:
+	funcionar = true
+	fase += 1
+	$AudioStreamPlayer2D.stream(playlist[fase])
+	$AudioStreamPlayer2D.play()
+	$CasillaBaile/AnimationPlayer.play("fade_in")
+	Global.emit_signal("transition_to_dialogue")
+	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
