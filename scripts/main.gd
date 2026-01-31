@@ -2,7 +2,6 @@ extends Node
 
 var tween_movement_luna
 var tween_visible
-var playing = false
 var timer
 var botones
 
@@ -67,12 +66,12 @@ func send_change_scene_to_dance_signal():
 
 func move_luna(is_right):
 	if (is_right):
-		$TrailAnimator.play("trail")
 		$TrailTimer.start()
+		$TrailAnimator.play("trail")
 	else:
-		$TrailAnimatorLeft.play("trail_left")
-		playing = true
 		$TrailLeftTimer.start()
+		$TrailAnimatorLeft.play("trail_left")
+		
 
 func _on_button_pressed() -> void:
 	Global.first_response.emit()
