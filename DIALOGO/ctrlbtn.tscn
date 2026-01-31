@@ -14,12 +14,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(31, 49)]
+"values": [Vector2(61, 132)]
 }
 
 [sub_resource type="Animation" id="Animation_6oria"]
 resource_name = "move"
-length = 20.0
+length = 12.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -28,16 +28,68 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0009999999, 0.96666664, 1.97, 3.03, 4.05, 5.01, 6.06, 7.03, 8.015496, 9.035497, 10.025449, 11.045449, 12.065449, 13.055449, 14.035449, 15.015449, 16.02175, 17.001749, 18.041748),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.01, 2.03, 3.04, 3.98, 5.02, 6.04, 7.06, 8.019668, 9.069668, 10.059668, 11.069667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(31, 49), Vector2(631, 137), Vector2(165, 378), Vector2(105, 427), Vector2(629, 364), Vector2(427, 32), Vector2(70, 415), Vector2(20, 24), Vector2(406, 263), Vector2(543, 28), Vector2(285, 382), Vector2(16, 257), Vector2(276, 194), Vector2(561, 15), Vector2(586, 369), Vector2(6, 371), Vector2(87, 136), Vector2(486, 63), Vector2(675, 22)]
+"values": [Vector2(61, 132), Vector2(151, 170), Vector2(226, 262), Vector2(317, 171), Vector2(308, 272), Vector2(350, 250), Vector2(443, 356), Vector2(589, 255), Vector2(574, 206), Vector2(273, 287), Vector2(237, 147), Vector2(65, 122)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_53h0m"]
 _data = {
 &"RESET": SubResource("Animation_ahrur"),
 &"move": SubResource("Animation_6oria")
+}
+
+[sub_resource type="Animation" id="Animation_53h0m"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_nunm5"]
+resource_name = "move2"
+length = 12.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gag0t"]
+_data = {
+&"RESET": SubResource("Animation_53h0m"),
+&"move2": SubResource("Animation_nunm5")
+}
+
+[sub_resource type="Animation" id="Animation_oe7xb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(444, 234)]
+}
+
+[sub_resource type="Animation" id="Animation_gag0t"]
+resource_name = "mov3"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.98, 2, 3.06, 4.03, 5.04, 5.99, 6.98, 8.020341, 9.03034, 9.99034, 11.010341),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(444, 234), Vector2(519, 315), Vector2(439, 416), Vector2(351, 336), Vector2(218, 266), Vector2(350, 250), Vector2(149, 300), Vector2(28, 144), Vector2(56, 18), Vector2(232, 83), Vector2(415, 357), Vector2(400, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oe7xb"]
+_data = {
+&"RESET": SubResource("Animation_oe7xb"),
+&"mov3": SubResource("Animation_gag0t")
 }
 
 [node name="Node" type="Control" unique_id=707746953]
@@ -55,12 +107,13 @@ anchor_left = 0.044000003
 anchor_top = 0.098000005
 anchor_right = 0.15400001
 anchor_bottom = 0.268
-offset_left = 0.19999695
-offset_right = 0.23719025
-offset_bottom = 0.0032043457
+offset_left = 30.199997
+offset_top = 83.0
+offset_right = 30.249641
+offset_bottom = 83.003265
 text = "1"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Button1" unique_id=1649639441]
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="Button1" unique_id=1649639441]
 libraries/ = SubResource("AnimationLibrary_53h0m")
 autoplay = &"move"
 
@@ -72,11 +125,13 @@ anchor_top = 0.22000001
 anchor_right = 0.40600002
 anchor_bottom = 0.40800002
 offset_left = -0.19999695
-offset_right = -0.2000122
-offset_bottom = -1.5258789e-05
+offset_right = -0.2006836
+offset_bottom = -0.0010528564
 text = "2"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Button2" unique_id=350640200]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Button2" unique_id=350640200]
+libraries/ = SubResource("AnimationLibrary_gag0t")
+autoplay = &"move2"
 
 [node name="Button3" type="Button" parent="." unique_id=2034669585]
 layout_mode = 1
@@ -85,12 +140,15 @@ anchor_left = 0.076000005
 anchor_top = 0.49800003
 anchor_right = 0.289
 anchor_bottom = 0.67
-offset_left = -0.20000458
-offset_top = -1.5258789e-05
-offset_right = -0.30000305
+offset_left = 390.8
+offset_top = -15.000015
+offset_right = 341.69598
+offset_bottom = -15.000275
 text = "3"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Button3" unique_id=741766413]
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Button3" unique_id=741766413]
+libraries/ = SubResource("AnimationLibrary_oe7xb")
+autoplay = &"mov3"
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
