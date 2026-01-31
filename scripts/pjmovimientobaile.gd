@@ -24,7 +24,18 @@ func _physics_process(delta: float) -> void:
 		if global_position.x > 380 && moverse:
 			position.x -= 256
 			moverse = false
-
+	if Input.is_action_just_pressed("espacio"):
+		$AnimatedSprite2D.visible = true
+		$AnimatedSprite2D2.visible = true
+		$AnimatedSprite2D3.visible = true
+		$AnimatedSprite2D4.visible = true
+		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D2.play("default")
+		$AnimatedSprite2D3.play("default")
+		$AnimatedSprite2D4.play("default")
+		$AnimationPlayer.play("MOVE")
+		$Timer.start()
+		
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
@@ -47,3 +58,11 @@ func _physics_process(delta: float) -> void:
 func _on_paso_animation_finished(anim_name: StringName) -> void:
 	moverse = true
 	$Paso.play()
+
+
+func _on_timer_timeout() -> void:
+	$AnimatedSprite2D.visible = false
+	$AnimatedSprite2D2.visible = false
+	$AnimatedSprite2D3.visible = false
+	$AnimatedSprite2D4.visible = false
+	$AnimationPlayer.stop()
