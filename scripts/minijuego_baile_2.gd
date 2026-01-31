@@ -42,6 +42,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		$CasillaBaile/AnimationPlayer.play("fade_in")
 		if %CasillaBaile.visible == false:
 			%CasillaBaile.visible = true
+	else:
+		Global.emit_signal("transition_to_dialogue")
 	print("funciona")
 
 
@@ -89,5 +91,5 @@ func _on_global_change_scene_to_dance() -> void:
 	$AudioStreamPlayer2D.stream(playlist[fase])
 	$AudioStreamPlayer2D.play()
 	$CasillaBaile/AnimationPlayer.play("fade_in")
-	Global.emit_signal("transition_to_dialogue")
+	
 	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
