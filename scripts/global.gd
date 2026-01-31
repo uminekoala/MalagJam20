@@ -4,6 +4,10 @@ signal option_pressed(id)
 signal response(line)
 signal send_text_buttons(line0,line1,line2)
 signal end_dialogue()
+signal first_response()
+signal change_scene_to_dialogue()
+signal change_scene_to_dance()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
