@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1wdjlpsyyf36"]
 
-[ext_resource type="FontFile" uid="uid://bm24pqen01eet" path="res://ASSETS/FONT/Alagard_esp.ttf" id="1_brfdx"]
+[ext_resource type="FontFile" uid="uid://p7s3mqbvfuk0" path="res://ASSETS/FONT/alagard.ttf" id="1_1a1em"]
 [ext_resource type="Script" uid="uid://cphw4rqi20wm6" path="res://scripts/dialogo_labels.gd" id="2_brfdx"]
 
 [sub_resource type="Theme" id="Theme_brfdx"]
@@ -8,7 +8,7 @@ RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 3
 RichTextLabel/font_sizes/normal_font_size = 22
-RichTextLabel/fonts/normal_font = ExtResource("1_brfdx")
+RichTextLabel/fonts/normal_font = ExtResource("1_1a1em")
 VBoxContainer/constants/separation = 15
 
 [sub_resource type="Animation" id="Animation_is0no"]
