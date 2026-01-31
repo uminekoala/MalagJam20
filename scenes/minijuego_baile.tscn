@@ -120,6 +120,12 @@ offset_top = 171.0
 offset_right = 1124.0
 offset_bottom = 224.0
 
+[node name="Label2" type="Label" parent="." unique_id=1414841466]
+offset_left = 879.0
+offset_top = 279.0
+offset_right = 1173.0
+offset_bottom = 310.0
+
 [connection signal="animation_finished" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
 
