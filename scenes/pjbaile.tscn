@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccgdh5bbdqgkd"]
 
-[ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_hj2wp"]
 [ext_resource type="Script" uid="uid://c1mb4iyvb74tm" path="res://scripts/pjmovimientobaile.gd" id="1_ujnbw"]
+[ext_resource type="Texture2D" uid="uid://vcant4bb2t0g" path="res://ASSETS/BOTAS.png" id="2_tt456"]
 [ext_resource type="Texture2D" uid="uid://bpd4a64bu2i5i" path="res://ASSETS/PETALOS_VERDES.png" id="3_tt456"]
 
 [sub_resource type="Animation" id="Animation_ujnbw"]
@@ -297,7 +297,8 @@ script = ExtResource("1_ujnbw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441209124]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("1_hj2wp")
+texture_filter = 1
+texture = ExtResource("2_tt456")
 
 [node name="Paso" type="AnimationPlayer" parent="." unique_id=1175181124]
 libraries/ = SubResource("AnimationLibrary_abq34")

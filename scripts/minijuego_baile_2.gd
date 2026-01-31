@@ -23,21 +23,19 @@ func _process(delta: float) -> void:
 	$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
 	if Input.is_action_just_pressed("espacio"):
 		if funcionar && enArea:
-			print("probando mi amor por ti")
+			print(" mi amor por ti")
 			print("SUPER NICE COCK")
-			if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
-				%CasillaBaile.visible = false
+			if $CasillaBaile/AnimationPlayer/Timer.time_left < 1.0:
 				feedback.text = "OMEGA GIGA NICE COCK"
 				Global.puntos += 2
-			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
-				%CasillaBaile.visible = false
+			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 2.0 && $CasillaBaile/AnimationPlayer/Timer.time_left > 1.0:
 				Global.puntos += 1
 				feedback.text = "Only little GIGA NICE COCK"
 				print("only little GIGA NICE COCK")
 		else:
-			%CasillaBaile.visible = false
 			print("jauja")
 			feedback.text = "SAD COCK"
+		%CasillaBaile.visible = false
 
 		
 
@@ -111,7 +109,7 @@ func _on_global_change_scene_to_dance():
 	$AudioStreamPlayer2D.stream = load(playlist[fase])
 	fase += 1
 	$AudioStreamPlayer2D.play()
-	%CasillaBaile.visible = true
+	$CasillaBaile/AnimatedSprite2D.visible = true
 	$CasillaBaile/AnimationPlayer.active = true
 	$CasillaBaile/AnimationPlayer.play("fade_in")
 	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
