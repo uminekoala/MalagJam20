@@ -225,7 +225,9 @@ position = Vector2(1120, 32)
 
 [node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("5_tbgi4")]
 visible = false
-position = Vector2(105, -96)
+
+[node name="PJbaile" parent="MinijuegoBaile" index="2" unique_id=581735157]
+scale = Vector2(1.92, 1.92)
 
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
 modulate = Color(0, 0, 0.8039216, 0.26666668)
@@ -283,3 +285,7 @@ texture = ExtResource("5_tefeu")
 libraries/ = SubResource("AnimationLibrary_o6xl0")
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
+
+[editable path="MinijuegoBaile"]
+[editable path="MinijuegoBaile/PJbaile"]
+[editable path="MinijuegoBaile/CasillaBaile"]
