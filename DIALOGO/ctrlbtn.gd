@@ -7,7 +7,7 @@ extends Node
 @onready var btn2=$"Button2"
 @onready var btn3=$"Button3"
 func _ready():
-	pass
+	Global.connect("send_text_buttons",textc)
 func _process(delta: float) -> void:
 	pass
 func _on_button_1_pressed() -> void:
@@ -28,5 +28,9 @@ func _on_button_3_pressed() -> void:
 	btn2.disabled=true
 	btn2.visible=false
 	Global.option_pressed.emit(2)
-func text():
-	pass #funcion de meter textos que de 050 e ir sustituyendo en lso botoness
+func textc():
+	pass
+	#btn1.text=text
+	#btn2.text=text
+	#btn3.text=text
+	 #funcion de meter textos que de 050 e ir sustituyendo en lso botoness
