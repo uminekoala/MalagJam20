@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var panelbotones_principales: Panel = $PanelbotonesPrincipales
+@onready var panelbotones_principales_2: Panel = $PanelbotonesPrincipales2
+@onready var blackout: AnimationPlayer = $blackout
+@onready var texture_button: TextureButton = $TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +14,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if !blackout.is_playing():
+		panelbotones_principales.z_index =50
+		panelbotones_principales_2.z_index =50
+		texture_button.z_index = 50
 
 
 func _on_btn_jugar_pressed() -> void:
@@ -20,4 +27,17 @@ func _on_btn_jugar_pressed() -> void:
 
 func _on_btn_salir_pressed() -> void:
 	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_btn_volver_pressed() -> void:
+	panelbotones_principales.visible =true
+	panelbotones_principales_2.visible= false
+	pass # Replace with function body.
+
+
+func _on_texture_button_pressed() -> void:
+	
+	panelbotones_principales.visible = false
+	panelbotones_principales_2.visible= true
 	pass # Replace with function body.
