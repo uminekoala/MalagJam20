@@ -422,7 +422,7 @@ text = "¿Me concede este baile?"
 position = Vector2(136, 32)
 
 [node name="LunaPositionRight" type="Marker2D" parent="." unique_id=483600380]
-position = Vector2(1020, 32)
+position = Vector2(950, 32)
 
 [node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("5_tbgi4")]
 visible = false
