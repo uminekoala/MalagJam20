@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://v4uke1lu6mch"]
 
 [ext_resource type="Script" uid="uid://swatctur8dbb" path="res://scripts/dialogo_bad.gd" id="1_wtwdv"]
+[ext_resource type="AudioStream" uid="uid://s7y8myuxswjo" path="res://ASSETS/EFECTOS_DE_SONIDO/ERROR.mp3" id="2_b7bl3"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t8bks"]
 particle_flag_disable_z = true
@@ -22,3 +23,6 @@ process_material = SubResource("ParticleProcessMaterial_t8bks")
 script = ExtResource("1_wtwdv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=745409330]
+stream = ExtResource("2_b7bl3")
+pitch_scale = 0.67
+autoplay = true
