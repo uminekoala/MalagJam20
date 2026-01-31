@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bh1wkox7kltma" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://73b1wiwl8nx1" path="res://ASSETS/images/cortinicas.png" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bnx6lp0t1iv6f" path="res://ASSETS/images/cuidaTrigger.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dqndp2q5chvw8" path="res://ASSETS/images/cortina central.png" id="4_wu84c"]
 
 [sub_resource type="Curve" id="Curve_vue75"]
 _data = [Vector2(0.12350598, 1), 0.0, 0.0, 0, 0]
@@ -78,6 +79,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Telon2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(446, 565)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Telon:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1351, 572)]
+}
 
 [sub_resource type="Animation" id="Animation_bqqt6"]
 resource_name = "blackout"
@@ -105,6 +130,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Telon2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(446, 572), Vector2(446, -366)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Telon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1351, 572), Vector2(1351, -366)]
 }
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
@@ -295,6 +344,16 @@ color = Color(0, 0, 0, 1)
 [node name="blackout" type="AnimationPlayer" parent="." unique_id=1031844904]
 libraries/ = SubResource("AnimationLibrary_bqqt6")
 autoplay = &"blackout"
+
+[node name="Telon" type="Sprite2D" parent="." unique_id=1501062602]
+z_index = 2
+position = Vector2(1351, 572)
+texture = ExtResource("4_wu84c")
+
+[node name="Telon2" type="Sprite2D" parent="." unique_id=1105778588]
+z_index = 2
+position = Vector2(446, 565)
+texture = ExtResource("4_wu84c")
 
 [connection signal="pressed" from="PanelbotonesPrincipales/btnJugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales/btnSalir" to="." method="_on_btn_salir_pressed"]
