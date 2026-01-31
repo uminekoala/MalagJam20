@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 func on_first_response():
 	is_first_scene = true
 	$VBoxContainer/MoonNameLabel.visible_characters = -1
-	$VBoxContainer/MoonDialogueLabel.text = "HAZ TU MAGIA ANDRÉA + TRANSICIóN + BAILE + SHADERS!!!!!"
+	$VBoxContainer/MoonDialogueLabel.text = "¿Aún no ha salido Épicamente el niñó?  HAZ TU MAGIA ANDRÉA + TRANSICIóN + BAILE + SHADERS!!!!!"
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 
 func on_response(line):
