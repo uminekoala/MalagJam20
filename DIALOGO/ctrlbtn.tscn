@@ -2,34 +2,96 @@
 
 [ext_resource type="Script" uid="uid://r4f3k7epbiva" path="res://DIALOGO/ctrlbtn.gd" id="1_ahrur"]
 
-[node name="Node" type="Node" unique_id=845499186]
+[sub_resource type="Animation" id="Animation_ahrur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(31, 49)]
+}
+
+[sub_resource type="Animation" id="Animation_6oria"]
+resource_name = "move"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.96666664, 1.97, 3.03, 4.05, 5.01, 6.06, 7.03, 8.015496, 9.035497, 10.025449, 11.045449, 12.065449, 13.055449, 14.035449, 15.015449, 16.02175, 17.001749, 18.041748),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(31, 49), Vector2(631, 137), Vector2(165, 378), Vector2(105, 427), Vector2(629, 364), Vector2(427, 32), Vector2(70, 415), Vector2(20, 24), Vector2(406, 263), Vector2(543, 28), Vector2(285, 382), Vector2(16, 257), Vector2(276, 194), Vector2(561, 15), Vector2(586, 369), Vector2(6, 371), Vector2(87, 136), Vector2(486, 63), Vector2(675, 22)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53h0m"]
+_data = {
+&"RESET": SubResource("Animation_ahrur"),
+&"move": SubResource("Animation_6oria")
+}
+
+[node name="Node" type="Control" unique_id=707746953]
+layout_mode = 3
+anchor_right = 0.365
+anchor_bottom = 0.46300003
+offset_right = -0.8000488
+offset_bottom = -0.040039063
 script = ExtResource("1_ahrur")
 
-[node name="Timer" type="Timer" parent="." unique_id=1369483492]
-autostart = true
-
 [node name="Button1" type="Button" parent="." unique_id=654750123]
-offset_left = 674.0
-offset_top = 187.0
-offset_right = 751.0
-offset_bottom = 312.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044000003
+anchor_top = 0.098000005
+anchor_right = 0.15400001
+anchor_bottom = 0.268
+offset_left = 0.19999695
+offset_right = 0.23719025
+offset_bottom = 0.0032043457
 text = "1"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button1" unique_id=1649639441]
+libraries/ = SubResource("AnimationLibrary_53h0m")
+autoplay = &"move"
+
 [node name="Button2" type="Button" parent="." unique_id=361573828]
-offset_left = 1238.0
-offset_top = 132.0
-offset_right = 1315.0
-offset_bottom = 824.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296
+anchor_top = 0.22000001
+anchor_right = 0.40600002
+anchor_bottom = 0.40800002
+offset_left = -0.19999695
+offset_right = -0.2000122
+offset_bottom = -1.5258789e-05
 text = "2"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button2" unique_id=350640200]
+
 [node name="Button3" type="Button" parent="." unique_id=2034669585]
-offset_left = 259.0
-offset_top = 135.0
-offset_right = 433.0
-offset_bottom = 221.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.076000005
+anchor_top = 0.49800003
+anchor_right = 0.289
+anchor_bottom = 0.67
+offset_left = -0.20000458
+offset_top = -1.5258789e-05
+offset_right = -0.30000305
 text = "3"
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button3" unique_id=741766413]
+
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
