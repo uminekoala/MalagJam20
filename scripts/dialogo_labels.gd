@@ -12,13 +12,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && (is_first_scene || is_final):
+	if $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_first_scene && Input.is_action_just_pressed("accion"):
 		Global.transition_to_dance.emit()
 		is_first_scene = false
 		is_final = false
 	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && finished_sentence && !is_first_scene:
 		finished_sentence = false
 		DialogoController.launch_buttons_flag = true
+	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_final && Input.is_action_just_pressed("accion"):
+		is_final = false
+		Global.transition_to_dance.emit()
 
 
 func on_purge_dialogue_labels():

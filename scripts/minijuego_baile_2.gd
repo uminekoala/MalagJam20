@@ -23,21 +23,19 @@ func _process(delta: float) -> void:
 	$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
 	if Input.is_action_just_pressed("espacio"):
 		if funcionar && enArea:
-			print("probando mi amor por ti")
+			print(" mi amor por ti")
 			print("SUPER NICE COCK")
-			if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
-				%CasillaBaile.visible = false
+			if $CasillaBaile/AnimationPlayer/Timer.time_left < 1.0:
 				feedback.text = "OMEGA GIGA NICE COCK"
 				Global.puntos += 2
-			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
-				%CasillaBaile.visible = false
+			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 2.0 && $CasillaBaile/AnimationPlayer/Timer.time_left > 1.0:
 				Global.puntos += 1
 				feedback.text = "Only little GIGA NICE COCK"
 				print("only little GIGA NICE COCK")
 		else:
-			%CasillaBaile.visible = false
 			print("jauja")
 			feedback.text = "SAD COCK"
+		%CasillaBaile.visible = false
 
 		
 
@@ -96,22 +94,19 @@ func tuMovimiento(movimiento: Vector2):
 		return movimiento
 
 func _on_global_transition_to_dialogue() -> void:
-	var eq = AudioServer.get_bus_effect(1, 0)
-	AudioServer.set_bus_effect_enabled(1, 0, true)
+	audio_stream_player_2d.volume_db = -15
 	$CasillaBaile/AnimationPlayer.stop("fade_in")
 	$CasillaBaile/AnimationPlayer.active = false
 	funcionar = false
 
 func _on_global_change_scene_to_dance():
 	print(AudioServer.get_bus_index("Musica"))
-	var eq = AudioServer.get_bus_effect(1, 0)
-	
-	AudioServer.set_bus_effect_enabled(1, 0, false)
+	audio_stream_player_2d.volume_db = 0
 	funcionar = true
 	$AudioStreamPlayer2D.stream = load(playlist[fase])
 	fase += 1
 	$AudioStreamPlayer2D.play()
-	%CasillaBaile.visible = true
+	$CasillaBaile/AnimatedSprite2D.visible = true
 	$CasillaBaile/AnimationPlayer.active = true
 	$CasillaBaile/AnimationPlayer.play("fade_in")
 	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
