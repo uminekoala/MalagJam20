@@ -226,12 +226,42 @@ offset_right = 2090.0
 offset_bottom = 1150.0
 color = Color(0.43137255, 0.19607843, 0.14901961, 1)
 
+[node name="Label" type="Label" parent="." unique_id=344284517]
+texture_filter = 1
+offset_left = 430.0
+offset_top = 228.0
+offset_right = 1477.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_rtw2f")
+theme_override_font_sizes/font_size = 100
+text = "Has traicionado
+ a la luna"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=72559357]
+texture_filter = 1
+offset_left = 421.0
+offset_top = 477.0
+offset_right = 1437.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_rtw2f")
+theme_override_font_sizes/font_size = 70
+text = "Y aún asi
+¿Quieres bailar?"
+horizontal_alignment = 1
+
 [node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
 z_index = 1
-offset_left = 771.0
-offset_top = 322.0
-offset_right = 1141.0
-offset_bottom = 688.0
+offset_left = 741.0
+offset_top = 510.0
+offset_right = 1111.0
+offset_bottom = 876.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wu84c")
 
@@ -239,22 +269,22 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_wu84c")
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 111.0
-offset_top = 60.0
-offset_right = 241.0
-offset_bottom = 91.0
+offset_left = -123.0
+offset_top = 170.0
+offset_right = 7.0
+offset_bottom = 201.0
 theme_override_fonts/font = ExtResource("2_rtw2f")
-text = "JUGAR
-"
+text = "Por supuesto"
+flat = true
 
 [node name="btnControles" type="Button" parent="PanelbotonesPrincipales" unique_id=1313136413]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 113.0
-offset_top = 153.0
-offset_right = 243.0
-offset_bottom = 184.0
+offset_left = -433.0
+offset_top = 445.0
+offset_right = -303.0
+offset_bottom = 476.0
 theme_override_fonts/font = ExtResource("2_rtw2f")
 text = "Tutorial
 "
@@ -263,10 +293,10 @@ text = "Tutorial
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 104.0
-offset_top = 225.0
-offset_right = 283.0
-offset_bottom = 256.0
+offset_left = 272.0
+offset_top = 175.0
+offset_right = 451.0
+offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("2_rtw2f")
 text = "SAL DE AQUI TRAIDOR
 "
@@ -357,6 +387,7 @@ theme_override_fonts/font = ExtResource("2_rtw2f")
 text = "TRIGGER WARNINGS"
 
 [node name="fundidoNegro" type="ColorRect" parent="." unique_id=898226042]
+visible = false
 z_index = 2
 offset_right = 1932.0
 offset_bottom = 1090.0
@@ -367,11 +398,13 @@ libraries/ = SubResource("AnimationLibrary_bqqt6")
 autoplay = &"blackout"
 
 [node name="Telon" type="Sprite2D" parent="." unique_id=1501062602]
+visible = false
 z_index = 2
 position = Vector2(1351, 572)
 texture = ExtResource("4_wu84c")
 
 [node name="Telon2" type="Sprite2D" parent="." unique_id=1105778588]
+visible = false
 z_index = 2
 position = Vector2(446, 565)
 texture = ExtResource("4_wu84c")
