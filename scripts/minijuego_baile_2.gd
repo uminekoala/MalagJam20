@@ -2,7 +2,7 @@ extends Node2D
 var posicion: int = 0
 var dondeAndaras: Vector2
 var funcionar: bool = false
-var casillasPrimeraFase: int = 10
+var casillasPrimeraFase: int = 1
 var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
 var fase: int = 0
 # Called when the node enters the scene tree for the first time.
