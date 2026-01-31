@@ -14,18 +14,20 @@ particles_anim_loop = false
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(1000, 500, 1)
-direction = Vector3(1, 0.5, 0)
+direction = Vector3(1, 0.75, 0)
 spread = 20.0
 initial_velocity_min = 38.66
 initial_velocity_max = 316.65
 gravity = Vector3(0, 20, 0)
+scale_min = 3.0
+scale_max = 3.0
 anim_offset_max = 1.0
 
 [node name="efecto_brillos" type="GPUParticles2D" unique_id=330267844]
 material = SubResource("CanvasItemMaterial_c2l5p")
 position = Vector2(1004, 496)
 emitting = false
-amount = 100
+amount = 70
 texture = ExtResource("1_l07bd")
 one_shot = true
 visibility_rect = Rect2(-1000, -200, 2000, 600)
