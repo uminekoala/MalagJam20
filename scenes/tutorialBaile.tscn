@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ci8iwyekc4xib"]
 
 [ext_resource type="Script" uid="uid://csfji1bm4jusa" path="res://scripts/tutorial.gd" id="1_nbt8l"]
-[ext_resource type="PackedScene" uid="uid://gm282uy0w2w3" path="res://scenes/minijuego_baile.tscn" id="2_laqf1"]
+[ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="2_laqf1"]
+[ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_laqf1"]
 
 [node name="TutorialBaile" type="Node2D" unique_id=228089658]
 script = ExtResource("1_nbt8l")
@@ -16,27 +17,42 @@ color = Color(0, 0, 0, 1)
 [node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("2_laqf1")]
 position = Vector2(0, -32)
 
+[node name="AudioStreamPlayer2D" parent="MinijuegoBaile" index="1" unique_id=1629616640]
+bus = &"Musica"
+
 [node name="Button" type="Button" parent="." unique_id=86668513]
+texture_filter = 1
 offset_left = 1636.0
 offset_top = 936.0
 offset_right = 1849.0
 offset_bottom = 1070.0
+theme_override_fonts/font = ExtResource("3_laqf1")
 text = "VOLVER"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1189824939]
+texture_filter = 1
 offset_left = 863.0
 offset_top = 18.0
 offset_right = 1865.0
 offset_bottom = 949.0
+theme_override_fonts/normal_font = ExtResource("3_laqf1")
 theme_override_font_sizes/normal_font_size = 58
-text = "Esto es el Putisimo minijuego de MIEEEERDA del baile, aqui se baila pruebalo venga espabilao"
+text = "El icono que se mueve eres tú y te mueves al ritmo de la música. Notarás que hay casillas que se iluminan, debes dirigirte a la casilla iluminada y pulsar la tecla \"ESPACIO\" al golpe del tercer compás.
+
+¡Ojo! Debes pulsar \"ESPACIO\" al golpe del tercer compás, no antes ni después, pero no pierdas la oportunidad de intentarlo."
 
 [node name="Button2" type="Button" parent="." unique_id=1104413659]
+texture_filter = 1
 offset_left = 1374.0
 offset_top = 932.0
 offset_right = 1587.0
 offset_bottom = 1066.0
+theme_override_fonts/font = ExtResource("3_laqf1")
 text = "TUTORIAL DIALOGO"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+
+[editable path="MinijuegoBaile"]
+[editable path="MinijuegoBaile/PJbaile"]
+[editable path="MinijuegoBaile/CasillaBaile"]

@@ -9,19 +9,19 @@ var moverse:bool = false
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("tilemapArriba"):
-		if global_position.y > 384 && moverse:
+		if global_position.y > 400 && moverse:
 			position.y -= 256
 			moverse = false
 	if Input.is_action_just_pressed("tilemapAbajo"):
-		if global_position.y < 696 && moverse:
+		if global_position.y < 680 && moverse:
 			position.y += 256
 			moverse = false
 	if Input.is_action_just_pressed("tilemapDerecha"):
-		if global_position.x < 540 && moverse:
+		if global_position.x < 680 && moverse:
 			position.x += 256
 			moverse = false
 	if Input.is_action_just_pressed("tilemapIzquierda"):
-		if global_position.x > 228 && moverse:
+		if global_position.x > 380 && moverse:
 			position.x -= 256
 			moverse = false
 
