@@ -1,24 +1,30 @@
 extends CharacterBody2D
 
-
+@onready var bailando = get_node("res://scenes/minijuego_baile.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var col_arriba: CollisionShape2D = $"../ColArriba"
 
+var moverse:bool = true
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("tilemapArriba"):
-		if global_position.y > 228:
+		if global_position.y > 384 && moverse:
 			position.y -= 256
+			moverse = false
 	if Input.is_action_just_pressed("tilemapAbajo"):
-		if global_position.y < 540:
+		if global_position.y < 696 && moverse:
 			position.y += 256
+			moverse = false
 	if Input.is_action_just_pressed("tilemapDerecha"):
-		if global_position.x < 540:
+		if global_position.x < 540 && moverse:
 			position.x += 256
+			moverse = false
 	if Input.is_action_just_pressed("tilemapIzquierda"):
-		if global_position.x > 228:
+		if global_position.x > 228 && moverse:
 			position.x -= 256
+			moverse = false
+
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
@@ -36,3 +42,8 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_paso_animation_finished(anim_name: StringName) -> void:
+	moverse = true
+	$Paso.play()
