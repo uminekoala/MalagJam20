@@ -1,7 +1,7 @@
 extends Node
 
 signal option_pressed(id)
-signal response(line)
+signal response(line, is_final)
 signal send_text_buttons(line0,line1,line2)
 signal first_response()
 signal dialogue_feedback(value)

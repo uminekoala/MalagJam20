@@ -2,6 +2,7 @@ extends ScrollContainer
 
 var is_first_scene = false
 var finished_sentence = false
+var is_final = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,9 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_first_scene:
+	if $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && (is_first_scene || is_final):
 		Global.transition_to_dance.emit()
 		is_first_scene = false
+		is_final = false
 	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && finished_sentence && !is_first_scene:
 		finished_sentence = false
 		DialogoController.launch_buttons_flag = true
@@ -30,7 +32,8 @@ func on_first_response():
 	$VBoxContainer/MoonDialogueLabel.text = "¿Aún no ha salido Épicamente el niñó?  HAZ TU MAGIA ANDRÉA + TRANSICIóN + BAILE + SHADERS!!!!!"
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 
-func on_response(line):
+func on_response(line, final):
+	is_final = final
 	finished_sentence = true
 	$VBoxContainer/MoonNameLabel.visible_characters = -1
 	$VBoxContainer/MoonDialogueLabel.text = line
