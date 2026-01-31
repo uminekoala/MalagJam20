@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bomsrp8a8yq4n"]
 
 [ext_resource type="Script" uid="uid://r4f3k7epbiva" path="res://DIALOGO/ctrlbtn.gd" id="1_ahrur"]
+[ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="2_6oria"]
 
 [sub_resource type="Animation" id="Animation_ahrur"]
 length = 0.001
@@ -133,8 +134,9 @@ anchor_right = 0.15400001
 anchor_bottom = 0.268
 offset_left = 30.199997
 offset_top = 83.0
-offset_right = 30.249641
-offset_bottom = 83.003265
+offset_right = 30.250633
+offset_bottom = 83.00319
+theme_override_fonts/font = ExtResource("2_6oria")
 text = "1"
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="Button1" unique_id=1649639441]
@@ -152,6 +154,7 @@ offset_left = -70.2
 offset_top = 8.999992
 offset_right = -70.20126
 offset_bottom = 8.998291
+theme_override_fonts/font = ExtResource("2_6oria")
 text = "2"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Button2" unique_id=350640200]
@@ -169,6 +172,7 @@ offset_left = 390.8
 offset_top = -15.000015
 offset_right = 341.69452
 offset_bottom = -15.000366
+theme_override_fonts/font = ExtResource("2_6oria")
 text = "3"
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="Button3" unique_id=741766413]
