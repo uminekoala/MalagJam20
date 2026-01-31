@@ -71,11 +71,13 @@ func on_transition_to_dance():
 
 func send_change_scene_to_dialogue_signal():
 	print("CAMBIAR ESCENA DIALOGO")
+	AudioServer.set_bus_effect_enabled(1, 0, true)
 	Global.change_scene_to_dialogue.emit()
 
 
 func send_change_scene_to_dance_signal():
 	print("CAMBIAR ESCENA BAILE")
+	AudioServer.set_bus_effect_enabled(1, 0, false)
 	Global.change_scene_to_dance.emit()
 
 func move_luna(is_right):
