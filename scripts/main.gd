@@ -2,14 +2,15 @@ extends Node
 
 var tween_movement_luna
 var tween_visible
+var playing = false
+var timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
 	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
-	$TrailAnimatorLeft.connect("animation_finished", send_change_scene_to_dialogue_signal)
-	$TrailAnimator.connect("animation_finished", send_change_scene_to_dance_signal)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,11 +62,20 @@ func send_change_scene_to_dance_signal():
 func move_luna(is_right):
 	if (is_right):
 		$TrailAnimator.play("trail")
+		$TrailTimer.start()
 	else:
 		$TrailAnimatorLeft.play("trail_left")
-	
-
+		playing = true
+		$TrailTimer.start()
 
 func _on_button_pressed() -> void:
 	Global.first_response.emit()
 	$FirstButton.disabled = true
+
+func _on_trail_timer_timeout() -> void:
+	print("AFWFAWFWA")
+	send_change_scene_to_dance_signal()
+
+
+func _on_trail_left_timer_timeout() -> void:
+	send_change_scene_to_dialogue_signal()
