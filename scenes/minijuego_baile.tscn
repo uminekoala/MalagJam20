@@ -192,19 +192,20 @@ offset_right = 375.0
 offset_bottom = 247.0
 
 [node name="AnimationPlayer" parent="CasillaBaile" index="1" unique_id=1439832419]
-active = true
 autoplay = &""
 
 [node name="Timer" type="Timer" parent="CasillaBaile/AnimationPlayer" index="0" unique_id=550172142]
 wait_time = 3.0
 
 [node name="Label" type="Label" parent="." unique_id=1122484614]
+visible = false
 offset_left = 851.0
 offset_top = 171.0
 offset_right = 1124.0
 offset_bottom = 224.0
 
 [node name="Label2" type="Label" parent="." unique_id=1414841466]
+visible = false
 offset_left = 879.0
 offset_top = 279.0
 offset_right = 1173.0
