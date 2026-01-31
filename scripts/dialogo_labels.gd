@@ -6,6 +6,7 @@ var is_first_scene = false
 func _ready() -> void:
 	Global.connect("response", on_response)
 	Global.connect("first_response",on_first_response)
+	Global.connect("purge_dialogue_labels", on_purge_dialogue_labels)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -14,6 +15,10 @@ func _process(delta: float) -> void:
 		is_first_scene = false
 		
 	pass
+
+func on_purge_dialogue_labels():
+	$VBoxContainer/MoonDialogueLabel.text = ""
+	$VBoxContainer/MoonNameLabel.text = ""
 
 
 func on_first_response():
