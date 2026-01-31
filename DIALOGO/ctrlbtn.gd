@@ -7,8 +7,8 @@ extends Node
 @onready var btn2=$"Button2"
 @onready var btn3=$"Button3"
 @onready var animation_player_1=$Button1/AnimationPlayer1
-@onready var animation_player_2=$Button1/AnimationPlayer2
-@onready var animation_player_3=$Button1/AnimationPlayer3
+@onready var animation_player_2=$Button2/AnimationPlayer2
+@onready var animation_player_3=$Button3/AnimationPlayer3
 @onready var tween1=get_tree().create_tween()
 @onready var tween2=get_tree().create_tween()
 @onready var tween3=get_tree().create_tween()
