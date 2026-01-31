@@ -174,14 +174,7 @@ position = Vector2(512, 788)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="PJbaile" index="0" unique_id=1441209124]
-position = Vector2(0.49999762, 4.5)
 scale = Vector2(4, 4)
-
-[node name="AudioStreamPlayer2D" parent="PJbaile" index="8" unique_id=714600341]
-bus = &"FX"
-
-[node name="AudioStreamPlayer2D2" parent="PJbaile" index="9" unique_id=1338234348]
-bus = &"FX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PJbaile" unique_id=2006634766]
 position = Vector2(0.25, 3.9999695)
@@ -196,9 +189,10 @@ offset_bottom = -63.5
 
 [node name="CasillaBaile" parent="." unique_id=2109904252 instance=ExtResource("5_ghm1a")]
 unique_name_in_owner = true
-position = Vector2(0, 412)
+position = Vector2(128, 412)
+scale = Vector2(16, 16)
 
-[node name="ColorRect" parent="CasillaBaile" index="0" unique_id=1499780848]
+[node name="ColorRect" parent="CasillaBaile" index="1" unique_id=1499780848]
 offset_left = 136.0
 offset_top = 8.0
 offset_right = 375.0
