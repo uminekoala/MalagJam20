@@ -12,6 +12,7 @@ func _ready() -> void:
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
 	$pulso.play("pulso")
 	AudioServer.set_bus_mute(2,true)
+	Global.connect("finish", on_finish_game)
 	$susurros.play()
 
 
@@ -29,6 +30,9 @@ func on_dialogue_feedback(value):
 		feedback = preload("res://scenes/dialogo_meh.tscn").instantiate()
 	
 	$LunaPositionLeft.add_child(feedback)
+
+func on_finish_game():
+	pass
 
 func check_change_fase_skin():
 	var points = Global.puntos
