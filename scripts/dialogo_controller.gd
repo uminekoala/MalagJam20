@@ -23,6 +23,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (launch_buttons_flag):
 		launch_buttons_flag = false
+		option1 = all_dialogue[dialogue_state][0]
+		option2 = all_dialogue[dialogue_state][1]
+		option3 = all_dialogue[dialogue_state][2]
 		Global.send_text_buttons.emit(option1, option2, option3)
 
 
@@ -61,6 +64,8 @@ func on_option_pressed(option_id):
 	option3 = all_dialogue[dialogue_state][2]
 
 	Global.dialogue_feedback.emit(valor)
+
+	dialogue_state += 1
 	
 	if (final):
 		Global.response.emit(respuesta, true)
@@ -68,7 +73,7 @@ func on_option_pressed(option_id):
 	else:
 		Global.response.emit(respuesta, false)
 	
-	dialogue_state += 1
+	
 		
 
 

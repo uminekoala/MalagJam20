@@ -12,6 +12,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var eq = AudioServer.get_bus_effect(1, 0)
+	
+	AudioServer.set_bus_effect_enabled(1, 0, false)
 	animation_player.autoplay
 	Global.puntos = 0
 	audio_stream_player_2d.play()

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bcghwhylrvt6o"]
+[gd_scene format=3 uid="uid://ctnrnhwxopl6j"]
 
-[ext_resource type="Script" uid="uid://bk2w0qsfrn6mr" path="res://scripts/dialogo_good.gd" id="1_1m4v6"]
-[ext_resource type="Texture2D" uid="uid://bpd4a64bu2i5i" path="res://ASSETS/PETALOS_VERDES.png" id="1_l07bd"]
-[ext_resource type="AudioStream" uid="uid://cgsiy2guatvxj" path="res://ASSETS/EFECTOS_DE_SONIDO/CORRECTO1.mp3" id="2_y5osx"]
+[ext_resource type="Texture2D" uid="uid://dc2q18x1p1n66" path="res://ASSETS/brilli_brilli.png" id="1_bha4y"]
+[ext_resource type="Script" uid="uid://bk2w0qsfrn6mr" path="res://scripts/dialogo_good.gd" id="2_qovkg"]
+[ext_resource type="AudioStream" uid="uid://cgsiy2guatvxj" path="res://ASSETS/EFECTOS_DE_SONIDO/CORRECTO1.mp3" id="3_u432p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c2l5p"]
 particles_animation = true
@@ -14,27 +14,28 @@ particles_anim_loop = false
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(1000, 500, 1)
-direction = Vector3(1, 0.75, 0)
-spread = 20.0
-initial_velocity_min = 38.66
-initial_velocity_max = 316.65
-gravity = Vector3(0, 20, 0)
-scale_min = 3.0
+direction = Vector3(0, 0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
 scale_max = 3.0
 anim_offset_max = 1.0
 
-[node name="efecto_brillos" type="GPUParticles2D" unique_id=330267844]
+[node name="efecto_baldosa" type="GPUParticles2D" unique_id=330267844]
 material = SubResource("CanvasItemMaterial_c2l5p")
 position = Vector2(1004, 496)
 emitting = false
-amount = 70
-texture = ExtResource("1_l07bd")
+amount = 20
+texture = ExtResource("1_bha4y")
+lifetime = 2.0
 one_shot = true
+explosiveness = 1.0
 visibility_rect = Rect2(-1000, -200, 2000, 600)
 process_material = SubResource("ParticleProcessMaterial_t8bks")
-script = ExtResource("1_1m4v6")
+script = ExtResource("2_qovkg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=745409330]
-stream = ExtResource("2_y5osx")
+stream = ExtResource("3_u432p")
 volume_db = 1.0
 autoplay = true

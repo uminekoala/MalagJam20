@@ -6,6 +6,9 @@ var casillasPrimeraFase: int = 10
 var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
 var fase: int = 0
 @onready var feedback: Label = $PJbaile/Label
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.connect("change_scene_to_dance", _on_global_change_scene_to_dance)
@@ -93,13 +96,17 @@ func tuMovimiento(movimiento: Vector2):
 		return movimiento
 
 func _on_global_transition_to_dialogue() -> void:
+	var eq = AudioServer.get_bus_effect(1, 0)
+	AudioServer.set_bus_effect_enabled(1, 0, true)
 	$CasillaBaile/AnimationPlayer.stop("fade_in")
 	$CasillaBaile/AnimationPlayer.active = false
 	funcionar = false
 
 func _on_global_change_scene_to_dance():
-	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
-
+	print(AudioServer.get_bus_index("Musica"))
+	var eq = AudioServer.get_bus_effect(1, 0)
+	
+	AudioServer.set_bus_effect_enabled(1, 0, false)
 	funcionar = true
 	$AudioStreamPlayer2D.stream = load(playlist[fase])
 	fase += 1
