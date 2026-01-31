@@ -7,6 +7,10 @@ extends Node
 
 var all_dialogue = {}
 var dialogue_state = 0
+var launch_buttons_flag = false
+var option1
+var option2
+var option3
 # 0,1,2,3,4... se refleja en el .cfg con las secciones
 
 # Called when the node enters the scene tree for the first time.
@@ -17,16 +21,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (launch_buttons_flag):
+		launch_buttons_flag = false
+		Global.send_text_buttons.emit(option1, option2, option3)
 
 
 func end_dialogue_phase():
 	Global.end_dialogue.emit()
 
 func on_change_scene_to_dialogue():
-	var option1 = all_dialogue[dialogue_state][0]
-	var option2 = all_dialogue[dialogue_state][1]
-	var option3 = all_dialogue[dialogue_state][2]
+	option1 = all_dialogue[dialogue_state][0]
+	option2 = all_dialogue[dialogue_state][1]
+	option3 = all_dialogue[dialogue_state][2]
 
 	Global.send_text_buttons.emit(option1, option2, option3)
 
@@ -54,13 +60,13 @@ func on_option_pressed(option_id):
 			respuesta = all_dialogue[dialogue_state][8]
 
 	
-	var option1 = all_dialogue[dialogue_state][0]
-	var option2 = all_dialogue[dialogue_state][1]
-	var option3 = all_dialogue[dialogue_state][2]
+	option1 = all_dialogue[dialogue_state][0]
+	option2 = all_dialogue[dialogue_state][1]
+	option3 = all_dialogue[dialogue_state][2]
 
 	Global.dialogue_feedback.emit(valor)
 	Global.response.emit(respuesta)
-	Global.send_text_buttons.emit(option1, option2, option3)
+	
 	dialogue_state += 1
 
 

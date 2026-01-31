@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cq72kq6g6oxbd"
+path="res://.godot/imported/TRAILER MUSIC.mp3-7aa70224f535411334957d24dfd378ed.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/MUSICA/TRAILER MUSIC.mp3"
+dest_files=["res://.godot/imported/TRAILER MUSIC.mp3-7aa70224f535411334957d24dfd378ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
