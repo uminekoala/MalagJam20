@@ -12,7 +12,7 @@ signal transition_to_dance()
 signal change_scene_to_dance()
 signal change_scene_to_dialogue()
 # ed
-signal finish()
+signal finish(puntuacion)
 var puntos: int
 
 # Called when the node enters the scene tree for the first time.
