@@ -83,7 +83,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xim1x"]
-size = Vector2(16, 16)
+size = Vector2(0.9355469, 0.8886719)
 
 [node name="CasillaBaile" type="Node2D" unique_id=2109904252]
 

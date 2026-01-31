@@ -31,7 +31,7 @@ func on_dialogue_feedback(value):
 	
 	$LunaPositionLeft.add_child(feedback)
 
-func on_finish_game():
+func on_finish_game(puntuacion):
 	pass
 
 func check_change_fase_skin():

@@ -170,7 +170,7 @@ bus = &"Musica"
 [node name="PJbaile" parent="." unique_id=581735157 instance=ExtResource("2_ebdji")]
 unique_name_in_owner = true
 z_index = 20
-position = Vector2(512, 788)
+position = Vector2(510, 796)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="PJbaile" index="0" unique_id=1441209124]
@@ -201,8 +201,11 @@ offset_bottom = 247.0
 [node name="Timer" type="Timer" parent="CasillaBaile/AnimationPlayer" parent_id_path=PackedInt32Array(2109904252, 1439832419) index="0" unique_id=550172142]
 wait_time = 3.0
 
-[node name="CollisionShape2D" parent="CasillaBaile/Area2D" parent_id_path=PackedInt32Array(2109904252, 1938711099) index="0" unique_id=1951563535]
-position = Vector2(256, 128)
+[node name="Area2D" parent="CasillaBaile" index="3" unique_id=1938711099]
+visible = true
+
+[node name="CollisionShape2D" parent="CasillaBaile/Area2D" index="0" unique_id=1951563535]
+position = Vector2(7.453125, 7.890625)
 scale = Vector2(16, 16)
 
 [node name="Label" type="Label" parent="." unique_id=1122484614]

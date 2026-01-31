@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		Global.transition_to_dance.emit()
 	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_finish && Input.is_action_just_pressed("accion"):
 		is_finish = false
-		Global.finish.emit()
+		Global.finish.emit(Global.puntos)
 
 
 func on_purge_dialogue_labels():
@@ -49,5 +49,4 @@ func on_response(line, final, finish):
 
 	
 func _on_p_jbaile_no_te_muevas() -> void:
-	visible = true
-	$VBoxContainer/MoonDialogueLabel.text = "NO FEAWEDKCAJK FJNSAKÑFH"
+	pass
