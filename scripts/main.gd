@@ -48,17 +48,19 @@ func on_transition_to_dialogue():
 	$dialogo_labels.visible = true
 	move_luna(false)
 	# llamar al dialogo
+	# escena de los botones
 	botones = preload("res://DIALOGO/ctrlbtn.tscn").instantiate()
 	$LunaPositionRight.add_child(botones)
 
-	# escena de los botones
+	
 
 func on_transition_to_dance():
 	# apagar todo lo que sea de dialogos
 	if ($FirstButton):
 		$FirstButton.queue_free()
-	
-	$dialogo_labels.visible = false
+
+	Global.purge_dialogue_labels.emit()
+
 	if (botones):
 		botones.queue_free()
 	# Animar sprite para que se mueva a la derecha
@@ -69,6 +71,8 @@ func on_transition_to_dance():
 		tween_visible.kill()
 	tween_visible = get_tree().create_tween()
 	tween_visible.tween_property($MinijuegoBaile, "visible", true, 1.5)
+
+
 
 func send_change_scene_to_dialogue_signal():
 	print("CAMBIAR ESCENA DIALOGO")
