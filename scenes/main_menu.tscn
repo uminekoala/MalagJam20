@@ -65,9 +65,9 @@ tracks/0/path = NodePath("LuzFoco:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(3, 0),
-"points": PackedFloat32Array(1800, -1.25, 453.375, 1.25, -453.375, 0, -1.2666667, 450, 1.2666667, -450),
-"times": PackedFloat32Array(0, 5)
+"handle_modes": PackedInt32Array(3, 3, 0),
+"points": PackedFloat32Array(1800, -1.25, 453.375, 1.25, -453.375, 896.482, -0.625, 450, 0.625, -450, 0, -1.2666667, 450, 1.2666667, -450),
+"times": PackedFloat32Array(0, 2.5, 5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -76,9 +76,9 @@ tracks/1/path = NodePath("LuzFoco:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(3, 0),
-"points": PackedFloat32Array(1000, -1.25, 253.25, 1.25, -253.25, 0, -1.2666667, 250, 1.2666667, -250),
-"times": PackedFloat32Array(0, 5)
+"handle_modes": PackedInt32Array(3, 3, 0),
+"points": PackedFloat32Array(1000, -1.25, 253.25, 1.25, -253.25, 300, -0.625, 250, 0.625, -250, 0, -1.2666667, 250, 1.2666667, -250),
+"times": PackedFloat32Array(0, 2.5, 5)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -87,9 +87,9 @@ tracks/2/path = NodePath("LuzFoco2:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(3, 3),
-"points": PackedFloat32Array(0, -1.25, -238.125, 1.25, 238.125, 1800, -1.25, -450, 1.25, 450),
-"times": PackedFloat32Array(0, 5)
+"handle_modes": PackedInt32Array(3, 3, 2),
+"points": PackedFloat32Array(0, -1.25, -238.125, 1.25, 238.125, 816.605, -0.625, -450, 0.625, 450, 1800, -0.8333334, -300, 0, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -98,9 +98,9 @@ tracks/3/path = NodePath("LuzFoco2:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(3, 3),
-"points": PackedFloat32Array(0, -1.1916667, -238.24998, 1.1916667, 238.24998, 1000, -1.25, -250, 1.25, 250),
-"times": PackedFloat32Array(0, 5)
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0, -1.1916667, -238.24998, 1.1916667, 238.24998, 700, -0.625, -250, 0.625, 250, 1000, -1.25, -250, 1.25, 250),
+"times": PackedFloat32Array(0, 2.5, 5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bqqt6"]
