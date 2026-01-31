@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djm5n863jp1te" path="res://scripts/minijuego_baile_2.gd" id="1_4nte5"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_qfoj6"]
 [ext_resource type="PackedScene" uid="uid://ccgdh5bbdqgkd" path="res://scenes/pjbaile.tscn" id="2_ebdji"]
-[ext_resource type="AudioStream" uid="uid://dhovaev2i6xfl" path="res://ASSETS/FASE 1.mp3" id="3_ghm1a"]
+[ext_resource type="AudioStream" uid="uid://dhovaev2i6xfl" path="res://ASSETS/MUSICA/FASE 1.mp3" id="3_ghm1a"]
 [ext_resource type="PackedScene" uid="uid://bvtk738l6c50b" path="res://scenes/casilla_baile.tscn" id="5_ghm1a"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ebdji"]
@@ -119,6 +119,12 @@ offset_left = 851.0
 offset_top = 171.0
 offset_right = 1124.0
 offset_bottom = 224.0
+
+[node name="Label2" type="Label" parent="." unique_id=1414841466]
+offset_left = 879.0
+offset_top = 279.0
+offset_right = 1173.0
+offset_bottom = 310.0
 
 [connection signal="animation_finished" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_started"]

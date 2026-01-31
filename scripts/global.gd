@@ -12,7 +12,6 @@ signal change_scene_to_dance()
 signal change_scene_to_dialogue()
 var puntos: int
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
