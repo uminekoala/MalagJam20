@@ -30,6 +30,7 @@ func on_dialogue_feedback(value):
 func on_transition_to_dialogue():
 	#apagar todo lo que sea de danzadura
 	# Animar sprite para que se mueva a la izquierda
+	$dialogo_labels.visible = true
 	move_luna(false)
 	# llamar al dialogo
 	var botones = preload("res://DIALOGO/ctrlbtn.tscn").instantiate()
@@ -52,11 +53,12 @@ func on_transition_to_dance():
 	tween_visible.tween_property($MinijuegoBaile, "visible", true, 1.5)
 
 func send_change_scene_to_dialogue_signal():
+	print("CAMBIAR ESCENA DIALOGO")
 	Global.change_scene_to_dialogue.emit()
 
 
 func send_change_scene_to_dance_signal():
-	print("AWFwafaf")
+	print("CAMBIAR ESCENA BAILE")
 	Global.change_scene_to_dance.emit()
 
 func move_luna(is_right):
@@ -66,7 +68,7 @@ func move_luna(is_right):
 	else:
 		$TrailAnimatorLeft.play("trail_left")
 		playing = true
-		$TrailTimer.start()
+		$TrailLeftTimer.start()
 
 func _on_button_pressed() -> void:
 	Global.first_response.emit()

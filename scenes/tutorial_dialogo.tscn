@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://852wu7fj12qt"]
+
+[ext_resource type="Script" uid="uid://b1wslyraed3tr" path="res://scripts/tutorial_dialogo.gd" id="1_mxhct"]
+
+[node name="tutorialDialogo" type="Node2D" unique_id=1526789119]
+script = ExtResource("1_mxhct")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1361301318]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 1996.0
+offset_bottom = 1240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=630807769]
+offset_left = 1636.0
+offset_top = 936.0
+offset_right = 1849.0
+offset_bottom = 1070.0
+text = "VOLVER"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=355570716]
+offset_left = 863.0
+offset_top = 18.0
+offset_right = 1865.0
+offset_bottom = 949.0
+theme_override_font_sizes/normal_font_size = 58
+text = "Esto es el Putisimo minijuego MAZO CURRAO de dialogos (creo), aqui se DIALOGA a hablar cojona"
+
+[node name="Button2" type="Button" parent="." unique_id=1624476676]
+offset_left = 1378.0
+offset_top = 940.0
+offset_right = 1591.0
+offset_bottom = 1074.0
+text = "TUTORIAL BAILE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

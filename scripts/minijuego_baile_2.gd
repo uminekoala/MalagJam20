@@ -2,9 +2,10 @@ extends Node2D
 var posicion: int = 0
 var dondeAndaras: Vector2
 var funcionar: bool = false
-var casillasPrimeraFase: int = 10
+var casillasPrimeraFase: int = 1
 var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
 var fase: int = 0
+@onready var feedback: Label = $PJbaile/Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,21 +13,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if funcionar:
+	if !funcionar:
 		$Label2.text = str(Global.puntos)
 		$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
 		if Input.is_action_just_pressed("espacio"):
 			if %PJbaile.global_position == (%CasillaBaile.global_position +Vector2(128,128)):
 				print("SUPER NICE COCK")
 				if $CasillaBaile/AnimationPlayer/Timer.time_left < 0.5:
-					print("OMEGA GIGA NICE COCK")
+					%CasillaBaile.visible = false
+					feedback.text = "OMEGA GIGA NICE COCK"
 					Global.puntos += 2
 				elif $CasillaBaile/AnimationPlayer/Timer.time_left < 1.5 && $CasillaBaile/AnimationPlayer/Timer.time_left > 0.5:
+					%CasillaBaile.visible = false
 					Global.puntos += 1
+					feedback.text = "Only little GIGA NICE COCK"
 					print("only little GIGA NICE COCK")
 			else:
 				%CasillaBaile.visible = false
-				print("SAD COCK")
+				feedback.text = "SAD COCK"
+				
 			print(%PJbaile.global_position)
 			print(%CasillaBaile.global_position +Vector2(128,128))
 
