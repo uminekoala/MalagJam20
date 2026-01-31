@@ -4,11 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dredtg3hrw2lk" path="res://ASSETS/PLACEHOLDER_MASCARA.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://gm282uy0w2w3" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
-=======
-[ext_resource type="FontFile" uid="uid://bm24pqen01eet" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_jyhfs"]
->>>>>>> Stashed changes
 =======
 [ext_resource type="FontFile" uid="uid://bm24pqen01eet" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_jyhfs"]
 >>>>>>> Stashed changes

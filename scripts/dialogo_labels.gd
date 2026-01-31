@@ -20,11 +20,7 @@ func on_first_response():
 	is_first_scene = true
 	$VBoxContainer/MoonNameLabel.visible_characters = -1
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 	$VBoxContainer/MoonDialogueLabel.text = "HAZ TU MAGIA ANDRÉA + TRANSICIóN + BAILE + SHADERS!!!!!"
-=======
-	$VBoxContainer/MoonDialogueLabel.text = "¿Aún no está Épicamente listo el niñó? HAZ TU MAGIA ANDREA + TRANSICIÓN + BAILE + SHADERS!!!!! "
->>>>>>> Stashed changes
 =======
 	$VBoxContainer/MoonDialogueLabel.text = "¿Aún no está Épicamente listo el niñó? HAZ TU MAGIA ANDREA + TRANSICIÓN + BAILE + SHADERS!!!!! "
 >>>>>>> Stashed changes
