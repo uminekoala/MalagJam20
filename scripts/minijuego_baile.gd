@@ -12,8 +12,37 @@ var casillasPrimeraFase = [
 	[0,0],
 	[0,0]
 ]
+
+var casillasSegundaFase = [
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0]
+]
+
+var casillasTerceraFase = [
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0],
+	[0,0]
+]
+
+var fase
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fase = "PrimeraFase"
 	pass # Replace with function body.
 
 
