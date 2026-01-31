@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://drx543miwsje4"]
+
+[ext_resource type="Script" uid="uid://bh1wkox7kltma" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://73b1wiwl8nx1" path="res://ASSETS/images/cortinicas.png" id="1_l6cm7"]
+
+[sub_resource type="Curve" id="Curve_vue75"]
+_data = [Vector2(0.12350598, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Animation" id="Animation_l6cm7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LuzFoco:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1762, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LuzFoco:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(953, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LuzFoco2:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LuzFoco2:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ekxnf"]
+resource_name = "focoMover"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LuzFoco:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(1800, -1.25, 453.375, 1.25, -453.375, 0, -1.2666667, 450, 1.2666667, -450),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LuzFoco:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(1000, -1.25, 253.25, 1.25, -253.25, 0, -1.2666667, 250, 1.2666667, -250),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LuzFoco2:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(3, 3),
+"points": PackedFloat32Array(0, -1.25, -238.125, 1.25, 238.125, 1800, -1.25, -450, 1.25, 450),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LuzFoco2:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(3, 3),
+"points": PackedFloat32Array(0, -1.1916667, -238.24998, 1.1916667, 238.24998, 1000, -1.25, -250, 1.25, 250),
+"times": PackedFloat32Array(0, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqqt6"]
+_data = {
+&"RESET": SubResource("Animation_l6cm7"),
+&"focoMover": SubResource("Animation_ekxnf")
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_ekxnf"]
+
+[node name="MainMenu" type="Node2D" unique_id=1085622922]
+script = ExtResource("1_ekxnf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1682949456]
+offset_right = 1956.0
+offset_bottom = 1103.0
+color = Color(0.43137255, 0.19607843, 0.14901961, 1)
+
+[node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
+z_index = 2
+points = PackedVector2Array(109, 65, 110, 64)
+closed = true
+width = 420.0
+width_curve = SubResource("Curve_vue75")
+default_color = Color(1, 1, 0.007843138, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 30.0
+round_precision = 24
+
+[node name="LuzFoco" type="Line2D" parent="." unique_id=1557391889]
+z_index = 2
+position = Vector2(1762, 953)
+points = PackedVector2Array(109, 65, 110, 64)
+closed = true
+width = 420.0
+width_curve = SubResource("Curve_vue75")
+default_color = Color(1, 1, 0.007843138, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 30.0
+round_precision = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1768912638]
+libraries/ = SubResource("AnimationLibrary_bqqt6")
+autoplay = &"focoMover"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1350907539]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_ekxnf")
+
+[node name="Cortinicas" type="Sprite2D" parent="." unique_id=1376772477]
+position = Vector2(963.8625, 541.00006)
+scale = Vector2(3.2152267, 1.9111235)
+texture = ExtResource("1_l6cm7")
