@@ -30,6 +30,8 @@ func on_dialogue_feedback(value):
 func on_transition_to_dialogue():
 	#apagar todo lo que sea de danzadura
 	# Animar sprite para que se mueva a la izquierda
+	Global.purge_dialogue_labels.emit()
+	$MinijuegoBaile.visible = false
 	$dialogo_labels.visible = true
 	move_luna(false)
 	# llamar al dialogo

@@ -357,9 +357,6 @@ visible = false
 [node name="PJbaile" parent="MinijuegoBaile" index="2" unique_id=581735157]
 scale = Vector2(1.92, 1.92)
 
-[node name="AnimationPlayer" parent="MinijuegoBaile/CasillaBaile" parent_id_path=PackedInt32Array(1772075878, 2109904252) index="1" unique_id=1439832419]
-autoplay = &"fade_in"
-
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
 modulate = Color(0, 0, 0.8039216, 0.26666668)
 anchors_preset = -1

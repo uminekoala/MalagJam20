@@ -57,10 +57,23 @@ func _on_button_3_pressed() -> void:
 	anpos3=btn3.position
 	animation_player_3.stop()
 	btn3.position=anpos3
-func textc():
-	btn1.text=Global.line0
-	btn2.text=Global.line1
-	btn3.text=Global.line2
+func textc(line1, line2, line3):
+	btn1.text=line1
+	btn2.text=line2
+	btn3.text=line3
+	btn1.visible = true
+	btn2.visible = true
+	btn3.visible = true
+	btn1.disabled=false
+	btn2.disabled=false
+	btn3.disabled=false
+	if (!$Button1/AnimationPlayer1.is_playing()):
+		$Button1/AnimationPlayer1.play()
+	if (!$Button2/AnimationPlayer2.is_playing()):
+		$Button2/AnimationPlayer2.play()
+	if (!$Button3/AnimationPlayer3.is_playing()):
+		$Button3/AnimationPlayer3.play()
+
 #func logt():	
 #	pos_x1=randf_range(0,700)
 #	pos_y1=randf_range(0,500)
