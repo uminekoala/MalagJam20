@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 
 func end_dialogue_phase():
-	Global.end_dialogue.emit()
+	Global.transition_to_dance.emit()
 
 func on_change_scene_to_dialogue():
 	option1 = all_dialogue[dialogue_state][0]
@@ -45,6 +45,7 @@ func on_option_pressed(option_id):
 	var final = all_dialogue[dialogue_state][9]
 
 	if (final):
+		final = false
 		end_dialogue_phase()
 		return
 

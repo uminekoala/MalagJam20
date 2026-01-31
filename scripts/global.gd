@@ -3,7 +3,6 @@ extends Node
 signal option_pressed(id)
 signal response(line)
 signal send_text_buttons(line0,line1,line2)
-signal end_dialogue()
 signal first_response()
 signal dialogue_feedback(value)
 signal purge_dialogue_labels()

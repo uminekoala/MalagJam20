@@ -4,13 +4,13 @@ var tween_movement_luna
 var tween_visible
 var playing = false
 var timer
+var botones
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
 	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +35,7 @@ func on_transition_to_dialogue():
 	$dialogo_labels.visible = true
 	move_luna(false)
 	# llamar al dialogo
-	var botones = preload("res://DIALOGO/ctrlbtn.tscn").instantiate()
+	botones = preload("res://DIALOGO/ctrlbtn.tscn").instantiate()
 	$LunaPositionRight.add_child(botones)
 
 	# escena de los botones
@@ -46,6 +46,8 @@ func on_transition_to_dance():
 		$FirstButton.queue_free()
 	
 	$dialogo_labels.visible = false
+	if (botones):
+		botones.queue_free()
 	# Animar sprite para que se mueva a la derecha
 	move_luna(true)
 	# llamar a la danzadura
