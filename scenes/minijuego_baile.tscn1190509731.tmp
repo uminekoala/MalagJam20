@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://gm282uy0w2w3"]
+[gd_scene format=4 uid="uid://bq1ywsuahngiw"]
 
 [ext_resource type="Script" uid="uid://djm5n863jp1te" path="res://scripts/minijuego_baile_2.gd" id="1_4nte5"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_qfoj6"]

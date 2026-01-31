@@ -5,7 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var col_arriba: CollisionShape2D = $"../ColArriba"
 
-var moverse:bool = true
+var moverse:bool = false
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("tilemapArriba"):

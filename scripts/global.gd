@@ -10,6 +10,7 @@ signal transition_to_dialogue()
 signal transition_to_dance()
 signal change_scene_to_dance()
 signal change_scene_to_dialogue()
+var puntos: int
 
 
 # Called when the node enters the scene tree for the first time.
