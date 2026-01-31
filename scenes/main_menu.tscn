@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://drx543miwsje4"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://bh1wkox7kltma" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://73b1wiwl8nx1" path="res://ASSETS/images/cortinicas.png" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bnx6lp0t1iv6f" path="res://ASSETS/images/cuidaTrigger.png" id="3_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://dqndp2q5chvw8" path="res://ASSETS/images/cortina central.png" id="4_wu84c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
 
 [sub_resource type="Curve" id="Curve_vue75"]
 _data = [Vector2(0.12350598, 1), 0.0, 0.0, 0, 0]
@@ -229,6 +231,7 @@ offset_top = 322.0
 offset_right = 1141.0
 offset_bottom = 688.0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wu84c")
 
 [node name="Button" type="Button" parent="PanelbotonesPrincipales" unique_id=915208593]
 z_index = 1
@@ -240,28 +243,48 @@ offset_bottom = 91.0
 text = "JUGAR
 "
 
+[node name="btnControles" type="Button" parent="PanelbotonesPrincipales" unique_id=1313136413]
+z_index = 1
+layout_mode = 0
+offset_left = 113.0
+offset_top = 153.0
+offset_right = 243.0
+offset_bottom = 184.0
+text = "CONTROLES
+"
+
+[node name="btnSalir" type="Button" parent="PanelbotonesPrincipales" unique_id=2072437338]
+z_index = 1
+layout_mode = 0
+offset_left = 104.0
+offset_top = 225.0
+offset_right = 283.0
+offset_bottom = 256.0
+text = "SAL DE AQUI TRAIDOR
+"
+
 [node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
-modulate = Color(1, 1, 1, 0.6509804)
+modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 points = PackedVector2Array(109, 65, 110, 64)
 closed = true
 width = 420.0
 width_curve = SubResource("Curve_vue75")
-default_color = Color(1, 1, 0.007843138, 1)
+default_color = Color(1, 0.84313726, 0.007843138, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 sharp_limit = 30.0
 round_precision = 24
 
 [node name="LuzFoco" type="Line2D" parent="." unique_id=1557391889]
-modulate = Color(1, 1, 1, 0.6509804)
+modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 position = Vector2(1762, 953)
 points = PackedVector2Array(109, 65, 110, 64)
 closed = true
 width = 420.0
 width_curve = SubResource("Curve_vue75")
-default_color = Color(1, 1, 0.007843138, 1)
+default_color = Color(1, 0.84313726, 0.007843138, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 sharp_limit = 30.0
@@ -320,7 +343,6 @@ offset_bottom = 53.0
 text = "TRIGGER WARNINGS"
 
 [node name="fundidoNegro" type="ColorRect" parent="." unique_id=898226042]
-visible = false
 z_index = 2
 offset_right = 1932.0
 offset_bottom = 1090.0
@@ -331,17 +353,16 @@ libraries/ = SubResource("AnimationLibrary_bqqt6")
 autoplay = &"blackout"
 
 [node name="Telon" type="Sprite2D" parent="." unique_id=1501062602]
-visible = false
 z_index = 2
 position = Vector2(1351, 572)
 texture = ExtResource("4_wu84c")
 
 [node name="Telon2" type="Sprite2D" parent="." unique_id=1105778588]
-visible = false
 z_index = 2
 position = Vector2(446, 565)
 texture = ExtResource("4_wu84c")
 
 [connection signal="pressed" from="PanelbotonesPrincipales/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelbotonesPrincipales/btnSalir" to="." method="_on_btn_salir_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales2/btnVolver" to="." method="_on_btn_volver_pressed"]
