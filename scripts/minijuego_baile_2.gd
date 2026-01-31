@@ -94,17 +94,14 @@ func tuMovimiento(movimiento: Vector2):
 		return movimiento
 
 func _on_global_transition_to_dialogue() -> void:
-	var eq = AudioServer.get_bus_effect(1, 0)
-	AudioServer.set_bus_effect_enabled(1, 0, true)
+	audio_stream_player_2d.volume_db = -15
 	$CasillaBaile/AnimationPlayer.stop("fade_in")
 	$CasillaBaile/AnimationPlayer.active = false
 	funcionar = false
 
 func _on_global_change_scene_to_dance():
 	print(AudioServer.get_bus_index("Musica"))
-	var eq = AudioServer.get_bus_effect(1, 0)
-	
-	AudioServer.set_bus_effect_enabled(1, 0, false)
+	audio_stream_player_2d.volume_db = 0
 	funcionar = true
 	$AudioStreamPlayer2D.stream = load(playlist[fase])
 	fase += 1

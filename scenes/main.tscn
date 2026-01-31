@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://p0s1d1ywes1q"]
+[gd_scene format=3 uid="uid://ssi28wcdun7g"]
 
 [ext_resource type="Script" uid="uid://clg60vi8dyunr" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="3_o6xl0"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
@@ -392,6 +392,13 @@ visible = false
 
 [node name="PJbaile" parent="MinijuegoBaile" index="2" unique_id=581735157]
 scale = Vector2(1.92, 1.92)
+
+[node name="Sprite2D" parent="MinijuegoBaile/PJbaile" index="0" unique_id=1441209124]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="2" unique_id=2006634766]
+position = Vector2(0, 0)
 
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
 modulate = Color(0, 0, 0.8039216, 0.26666668)
