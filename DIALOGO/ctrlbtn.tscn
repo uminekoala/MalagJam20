@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://r4f3k7epbiva" path="res://DIALOGO/ctrlbtn.gd" id="1_ahrur"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="2_6oria"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oria"]
+
+[sub_resource type="Theme" id="Theme_53h0m"]
+Button/styles/normal = SubResource("StyleBoxEmpty_6oria")
+
 [sub_resource type="Animation" id="Animation_ahrur"]
 length = 0.001
 tracks/0/type = "value"
@@ -123,6 +128,7 @@ anchor_right = 0.365
 anchor_bottom = 0.46300003
 offset_right = -0.8000488
 offset_bottom = -0.040039063
+theme = SubResource("Theme_53h0m")
 script = ExtResource("1_ahrur")
 
 [node name="Button1" type="Button" parent="." unique_id=654750123]
@@ -138,7 +144,6 @@ offset_right = 30.250633
 offset_bottom = 83.00319
 theme_override_fonts/font = ExtResource("2_6oria")
 theme_override_font_sizes/font_size = 32
-text = "1"
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="Button1" unique_id=1649639441]
 libraries/ = SubResource("AnimationLibrary_53h0m")
@@ -157,7 +162,6 @@ offset_right = -70.20126
 offset_bottom = 8.998291
 theme_override_fonts/font = ExtResource("2_6oria")
 theme_override_font_sizes/font_size = 32
-text = "2"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Button2" unique_id=350640200]
 libraries/ = SubResource("AnimationLibrary_gag0t")
@@ -176,7 +180,6 @@ offset_right = 341.69452
 offset_bottom = -15.000366
 theme_override_fonts/font = ExtResource("2_6oria")
 theme_override_font_sizes/font_size = 32
-text = "3"
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="Button3" unique_id=741766413]
 libraries/ = SubResource("AnimationLibrary_oe7xb")
