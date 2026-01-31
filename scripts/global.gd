@@ -6,6 +6,7 @@ signal send_text_buttons(line0,line1,line2)
 signal end_dialogue()
 signal first_response()
 signal dialogue_feedback(value)
+signal purge_dialogue_labels()
 # primero transicion (mover la mascara), luego mecánicas
 signal transition_to_dialogue()
 signal transition_to_dance()

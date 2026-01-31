@@ -44,10 +44,11 @@ func _on_button_3_pressed() -> void:
 	btn2.disabled=true
 	btn2.visible=false
 	Global.option_pressed.emit(2)
-func textc():
-	btn1.text=Global.line0
-	btn2.text=Global.line1
-	btn3.text=Global.line2
+func textc(line1, line2, line3):
+	print("NO ESTOY ENTRANDO")
+	btn1.text=line1
+	btn2.text=line2
+	btn3.text=line3
 #func logt():	
 #	pos_x1=randf_range(0,700)
 #	pos_y1=randf_range(0,500)
