@@ -3,10 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="1_kaf1w"]
 [ext_resource type="Script" uid="uid://bj4be5r46ijth" path="res://scripts/finale.gd" id="1_kh2f6"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="2_780xw"]
+[ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_28ree"]
 [ext_resource type="Script" uid="uid://00ruqrb867u1" path="res://scripts/scroll_containerfin.gd" id="3_37bed"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="4_kh2f6"]
 
 [sub_resource type="Theme" id="Theme_kh2f6"]
+default_font = ExtResource("3_28ree")
+default_font_size = 60
 
 [sub_resource type="Animation" id="Animation_kh2f6"]
 length = 0.001
@@ -44,6 +47,42 @@ _data = {
 &"texto": SubResource("Animation_37bed")
 }
 
+[sub_resource type="Animation" id="Animation_tnm2q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nwj6o"]
+resource_name = "texto"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnm2q"]
+_data = {
+&"RESET": SubResource("Animation_tnm2q"),
+&"texto": SubResource("Animation_nwj6o")
+}
+
 [node name="Control" type="Control" unique_id=788732252]
 texture_filter = 1
 layout_mode = 3
@@ -63,6 +102,7 @@ anchor_bottom = 0.435
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_kh2f6")
+horizontal_scroll_mode = 0
 script = ExtResource("1_kh2f6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerpunt" unique_id=1334178856]
@@ -90,6 +130,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="AnimationPlayerpuntu" type="AnimationPlayer" parent="ScrollContainerpunt/VBoxContainer/punt" unique_id=227086436]
+libraries/ = SubResource("AnimationLibrary_tnm2q")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1237124915]
 layout_mode = 0
