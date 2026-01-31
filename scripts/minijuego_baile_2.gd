@@ -2,18 +2,20 @@ extends Node2D
 var posicion: int = 0
 var dondeAndaras: Vector2
 var funcionar: bool = false
-var casillasPrimeraFase: int = 1
+var casillasPrimeraFase: int = 10
 var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
 var fase: int = 0
 @onready var feedback: Label = $PJbaile/Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Global.connect("change_scene_to_dance", _on_global_change_scene_to_dance)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !funcionar:
+	#if !funcionar:
+	#	Global.connect("change_scene_to_dance", _on_global_change_scene_to_dance())
+	if funcionar:
 		$Label2.text = str(Global.puntos)
 		$Label.text = str($CasillaBaile/AnimationPlayer/Timer.time_left).pad_decimals(2)
 		if Input.is_action_just_pressed("espacio"):
@@ -40,13 +42,15 @@ func _process(delta: float) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if posicion < casillasPrimeraFase:
+		print("no deberia existir")
 		print(%PJbaile.global_position)
 		dondeAndaras = tuMovimiento(%PJbaile.global_position)
 		%CasillaBaile.global_position = Vector2(dondeAndaras.x * 256, (dondeAndaras.y * 256)+ 156)
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
-		if %CasillaBaile.visible == false:
-			%CasillaBaile.visible = true
+		#if %CasillaBaile.visible == false:
+		#	print("helo")
+		#	%CasillaBaileAnimationPlayer.play.visible = true
 	else:
 		Global.emit_signal("transition_to_dialogue")
 	print("funciona")
@@ -88,13 +92,18 @@ func tuMovimiento(movimiento: Vector2):
 
 func _on_global_transition_to_dialogue() -> void:
 	$CasillaBaile/AnimationPlayer.stop("fade_in")
+	$CasillaBaile/AnimationPlayer.active = false
 	funcionar = false
 
-func _on_global_change_scene_to_dance() -> void:
-	funcionar = true
-	fase += 1
-	$AudioStreamPlayer2D.stream(playlist[fase])
-	$AudioStreamPlayer2D.play()
-	$CasillaBaile/AnimationPlayer.play("fade_in")
-	
+func _on_global_change_scene_to_dance():
 	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
+
+	funcionar = true
+	$AudioStreamPlayer2D.stream = load(playlist[fase])
+	fase += 1
+	$AudioStreamPlayer2D.play()
+	%CasillaBaile.visible = true
+	$CasillaBaile/AnimationPlayer.active = true
+	$CasillaBaile/AnimationPlayer.play("fade_in")
+	print(" JEJEJEJE JEJEJEJE JEJEJEJE")
+	return funcionar
