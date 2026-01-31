@@ -1,18 +1,8 @@
 extends Node2D
 signal bailar
 var posicion: int = 0
-var casillasPrimeraFase: Array = [
-	Vector2(2,0),
-	Vector2(0,0),
-	Vector2(1,1),
-	Vector2(2,2),
-	Vector2(1,0),
-	Vector2(1,2),
-	Vector2(0,1),
-	Vector2(2,1),
-	Vector2(0,2),
-	Vector2(1,0)
-]
+var dondeAndaras: Vector2
+var casillasPrimeraFase: int = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -32,6 +22,7 @@ func _process(delta: float) -> void:
 				Global.puntos += 1
 				print("only little GIGA NICE COCK")
 		else:
+			%CasillaBaile.visible = false
 			print("SAD COCK")
 		print(%PJbaile.global_position)
 		print(%CasillaBaile.global_position +Vector2(128,128))
@@ -40,12 +31,47 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if posicion < casillasPrimeraFase.size():
-		%CasillaBaile.global_position = Vector2(casillasPrimeraFase[posicion].x*256, (casillasPrimeraFase[posicion].y*256)+156)
+	if posicion < casillasPrimeraFase:
+		print(%PJbaile.global_position)
+		dondeAndaras = tuMovimiento(%PJbaile.global_position)
+		%CasillaBaile.global_position = Vector2(dondeAndaras.x * 256, (dondeAndaras.y * 256)+ 156)
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
+		if %CasillaBaile.visible == false:
+			%CasillaBaile.visible = true
 	print("funciona")
 
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 		$CasillaBaile/AnimationPlayer/Timer.start()
+		
+func tuMovimiento(movimiento: Vector2):
+	movimiento = Vector2((movimiento.x-128) / 256, (movimiento.y - 284) / 256)
+	print(movimiento)
+	if movimiento == Vector2(2,2):
+		movimiento = [Vector2(1,2),Vector2(2,1),Vector2(2,0),Vector2(1,1),Vector2(0,2)].pick_random()
+		return movimiento
+	if movimiento == Vector2(2,1):
+		movimiento = [Vector2(2,0),Vector2(2,2),Vector2(1,0),Vector2(0,1),Vector2(1,2)].pick_random()
+		return movimiento
+	if movimiento == Vector2(2,0):
+		movimiento = [Vector2(1,0),Vector2(2,1),Vector2(0,0),Vector2(1,1),Vector2(2,2)].pick_random()
+		return movimiento
+	if movimiento == Vector2(1,2):
+		movimiento = [Vector2(2,2),Vector2(0,2),Vector2(1,0),Vector2(2,1),Vector2(0,1)].pick_random()
+		return movimiento
+	if movimiento == Vector2(1,1):
+		movimiento = [Vector2(2,1),Vector2(1,0),Vector2(0,0),Vector2(2,0),Vector2(0,2),Vector2(2,2)].pick_random()
+		return movimiento
+	if movimiento == Vector2(1,0):
+		movimiento = [Vector2(2,0),Vector2(0,0),Vector2(0,1),Vector2(1,2),Vector2(2,1)].pick_random()
+		return movimiento
+	if movimiento == Vector2(0,2):
+		movimiento = [Vector2(1,2),Vector2(0,1),Vector2(0,0),Vector2(1,1),Vector2(2,2)].pick_random()
+		return movimiento
+	if movimiento == Vector2(0,1):
+		movimiento = [Vector2(0,2),Vector2(0,0),Vector2(2,1),Vector2(1,2),Vector2(1,0)].pick_random()
+		return movimiento
+	if movimiento == Vector2(0,0):
+		movimiento = [Vector2(0,1),Vector2(1,0),Vector2(2,0),Vector2(1,1),Vector2(0,2)].pick_random()
+		return movimiento

@@ -58,6 +58,7 @@ func on_option_pressed(option_id):
 	var option2 = all_dialogue[dialogue_state][1]
 	var option3 = all_dialogue[dialogue_state][2]
 
+	Global.dialogue_feedback.emit(valor)
 	Global.response.emit(respuesta)
 	Global.send_text_buttons.emit(option1, option2, option3)
 

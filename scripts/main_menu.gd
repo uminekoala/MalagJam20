@@ -5,6 +5,9 @@ extends Node2D
 @onready var panelbotones_principales_2: Panel = $PanelbotonesPrincipales2
 @onready var blackout: AnimationPlayer = $blackout
 @onready var texture_button: TextureButton = $TextureButton
+@onready var fundido_negro: ColorRect = $fundidoNegro
+@onready var telon: Sprite2D = $Telon
+@onready var telon_2: Sprite2D = $Telon2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,17 +18,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !blackout.is_playing():
-		panelbotones_principales.z_index =50
-		panelbotones_principales_2.z_index =50
-		texture_button.z_index = 50
-
-
-func _on_btn_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
-	pass # Replace with function body.
-
-
+		print("MAMAHUEOOO")
+		panelbotones_principales.z_index =5
+		panelbotones_principales_2.z_index =5
+		texture_button.z_index = 5
+		fundido_negro.visible = false
+		telon.visible = false
+		telon_2.visible = false
+		
+		
 func _on_btn_salir_pressed() -> void:
+	print("MAMAHUEOOO")
 	get_tree().quit()
 	pass # Replace with function body.
 
@@ -40,4 +43,11 @@ func _on_texture_button_pressed() -> void:
 	
 	panelbotones_principales.visible = false
 	panelbotones_principales_2.visible= true
+	pass # Replace with function body.
+
+
+func _on_button_pressed() -> void:
+
+	print("MAMAHUEOOO")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	pass # Replace with function body.
