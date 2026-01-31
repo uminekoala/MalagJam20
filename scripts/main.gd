@@ -25,6 +25,19 @@ func on_dialogue_feedback(value):
 	
 	$LunaPositionLeft.add_child(feedback)
 
+func check_change_fase_skin():
+	var points = Global.puntos
+	if (points > 5):
+		$Luna.texture = load("res://ASSETS/LUNA_FASE_2.png")
+		$LunaTrailRed.texture = load("res://ASSETS/LUNA_FASE_2.png")
+		$LunaTrailPurple.texture = load("res://ASSETS/LUNA_FASE_2.png")
+		$LunaTrailBlue.texture = load("res://ASSETS/LUNA_FASE_2.png")
+	elif (points > 10):
+		$Luna.texture = load("res://ASSETS/LUNA_FASE_3.png")
+		$LunaTrailRed.texture = load("res://ASSETS/LUNA_FASE_3.png")
+		$LunaTrailPurple.texture = load("res://ASSETS/LUNA_FASE_3.png")
+		$LunaTrailBlue.texture = load("res://ASSETS/LUNA_FASE_3.png")
+
 
 func on_transition_to_dialogue():
 	#apagar todo lo que sea de danzadura
@@ -49,6 +62,7 @@ func on_transition_to_dance():
 		botones.queue_free()
 	# Animar sprite para que se mueva a la derecha
 	move_luna(true)
+	check_change_fase_skin()
 	# llamar a la danzadura
 	if (tween_visible):
 		tween_visible.kill()

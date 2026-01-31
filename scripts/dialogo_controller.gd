@@ -64,7 +64,7 @@ func on_option_pressed(option_id):
 	option3 = all_dialogue[dialogue_state][2]
 
 	Global.dialogue_feedback.emit(valor)
-
+	Global.puntos += valor
 	dialogue_state += 1
 	
 	if (final):

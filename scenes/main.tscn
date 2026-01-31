@@ -393,6 +393,13 @@ visible = false
 [node name="PJbaile" parent="MinijuegoBaile" index="2" unique_id=581735157]
 scale = Vector2(1.92, 1.92)
 
+[node name="Sprite2D" parent="MinijuegoBaile/PJbaile" index="0" unique_id=1441209124]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="2" unique_id=2006634766]
+position = Vector2(0, 0)
+
 [node name="LunaTrailBlue" type="TextureRect" parent="." unique_id=75667287]
 modulate = Color(0, 0, 0.8039216, 0.26666668)
 anchors_preset = -1
