@@ -48,6 +48,7 @@ func on_option_pressed(option_id):
 	var respuesta
 	var valor
 	var final = all_dialogue[dialogue_state][9]
+	var finish = all_dialogue[dialogue_state][10]
 
 	match option_id:
 		0: 
@@ -69,12 +70,13 @@ func on_option_pressed(option_id):
 	Global.puntos += valor
 	dialogue_state += 1
 	
-	if (final):
-		Global.response.emit(respuesta, true)
+	if (final && !finish):
+		Global.response.emit(respuesta, true, false)
 		final = false
+	elif (!final && !finish):
+		Global.response.emit(respuesta, false, false)
 	else:
-		Global.response.emit(respuesta, false)
-	
+		Global.response.emit(respuesta,false,true)
 	
 		
 
@@ -100,7 +102,8 @@ func load_dialogues():
 		var respuesta2 = config.get_value(section,"respuesta2")
 		var respuesta3 = config.get_value(section,"respuesta3")
 		var final = config.get_value(section,"final")
+		var finish = config.get_value(section,"finish")
 		print("uno")
 
-		all_dialogue[i] = [option1,option2,option3,valor1,valor2,valor3,respuesta1,respuesta2,respuesta3,final]
+		all_dialogue[i] = [option1,option2,option3,valor1,valor2,valor3,respuesta1,respuesta2,respuesta3,final,finish]
 		i += 1
