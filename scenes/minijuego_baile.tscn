@@ -177,6 +177,12 @@ scale = Vector2(2, 2)
 position = Vector2(0.49999762, 4.5)
 scale = Vector2(4, 4)
 
+[node name="AudioStreamPlayer2D" parent="PJbaile" index="8" unique_id=714600341]
+bus = &"FX"
+
+[node name="AudioStreamPlayer2D2" parent="PJbaile" index="9" unique_id=1338234348]
+bus = &"FX"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PJbaile" unique_id=2006634766]
 position = Vector2(0.25, 3.9999695)
 scale = Vector2(0.99999964, 0.99999964)
@@ -192,12 +198,7 @@ offset_bottom = -63.5
 unique_name_in_owner = true
 position = Vector2(0, 412)
 
-[node name="AnimatedSprite2D" parent="CasillaBaile" index="0" unique_id=314062948]
-visible = false
-position = Vector2(256, 128)
-scale = Vector2(8, 8)
-
-[node name="ColorRect" parent="CasillaBaile" index="1" unique_id=1499780848]
+[node name="ColorRect" parent="CasillaBaile" index="0" unique_id=1499780848]
 offset_left = 136.0
 offset_top = 8.0
 offset_right = 375.0
@@ -206,10 +207,7 @@ offset_bottom = 247.0
 [node name="Timer" type="Timer" parent="CasillaBaile/AnimationPlayer" parent_id_path=PackedInt32Array(2109904252, 1439832419) index="0" unique_id=550172142]
 wait_time = 3.0
 
-[node name="Area2D" parent="CasillaBaile" index="3" unique_id=1938711099]
-visible = true
-
-[node name="CollisionShape2D" parent="CasillaBaile/Area2D" index="0" unique_id=1951563535]
+[node name="CollisionShape2D" parent="CasillaBaile/Area2D" parent_id_path=PackedInt32Array(2109904252, 1938711099) index="0" unique_id=1951563535]
 position = Vector2(256, 128)
 scale = Vector2(16, 16)
 

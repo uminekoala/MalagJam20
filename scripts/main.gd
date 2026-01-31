@@ -11,6 +11,7 @@ func _ready() -> void:
 	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
 	$pulso.play("pulso")
+	AudioServer.set_bus_mute(2,true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,10 +52,10 @@ func on_transition_to_dialogue():
 	# escena de los botones
 	botones = preload("res://DIALOGO/ctrlbtn.tscn").instantiate()
 	$LunaPositionRight.add_child(botones)
-
 	
 
 func on_transition_to_dance():
+	
 	# apagar todo lo que sea de dialogos
 	if ($FirstButton):
 		$FirstButton.queue_free()
@@ -78,12 +79,14 @@ func send_change_scene_to_dialogue_signal():
 	print("CAMBIAR ESCENA DIALOGO")
 	AudioServer.set_bus_effect_enabled(1, 0, true)
 	Global.change_scene_to_dialogue.emit()
+	AudioServer.set_bus_mute(2,true)
 
 
 func send_change_scene_to_dance_signal():
 	print("CAMBIAR ESCENA BAILE")
 	AudioServer.set_bus_effect_enabled(1, 0, false)
 	Global.change_scene_to_dance.emit()
+	AudioServer.set_bus_mute(2,false)
 
 func move_luna(is_right):
 	if (is_right):
