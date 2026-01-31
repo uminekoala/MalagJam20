@@ -21,6 +21,10 @@ var pos_y2=0
 var pos3=Vector2.ZERO
 var pos_x3=0
 var pos_y3=0
+var anpos1=Vector2.ZERO
+var anpos2=Vector2.ZERO
+var anpos3=Vector2.ZERO
+
 func _ready():
 	Global.connect("send_text_buttons",textc)
 	#logt()
@@ -32,23 +36,31 @@ func _on_button_1_pressed() -> void:
 	btn3.disabled=true
 	btn3.visible=false
 	Global.option_pressed.emit(0)
+	anpos1=btn1.position
+	animation_player_1.stop()
+	btn1.position=anpos1
 func _on_button_2_pressed() -> void:
 	btn1.disabled=true
 	btn1.visible=false
 	btn3.disabled=true
 	btn3.visible=false
 	Global.option_pressed.emit(1)
+	anpos2=btn2.position
+	animation_player_2.stop()
+	btn2.position=anpos2
 func _on_button_3_pressed() -> void:
 	btn1.disabled=true
 	btn1.visible=false
 	btn2.disabled=true
 	btn2.visible=false
 	Global.option_pressed.emit(2)
-func textc(line1, line2, line3):
-	print("NO ESTOY ENTRANDO")
-	btn1.text=line1
-	btn2.text=line2
-	btn3.text=line3
+	anpos3=btn3.position
+	animation_player_3.stop()
+	btn3.position=anpos3
+func textc():
+	btn1.text=Global.line0
+	btn2.text=Global.line1
+	btn3.text=Global.line2
 #func logt():	
 #	pos_x1=randf_range(0,700)
 #	pos_y1=randf_range(0,500)
