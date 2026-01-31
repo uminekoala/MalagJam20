@@ -2,7 +2,7 @@ extends Node2D
 var posicion: int = 0
 var dondeAndaras: Vector2
 var funcionar: bool = false
-var casillasPrimeraFase: int = 10
+var casillasPrimeraFase: int = 1
 var playlist: Array = ["res://ASSETS/MUSICA/FASE 1.mp3","res://ASSETS/MUSICA/FASE 2.mp3","res://ASSETS/MUSICA/FASE 3.mp3","res://ASSETS/MUSICA/FASE 4.mp3"]
 var fase: int = 0
 @onready var feedback: Label = $PJbaile/Label
@@ -48,6 +48,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		%CasillaBaile.global_position = Vector2(dondeAndaras.x * 256, (dondeAndaras.y * 256)+ 156)
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
+		%CasillaBaile.visible = true
 		#if %CasillaBaile.visible == false:
 		#	print("helo")
 		#	%CasillaBaileAnimationPlayer.play.visible = true
