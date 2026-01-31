@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0r8ouayln3hg"
-path="res://.godot/imported/Cortina PNG.png-8ef1ce6700bd505178c7f574ae05506f.ctex"
+uid="uid://cp3a32f16bstw"
+path="res://.godot/imported/Cortina PNG.png-3773e59b0c151142c293a64533273693.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NARRATIVA/Cortina PNG.png"
-dest_files=["res://.godot/imported/Cortina PNG.png-8ef1ce6700bd505178c7f574ae05506f.ctex"]
+source_file="res://NARRATIVA/Crap/Cortina PNG.png"
+dest_files=["res://.godot/imported/Cortina PNG.png-3773e59b0c151142c293a64533273693.ctex"]
 
 [params]
 

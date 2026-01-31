@@ -48,6 +48,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		%CasillaBaile.global_position = Vector2(dondeAndaras.x * 256, (dondeAndaras.y * 256)+ 156)
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
+		%CasillaBaile.visible = true
 		#if %CasillaBaile.visible == false:
 		#	print("helo")
 		#	%CasillaBaileAnimationPlayer.play.visible = true
