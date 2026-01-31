@@ -1,10 +1,11 @@
-[gd_scene format=4 uid="uid://gm282uy0w2w3"]
+[gd_scene format=4 uid="uid://bq1ywsuahngiw"]
 
 [ext_resource type="Script" uid="uid://djm5n863jp1te" path="res://scripts/minijuego_baile_2.gd" id="1_4nte5"]
 [ext_resource type="Texture2D" uid="uid://c1tp7pqe622b5" path="res://icon.svg" id="1_qfoj6"]
 [ext_resource type="PackedScene" uid="uid://ccgdh5bbdqgkd" path="res://scenes/pjbaile.tscn" id="2_ebdji"]
 [ext_resource type="AudioStream" uid="uid://dhovaev2i6xfl" path="res://ASSETS/MUSICA/FASE 1.mp3" id="3_ghm1a"]
 [ext_resource type="PackedScene" uid="uid://bvtk738l6c50b" path="res://scenes/casilla_baile.tscn" id="5_ghm1a"]
+[ext_resource type="PackedScene" uid="uid://c2jkvdduovq4x" path="res://scenes/global.tscn" id="6_frukt"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ebdji"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 3, 131072, 0, 7, 1, 65536, 0, 65537, 65536, 1, 131073, 262144, 7, 2, 458752, 0, 65538, 458752, 2, 131074, 458752, 7)
@@ -111,7 +112,10 @@ unique_name_in_owner = true
 position = Vector2(0, 412)
 scale = Vector2(16, 16)
 
-[node name="Timer" type="Timer" parent="CasillaBaile/AnimationPlayer" parent_id_path=PackedInt32Array(2109904252, 1439832419) index="0" unique_id=550172142]
+[node name="AnimationPlayer" parent="CasillaBaile" index="1" unique_id=1439832419]
+autoplay = &""
+
+[node name="Timer" type="Timer" parent="CasillaBaile/AnimationPlayer" index="0" unique_id=550172142]
 wait_time = 3.0
 
 [node name="Label" type="Label" parent="." unique_id=1122484614]
@@ -126,8 +130,12 @@ offset_top = 279.0
 offset_right = 1173.0
 offset_bottom = 310.0
 
+[node name="Global" parent="." unique_id=1160712436 instance=ExtResource("6_frukt")]
+
 [connection signal="animation_finished" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="change_scene_to_dance" from="Global" to="." method="_on_global_change_scene_to_dance"]
+[connection signal="transition_to_dialogue" from="Global" to="." method="_on_global_transition_to_dialogue"]
 
 [editable path="PJbaile"]
 [editable path="CasillaBaile"]
