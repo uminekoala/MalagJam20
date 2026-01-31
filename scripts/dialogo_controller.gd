@@ -22,6 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (launch_buttons_flag):
+		print("yo lo siento por el codigo")
 		launch_buttons_flag = false
 		option1 = all_dialogue[dialogue_state][0]
 		option2 = all_dialogue[dialogue_state][1]
@@ -33,6 +34,7 @@ func end_dialogue_phase():
 	Global.transition_to_dance.emit()
 
 func on_change_scene_to_dialogue():
+	print("yo lo siento por nada")
 	option1 = all_dialogue[dialogue_state][0]
 	option2 = all_dialogue[dialogue_state][1]
 	option3 = all_dialogue[dialogue_state][2]
