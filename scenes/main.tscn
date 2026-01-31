@@ -337,6 +337,43 @@ _data = {
 &"bounce": SubResource("Animation_choun")
 }
 
+[sub_resource type="Animation" id="Animation_eb6dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Luna:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_trceg"]
+resource_name = "pulso"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Luna:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.5, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(6.1, 6.1), Vector2(6, 6), Vector2(6, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8y0u"]
+_data = {
+&"RESET": SubResource("Animation_eb6dy"),
+&"pulso": SubResource("Animation_trceg")
+}
+
 [node name="Node2D" type="Node" unique_id=757001741]
 script = ExtResource("1_jyhfs")
 
@@ -465,6 +502,9 @@ one_shot = true
 
 [node name="BounceDialogue" type="AnimationPlayer" parent="." unique_id=1074440260]
 libraries/ = SubResource("AnimationLibrary_ya4ey")
+
+[node name="pulso" type="AnimationPlayer" parent="." unique_id=143790670]
+libraries/ = SubResource("AnimationLibrary_a8y0u")
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="TrailTimer" to="." method="_on_trail_timer_timeout"]
