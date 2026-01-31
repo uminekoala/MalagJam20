@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://csofjh6xvupqx" path="res://ASSETS/EFECTOS_DE_SONIDO/SUELA2.mp3" id="7_85g3d"]
+[ext_resource type="AudioStream" uid="uid://cejk7kd0836rj" path="res://ASSETS/EFECTOS_DE_SONIDO/SUSURROS.mp3" id="8_tipki"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
 
@@ -434,6 +436,9 @@ scale = Vector2(1.92, 1.92)
 position = Vector2(0, 4)
 scale = Vector2(4.1, 4.1)
 
+[node name="AudioStreamPlayer2D2" parent="MinijuegoBaile/PJbaile" index="9" unique_id=1338234348]
+stream = ExtResource("7_85g3d")
+
 [node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="10" unique_id=2006634766]
 position = Vector2(0, 0)
 
@@ -514,6 +519,10 @@ libraries/ = SubResource("AnimationLibrary_ya4ey")
 libraries/ = SubResource("AnimationLibrary_a8y0u")
 
 [node name="susurros" type="AudioStreamPlayer2D" parent="." unique_id=846445666]
+stream = ExtResource("8_tipki")
+volume_db = -10.597
+pitch_scale = 0.74
+autoplay = true
 
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="TrailTimer" to="." method="_on_trail_timer_timeout"]
