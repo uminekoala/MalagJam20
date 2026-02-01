@@ -248,7 +248,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(100, -70), Vector2(136, 0)]
+"values": [Vector2(0, 0), Vector2(100, 100)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -260,7 +260,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(99, -70), Vector2(54, 0)]
+"values": [Vector2(0, 0), Vector2(-100, 100)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -272,7 +272,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(100, -70), Vector2(54, -140)]
+"values": [Vector2(0, 0), Vector2(-100, -100)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -284,7 +284,59 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(99, -70), Vector2(136, -140)]
+"values": [Vector2(0, 0), Vector2(100, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_57at5"]
+resource_name = "MOVE_GREAT2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-100, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-100, -100)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, -100)]
 }
 
 [sub_resource type="Animation" id="Animation_13a83"]
@@ -393,7 +445,8 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p8b6x"]
 _data = {
 &"MOVE": SubResource("Animation_abq34"),
-&"MOVE_GREAT": SubResource("Animation_13a83"),
+&"MOVE_GREAT": SubResource("Animation_57at5"),
+&"MOVE_GREAT3": SubResource("Animation_13a83"),
 &"RESET": SubResource("Animation_uhjvr")
 }
 
@@ -448,7 +501,6 @@ libraries/ = SubResource("AnimationLibrary_abq34")
 autoplay = &"paso"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1482702703]
-visible = false
 texture_filter = 1
 position = Vector2(100, -70)
 rotation = 0.7853982
@@ -465,7 +517,6 @@ autoplay = "default"
 frame_progress = 0.15690081
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1220457260]
-visible = false
 texture_filter = 1
 position = Vector2(99, -70)
 rotation = -0.7853982
@@ -480,7 +531,6 @@ autoplay = "default"
 frame_progress = 0.22635211
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=910974928]
-visible = false
 texture_filter = 1
 position = Vector2(100, -70)
 rotation = 0.7853982
@@ -495,7 +545,6 @@ autoplay = "default"
 frame_progress = 0.52009445
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1819857426]
-visible = false
 texture_filter = 1
 position = Vector2(99, -70)
 rotation = -0.7853982
