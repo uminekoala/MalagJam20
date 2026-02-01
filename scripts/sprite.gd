@@ -25,18 +25,18 @@ func puntuacion():
 	$ScrollContainerpunt/VBoxContainer/punt/AnimationPlayerpuntu.play("texto")
 func finale_t():
 	print("finale")
-	if pun>=20:
+	if pun>=60:
 		$ScrollContainer/finale.text = final1
 		$Luna.texture = load("res://ASSETS/LUNA_FASE_4.png")
 		print("final1")
-	elif 20>pun && pun>15:
+	elif 60>pun && pun>=35:
 		print(" final??")
 		$ScrollContainer/finale.text = final2
 		$Luna.texture = load("res://ASSETS/LUNA_FASE_3.png")
-	elif 15>pun && pun>12:
+	elif 35>pun && pun>=20:
 		$ScrollContainer/finale.text = final3
 		$Luna.texture = load("res://ASSETS/LUNA_FASE_2.png")
-	elif pun<10:
+	elif pun<20:
 		$ScrollContainer/finale.text = final4
 		$Luna.texture = load("res://ASSETS/LUNA_FASE_1.png")
 	$ScrollContainer/finale/AnimationPlayerfin.play("texto")
