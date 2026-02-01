@@ -17,14 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
-	$MinijuegoBaile.funcionar = false
-	$MinijuegoBaile/CasillaBaile/AnimatedSprite2D.visible = false
-	$MinijuegoBaile/CasillaBaile/AnimationPlayer.active = false
-	DialogoController.puedes_moverte_don_jugador = false
-	$MinijuegoBaile/CasillaBaile/AnimationPlayer.stop()
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	pass # Replace with function body.
+
 
 
 func _on_button_2_pressed() -> void:
