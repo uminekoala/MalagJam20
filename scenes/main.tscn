@@ -4,12 +4,63 @@
 [ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="3_o6xl0"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cx0nyr1222k6o" path="res://ASSETS/ANIMACION_BAILE.png" id="4_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="6_tefeu"]
 [ext_resource type="AudioStream" uid="uid://djytr2lqb0625" path="res://ASSETS/EFECTOS_DE_SONIDO/STOMP3.mp3" id="8_choun"]
 [ext_resource type="AudioStream" uid="uid://cejk7kd0836rj" path="res://ASSETS/EFECTOS_DE_SONIDO/SUSURROS.mp3" id="8_tipki"]
 [ext_resource type="PackedScene" path="res://DIALOGO/caja_dialogo_labels.tscn" id="10_choun"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = ExtResource("4_ya4ey")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trceg"]
+atlas = ExtResource("4_ya4ey")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8y0u"]
+atlas = ExtResource("4_ya4ey")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkv2x"]
+atlas = ExtResource("4_ya4ey")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbj1t"]
+atlas = ExtResource("4_ya4ey")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muem4"]
+atlas = ExtResource("4_ya4ey")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dp3eg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb6dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trceg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8y0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkv2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbj1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muem4")
+}],
+"loop": true,
+"name": &"gif",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
 
@@ -441,6 +492,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_o6xl0")
+
+[node name="Baile" type="AnimatedSprite2D" parent="." unique_id=200090132]
+texture_filter = 1
+position = Vector2(1089, 647)
+scale = Vector2(6.525, 6.525)
+sprite_frames = SubResource("SpriteFrames_dp3eg")
+animation = &"gif"
+frame_progress = 0.6772861
 
 [node name="dialogo_labels" parent="." unique_id=1587499215 instance=ExtResource("2_sugp2")]
 anchor_left = 0.257

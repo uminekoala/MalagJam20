@@ -18,6 +18,7 @@ func _ready() -> void:
 	AudioServer.set_bus_mute(2,true)
 	Global.connect("finish", on_finish_game)
 	$susurros.play()
+	$Baile.play("gif")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
