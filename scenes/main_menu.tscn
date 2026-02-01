@@ -325,6 +325,7 @@ _data = {
 script = ExtResource("1_ekxnf")
 
 [node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
+visible = false
 z_index = 1
 offset_left = 921.0
 offset_top = 510.0
@@ -389,6 +390,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="Label" type="Label" parent="." unique_id=344284517]
+visible = false
 texture_filter = 1
 offset_left = 641.0
 offset_top = 199.0
@@ -404,6 +406,7 @@ text = "Has traicionado
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=72559357]
+visible = false
 texture_filter = 1
 offset_left = 621.0
 offset_top = 477.0
@@ -459,7 +462,6 @@ scale = Vector2(3.2152267, 1.9111235)
 texture = ExtResource("1_l6cm7")
 
 [node name="PanelbotonesPrincipales2" type="Panel" parent="." unique_id=656709545]
-visible = false
 z_index = 1
 offset_left = -16.0
 offset_top = 2.0
