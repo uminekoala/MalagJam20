@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjkom3av20imw" path="res://ASSETS/TABLERO.png" id="3_frukt"]
 [ext_resource type="AudioStream" uid="uid://dhovaev2i6xfl" path="res://ASSETS/MUSICA/FASE 1.mp3" id="3_ghm1a"]
 [ext_resource type="PackedScene" uid="uid://bvtk738l6c50b" path="res://scenes/casilla_baile.tscn" id="5_ghm1a"]
+[ext_resource type="AudioStream" uid="uid://b7lqasqli3l5e" path="res://ASSETS/EFECTOS_DE_SONIDO/STOMP2.mp3" id="6_38hs4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ebdji"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 3, 131072, 0, 7, 1, 65536, 0, 65537, 65536, 1, 131073, 262144, 7, 2, 458752, 0, 65538, 458752, 2, 131074, 458752, 7)
@@ -175,6 +176,31 @@ scale = Vector2(1.75, 1.75)
 
 [node name="Sprite2D" parent="PJbaile" index="0" unique_id=1441209124]
 scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" parent="PJbaile" index="2" unique_id=1482702703]
+visible = true
+rotation = 0.0
+frame_progress = 0.0
+flip_h = false
+
+[node name="AnimatedSprite2D2" parent="PJbaile" index="3" unique_id=1220457260]
+visible = true
+rotation = 0.0
+
+[node name="AnimatedSprite2D3" parent="PJbaile" index="4" unique_id=910974928]
+visible = true
+rotation = 0.0
+
+[node name="AnimatedSprite2D4" parent="PJbaile" index="5" unique_id=1819857426]
+visible = true
+rotation = 0.0
+flip_h = false
+
+[node name="Timer" parent="PJbaile" index="6" unique_id=1293590259]
+wait_time = 1.0
+
+[node name="AudioStreamPlayer2D" parent="PJbaile" index="8" unique_id=714600341]
+stream = ExtResource("6_38hs4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PJbaile" unique_id=2006634766]
 position = Vector2(0.25, 3.9999695)
