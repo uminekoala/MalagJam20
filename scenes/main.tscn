@@ -418,7 +418,8 @@ offset_top = 0.43998718
 offset_right = -0.4000244
 offset_bottom = -0.2800293
 theme = SubResource("Theme_tefeu")
-text = "¿Me concede este baile?"
+theme_override_font_sizes/font_size = 48
+text = "¿Me concedes este baile?"
 
 [node name="LunaPositionLeft" type="Marker2D" parent="." unique_id=1024467774]
 position = Vector2(136, 32)
