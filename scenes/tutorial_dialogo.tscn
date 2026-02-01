@@ -461,9 +461,9 @@ offset_right = 740.0
 offset_bottom = 1017.0
 theme_override_fonts/normal_font = ExtResource("2_lno1t")
 theme_override_font_sizes/normal_font_size = 49
-text = "Mientras dialogas no hay una cuenta atrás pero sí debes intentar atrapar el diálogo. Tienes que clickar la opcion que te parezca mejor.
+text = "Mientras dialogas no hay una cuenta atrás, pero sí debes intentar atrapar el diálogo. Pincha en la opción que te parezca mejor. 
 
-Tienes opciones de diálogo que te ayudarán de verdad a conseguir tu objetivo, opciones que no te ayudarán nada, y otras que te ayudarán, pero no tanto.
+Tienes opciones de diálogo que te ayudarán a conseguir tu objetivo, opciones que no te ayudarán nada, y otras que te ayudarán, pero no tanto. No hay respuestas incorrectas, pero algunas te acercarán más a la verdad que intentas descubir.
 
 ¡Misterio!"
 horizontal_alignment = 2
