@@ -23,7 +23,7 @@ offset_right = 1923.0
 offset_bottom = 1130.0
 theme_override_fonts/normal_font = ExtResource("3_laqf1")
 theme_override_font_sizes/normal_font_size = 49
-text = "El icono que se mueve eres tú y te mueves al ritmo de la música. Notarás que hay casillas que se iluminan, debes dirigirte a la casilla iluminada (🡹🡺🡸🡻, o WASD) y pulsar la tecla \"ESPACIO\" al golpe del tercer compás.
+text = "El icono que se mueve eres tú y te mueves al ritmo de la música. Notarás que hay casillas que se iluminan, debes dirigirte a la casilla iluminada (WASD) y pulsar la tecla \"ESPACIO\" al golpe del tercer compás.
 
 ¡Ojo! Debes pulsar \"ESPACIO\" al golpe del tercer compás, no antes ni después, pero no pierdas la oportunidad de intentarlo. ¡Un paso mal dado es mejor que no avanzar!"
 
