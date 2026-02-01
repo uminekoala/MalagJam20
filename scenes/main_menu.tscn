@@ -271,6 +271,7 @@ _data = {
 script = ExtResource("1_ekxnf")
 
 [node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
+visible = false
 z_index = 1
 offset_left = 741.0
 offset_top = 510.0
@@ -349,6 +350,7 @@ autoplay = "default"
 frame_progress = 0.528994
 
 [node name="Label" type="Label" parent="." unique_id=344284517]
+visible = false
 texture_filter = 1
 offset_left = 481.0
 offset_top = 199.0
@@ -364,6 +366,7 @@ text = "Has traicionado
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=72559357]
+visible = false
 texture_filter = 1
 offset_left = 421.0
 offset_top = 477.0
@@ -447,10 +450,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.79
-offset_left = -117.5
-offset_top = 193.0
-offset_right = 50.5
-offset_bottom = -48.26001
+offset_left = -158.5
+offset_top = 235.0
+offset_right = 9.5
+offset_bottom = -6.26001
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
