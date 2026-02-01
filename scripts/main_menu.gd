@@ -9,6 +9,7 @@ extends Node2D
 @onready var telon: Sprite2D = $Telon
 @onready var telon_2: Sprite2D = $Telon2
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var btnJugar: Button = $PanelbotonesPrincipales/Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
