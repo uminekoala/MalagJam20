@@ -104,9 +104,11 @@ func move_luna(is_right):
 	if (is_right):
 		$TrailTimer.start()
 		$TrailAnimator.play("trail")
+		$CajaDialogoLabels/NameLuna/Derecha.play("pos")
 	else:
 		$TrailLeftTimer.start()
 		$TrailAnimatorLeft.play("trail_left")
+		$CajaDialogoLabels/NameLuna/Izquierda.play("pos")
 		
 
 func _on_button_pressed() -> void:
@@ -126,4 +128,5 @@ func _on_p_jbaile_no_te_muevas() -> void:
 	var tam = fail_barks.size()
 	var rnd = randi_range(0,tam-1)
 	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel.text = fail_barks[rnd]
-	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
+	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("bark")
+	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/Timer.start()
