@@ -16,6 +16,7 @@ var puedes_moverte_don_jugador = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dialogue_state = 0
 	load_dialogues()
 	Global.connect("option_pressed", on_option_pressed)
 	Global.connect("change_scene_to_dialogue", on_change_scene_to_dialogue)
@@ -76,6 +77,7 @@ func on_option_pressed(option_id):
 		final = false
 	elif (finish):
 		Global.response.emit(respuesta,false,true)
+		dialogue_state = 0
 	else:
 		Global.response.emit(respuesta, false, false)
 	
