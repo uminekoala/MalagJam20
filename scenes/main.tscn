@@ -588,10 +588,15 @@ visible_ratio = 0.0
 [node name="BarkAnimation" type="AnimationPlayer" parent="BarkLabel" unique_id=1652620647]
 libraries/ = SubResource("AnimationLibrary_jbj1t")
 
+[node name="Timer" type="Timer" parent="BarkLabel" unique_id=1206317232]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="pressed" from="FirstButton" to="." method="_on_button_pressed"]
 [connection signal="noTeMuevas" from="MinijuegoBaile/PJbaile" to="." method="_on_p_jbaile_no_te_muevas"]
 [connection signal="timeout" from="TrailTimer" to="." method="_on_trail_timer_timeout"]
 [connection signal="timeout" from="TrailLeftTimer" to="." method="_on_trail_left_timer_timeout"]
+[connection signal="timeout" from="BarkLabel/Timer" to="." method="_on_timer_timeout"]
 
 [editable path="MinijuegoBaile"]
 [editable path="MinijuegoBaile/PJbaile"]

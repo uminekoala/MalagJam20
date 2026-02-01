@@ -35,6 +35,7 @@ func _on_button_1_pressed() -> void:
 	btn2.visible=false
 	btn3.disabled=true
 	btn3.visible=false
+	btn1.disabled = true
 	Global.option_pressed.emit(0)
 	anpos1=btn1.position
 	animation_player_1.stop()
@@ -44,6 +45,7 @@ func _on_button_2_pressed() -> void:
 	btn1.visible=false
 	btn3.disabled=true
 	btn3.visible=false
+	btn2.disabled = true
 	Global.option_pressed.emit(1)
 	anpos2=btn2.position
 	animation_player_2.stop()
@@ -53,6 +55,7 @@ func _on_button_3_pressed() -> void:
 	btn1.visible=false
 	btn2.disabled=true
 	btn2.visible=false
+	btn3.disabled = true
 	Global.option_pressed.emit(2)
 	anpos3=btn3.position
 	animation_player_3.stop()

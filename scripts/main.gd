@@ -128,3 +128,8 @@ func _on_p_jbaile_no_te_muevas() -> void:
 	$BarkLabel.visible = true
 	$BarkLabel.text = fail_barks[rnd]
 	$BarkLabel/BarkAnimation.play("bark")
+	$BarkLabel/Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	$BarkLabel.visible = false
