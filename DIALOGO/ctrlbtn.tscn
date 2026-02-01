@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oria"]
 
 [sub_resource type="Theme" id="Theme_53h0m"]
+Button/font_sizes/font_size = 32
 Button/styles/normal = SubResource("StyleBoxEmpty_6oria")
 
 [sub_resource type="Animation" id="Animation_ahrur"]

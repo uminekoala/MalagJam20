@@ -5,6 +5,10 @@ var tween_visible
 var timer
 var botones
 
+
+@onready var fail_barks = ["¿Tienes alguna prisa?", "Al compás, cariño", "¡Me has pisado!", "Es evidente que tu alma no reposa en alta cuna."]
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.connect("transition_to_dialogue", on_transition_to_dialogue)
@@ -87,6 +91,7 @@ func send_change_scene_to_dialogue_signal():
 	AudioServer.set_bus_effect_enabled(1, 0, true)
 	Global.change_scene_to_dialogue.emit()
 	AudioServer.set_bus_mute(2,true)
+	$BarkLabel.visible = false
 
 
 func send_change_scene_to_dance_signal():
@@ -115,3 +120,11 @@ func _on_trail_timer_timeout() -> void:
 
 func _on_trail_left_timer_timeout() -> void:
 	send_change_scene_to_dialogue_signal()
+
+
+func _on_p_jbaile_no_te_muevas() -> void:
+	var tam = fail_barks.size()
+	var rnd = randi_range(0,tam-1)
+	$BarkLabel.visible = true
+	$BarkLabel.text = fail_barks[rnd]
+	$BarkLabel/BarkAnimation.play("bark")

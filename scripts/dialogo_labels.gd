@@ -48,5 +48,3 @@ func on_response(line, final, finish):
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 
 	
-func _on_p_jbaile_no_te_muevas() -> void:
-	pass
