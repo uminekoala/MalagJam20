@@ -57,7 +57,7 @@ func on_transition_to_dialogue():
 	# Animar sprite para que se mueva a la izquierda
 	Global.purge_dialogue_labels.emit()
 	$MinijuegoBaile.visible = false
-	$dialogo_labels.visible = true
+	$CajaDialogoLabels.visible = true
 	move_luna(false)
 	# llamar al dialogo
 	# escena de los botones
@@ -125,11 +125,5 @@ func _on_trail_left_timer_timeout() -> void:
 func _on_p_jbaile_no_te_muevas() -> void:
 	var tam = fail_barks.size()
 	var rnd = randi_range(0,tam-1)
-	$BarkLabel.visible = true
-	$BarkLabel.text = fail_barks[rnd]
-	$BarkLabel/BarkAnimation.play("bark")
-	$BarkLabel/Timer.start()
-
-
-func _on_timer_timeout() -> void:
-	$BarkLabel.visible = false
+	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel.text = fail_barks[rnd]
+	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
