@@ -9,7 +9,9 @@ var finished_sentence = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	finale_t()
-	#pun=Global.puntos
+	pun=Global.puntos
+	print(pun)
+	print(pun)
 func finale_t():
 	
 	if pun>=20:
