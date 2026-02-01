@@ -10,8 +10,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbgi4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
-bg_color = Color(0.9529412, 0.9529412, 0.9529412, 0.05882353)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbyxc"]
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -25,4 +24,4 @@ Button/styles/disabled = SubResource("StyleBoxEmpty_o6xl0")
 Button/styles/focus = SubResource("StyleBoxEmpty_jyhfs")
 Button/styles/hover = SubResource("StyleBoxEmpty_tefeu")
 Button/styles/normal = SubResource("StyleBoxEmpty_tbgi4")
-Button/styles/pressed = SubResource("StyleBoxFlat_sugp2")
+Button/styles/pressed = SubResource("StyleBoxEmpty_bbyxc")
