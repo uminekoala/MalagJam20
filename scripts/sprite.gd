@@ -15,6 +15,7 @@ func _ready() -> void:
 	print(pun)
 	punt()
 	puntuacion()
+	$AudioStreamPlayer.play()
 func punt():
 	print("puntuacion")
 	$ScrollContainerpunt/VBoxContainer/textpunt.text = "Tu puntuación es:"

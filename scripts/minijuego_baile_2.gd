@@ -16,6 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	%PJbaile
 	#if !funcionar:
 	#	Global.connect("change_scene_to_dance", _on_global_change_scene_to_dance())
 	
@@ -62,6 +63,7 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print("OH NO??")
 	if posicion < casillasPrimeraFase:
 		print(%PJbaile.global_position)
 		dondeAndaras = tuMovimiento(%PJbaile.global_position)

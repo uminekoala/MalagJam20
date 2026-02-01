@@ -43,6 +43,8 @@ func _on_btn_salir_pressed() -> void:
 func _on_btn_volver_pressed() -> void:
 	panelbotones_principales.visible =true
 	panelbotones_principales_2.visible= false
+	$Label.visible = true
+	$Label2.visible = true
 	pass # Replace with function body.
 
 
