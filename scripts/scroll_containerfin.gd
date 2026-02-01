@@ -1,10 +1,10 @@
 extends ScrollContainer
 var finished_sentence = false
-@onready var final1="final1"
-@onready var final2="final2"
-@onready var final3="final3"
-@onready var final4="final4"
-@onready var pun=17
+@onready var final1="El verdadero arte reside en mentir y que te crean. Tú y yo podemos reescribir la historia."
+@onready var final2="El verdadero arte reside en mentir y que te crean. Tus palabras me seducen, pero tu máscara es cristalina."
+@onready var final3="El verdadero arte reside en mentir y que te crean. Por desgracia, has bailado a mi son."
+@onready var final4="Una persona como tú no merece llevar la luna. Una patética excusa de artista."
+@onready var pun
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
