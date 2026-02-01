@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_28ree"]
 [ext_resource type="Script" uid="uid://00ruqrb867u1" path="res://scripts/scroll_containerfin.gd" id="3_37bed"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="4_kh2f6"]
+[ext_resource type="AudioStream" uid="uid://xdrwhb1hqnkg" path="res://ASSETS/MUSICA/FASE 4.mp3" id="8_tnm2q"]
 
 [sub_resource type="Theme" id="Theme_kh2f6"]
 default_font = ExtResource("3_28ree")
@@ -177,3 +178,6 @@ texture = ExtResource("2_780xw")
 position = Vector2(971.00006, 691)
 scale = Vector2(6.025, 6.025)
 texture = ExtResource("4_kh2f6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2055451923]
+stream = ExtResource("8_tnm2q")
