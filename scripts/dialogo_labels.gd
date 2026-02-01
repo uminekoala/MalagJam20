@@ -47,4 +47,6 @@ func on_response(line, final, finish):
 	$VBoxContainer/MoonDialogueLabel.text = line
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 
-	
+
+func _on_timer_timeout() -> void:
+	$VBoxContainer/MoonDialogueLabel.text = ""
