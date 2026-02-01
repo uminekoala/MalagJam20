@@ -14,31 +14,31 @@ var moverse:bool = false
 func _physics_process(delta: float) -> void:
 	if p_jbaile.visible == true:
 		if Input.is_action_just_pressed("tilemapArriba"):
-			if global_position.y > 400 && moverse:
-				position.y -= 256
+			if global_position.y > 300 && moverse:
+				position.y -= 224
 				moverse = false				
 			else:
 				error.play("Error")
 				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("tilemapAbajo"):
-			if global_position.y < 680 && moverse:
-				position.y += 256
+			if global_position.y < 580 && moverse:
+				position.y += 224
 				moverse = false
 				pisada.play()
 			else:
 				error.play("Error")
 				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("tilemapDerecha"):
-			if global_position.x < 680 && moverse:
-				position.x += 256
+			if global_position.x < 580 && moverse:
+				position.x += 224
 				moverse = false
 				pisada.play()
 			else:
 				error.play("Error")
 				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("tilemapIzquierda"):
-			if global_position.x > 380 && moverse:
-				position.x -= 256
+			if global_position.x > 280 && moverse:
+				position.x -= 224
 				moverse = false
 				pisada.play()
 			else:
