@@ -4,25 +4,25 @@ var finished_sentence = false
 @onready var final2="El verdadero arte reside en mentir y que te crean. Tus palabras me seducen, pero tu máscara es cristalina."
 @onready var final3="El verdadero arte reside en mentir y que te crean. Por desgracia, has bailado a mi son."
 @onready var final4="Una persona como tú no merece llevar la luna. Una patética excusa de artista."
-@onready var pun=30
+@onready var pun =Global.puntos
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	finale_t()
-	pun=Global.puntos
-	print("pun:")
-	print(pun)
-	punt()
-	puntuacion()
+	#pun=Global.puntos
+	#print("pun:")
+	#print(pun)
+	#punt()
+	#puntuacion()
 	$AudioStreamPlayer.play()
-func punt():
-	print("puntuacion")
-	$ScrollContainerpunt/VBoxContainer/textpunt.text = "Tu puntuación es:"
-	$ScrollContainerpunt/VBoxContainer/textpunt/AnimationPlayerpunt.play("texto")
-func puntuacion():
-	$ScrollContainerpunt/VBoxContainer/punt.text = str(Global.puntos)
-	$ScrollContainerpunt/VBoxContainer/punt/AnimationPlayerpuntu.play("texto")
+#func punt():
+#	print("puntuacion")
+#	$ScrollContainerpunt/VBoxContainer/textpunt.text = "Tu puntuación es:"
+#	$ScrollContainerpunt/VBoxContainer/textpunt/AnimationPlayerpunt.play("texto")
+#func puntuacion():
+#	$ScrollContainerpunt/VBoxContainer/punt.text = str(pun)
+#	$ScrollContainerpunt/VBoxContainer/punt/AnimationPlayerpuntu.play("texto")
 func finale_t():
 	print("finale")
 	if pun>=60:

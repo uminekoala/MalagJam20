@@ -348,21 +348,6 @@ theme_override_font_sizes/font_size = 40
 text = "Por supuesto"
 flat = true
 
-[node name="btnControles" type="Button" parent="PanelbotonesPrincipales" unique_id=1313136413]
-z_index = 1
-texture_filter = 1
-layout_mode = 0
-offset_left = -433.0
-offset_top = 445.0
-offset_right = -303.0
-offset_bottom = 476.0
-theme = ExtResource("4_tbmy8")
-theme_override_fonts/font = ExtResource("2_rtw2f")
-theme_override_font_sizes/font_size = 40
-text = "Tutorial
-"
-flat = true
-
 [node name="btnSalir" type="Button" parent="PanelbotonesPrincipales" unique_id=2072437338]
 z_index = 1
 texture_filter = 1
@@ -559,7 +544,6 @@ attenuation = 2.070531
 bus = &"Musica"
 
 [connection signal="pressed" from="PanelbotonesPrincipales/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelbotonesPrincipales/btnControles" to="." method="_on_btn_controles_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales/btnSalir" to="." method="_on_btn_salir_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales/btnTriggers" to="." method="_on_btn_triggers_pressed"]
 [connection signal="pressed" from="PanelbotonesPrincipales2/btnVolver" to="." method="_on_btn_volver_pressed"]
