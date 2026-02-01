@@ -271,7 +271,6 @@ _data = {
 script = ExtResource("1_ekxnf")
 
 [node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
-visible = false
 z_index = 1
 offset_left = 741.0
 offset_top = 510.0
@@ -304,8 +303,9 @@ offset_top = 445.0
 offset_right = -303.0
 offset_bottom = 476.0
 theme = ExtResource("4_tbmy8")
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 0.99607843)
 theme_override_fonts/font = ExtResource("2_rtw2f")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 42
 text = "Tutorial
 "
 flat = true

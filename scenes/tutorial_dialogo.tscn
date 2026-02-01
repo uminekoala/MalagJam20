@@ -444,12 +444,14 @@ color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="." unique_id=630807769]
 texture_filter = 1
-offset_left = 1636.0
-offset_top = 936.0
-offset_right = 1849.0
-offset_bottom = 1070.0
+offset_left = 1262.0
+offset_top = 843.0
+offset_right = 1475.0
+offset_bottom = 977.0
 theme_override_fonts/font = ExtResource("2_lno1t")
-text = "VOLVER"
+theme_override_font_sizes/font_size = 32
+text = "Empezar"
+flat = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=355570716]
 texture_filter = 1
@@ -466,15 +468,6 @@ Tienes opciones de diálogo que te ayudarán de verdad a conseguir tu objetivo, 
 ¡Misterio!"
 horizontal_alignment = 2
 
-[node name="Button2" type="Button" parent="." unique_id=1624476676]
-texture_filter = 1
-offset_left = 1378.0
-offset_top = 940.0
-offset_right = 1591.0
-offset_bottom = 1074.0
-theme_override_fonts/font = ExtResource("2_lno1t")
-text = "TUTORIAL BAILE"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=748655813]
 position = Vector2(1358, 429)
 scale = Vector2(0.56, 0.56)
@@ -482,4 +475,3 @@ sprite_frames = SubResource("SpriteFrames_2tno2")
 autoplay = "default"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

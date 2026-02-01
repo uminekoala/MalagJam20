@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LA MASCARA NO DE MAJORA"
-run/main_scene="uid://drx543miwsje4"
+run/main_scene="uid://ci8iwyekc4xib"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
