@@ -11,6 +11,7 @@ var launch_buttons_flag = false
 var option1
 var option2
 var option3
+var puedes_moverte_don_jugador = false
 # 0,1,2,3,4... se refleja en el .cfg con las secciones
 
 # Called when the node enters the scene tree for the first time.
