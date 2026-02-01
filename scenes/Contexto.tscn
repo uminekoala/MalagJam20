@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dxm163cyna3bw"]
+
+[ext_resource type="Script" uid="uid://75rkue6fwa0y" path="res://scripts/contexto.gd" id="1_iq8is"]
+[ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="1_uj8u8"]
+
+[node name="Node2D" type="Node2D" unique_id=1013770403]
+script = ExtResource("1_iq8is")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=509605033]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 1996.0
+offset_bottom = 1240.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=78078602]
+texture_filter = 1
+layout_mode = 0
+offset_left = -3.0
+offset_right = 1913.0
+offset_bottom = 897.0
+theme_override_fonts/normal_font = ExtResource("1_uj8u8")
+theme_override_font_sizes/normal_font_size = 49
+text = "Andrea, pon aqui cosas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="ColorRect" unique_id=1193770955]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 943.0
+offset_right = 1743.0
+offset_bottom = 1077.0
+theme_override_fonts/font = ExtResource("1_uj8u8")
+theme_override_font_sizes/font_size = 29
+text = "EMPEZAR"
+flat = true
+
+[connection signal="pressed" from="ColorRect/Button2" to="." method="_on_button_2_pressed"]

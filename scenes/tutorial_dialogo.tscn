@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b1wslyraed3tr" path="res://scripts/tutorial_dialogo.gd" id="1_mxhct"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="2_lno1t"]
 [ext_resource type="Texture2D" uid="uid://7fhu0pkpx2jb" path="res://framesTutoDialogo.png" id="3_oho5i"]
+[ext_resource type="Theme" uid="uid://baquvosns5dwo" path="res://ASSETS/temaDialogos.tres" id="4_lk7sw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lk7sw"]
 atlas = ExtResource("3_oho5i")
@@ -456,9 +457,9 @@ flat = true
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=355570716]
 texture_filter = 1
 offset_left = 77.0
-offset_top = 86.0
+offset_top = 203.0
 offset_right = 740.0
-offset_bottom = 1017.0
+offset_bottom = 1134.0
 theme_override_fonts/normal_font = ExtResource("2_lno1t")
 theme_override_font_sizes/normal_font_size = 49
 text = "Mientras dialogas no hay una cuenta atrás pero sí debes intentar atrapar el diálogo. Tienes que clickar la opcion que te parezca mejor.
@@ -473,5 +474,15 @@ position = Vector2(1358, 429)
 scale = Vector2(0.56, 0.56)
 sprite_frames = SubResource("SpriteFrames_2tno2")
 autoplay = "default"
+
+[node name="Label" type="Label" parent="." unique_id=500797320]
+offset_top = 72.0
+offset_right = 803.0
+offset_bottom = 204.0
+theme = ExtResource("4_lk7sw")
+theme_override_fonts/font = ExtResource("2_lno1t")
+theme_override_font_sizes/font_size = 48
+text = "TUTORIAL"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
