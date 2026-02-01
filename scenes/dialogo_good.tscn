@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcghwhylrvt6o"]
 
-[ext_resource type="Script" uid="uid://bk2w0qsfrn6mr" path="res://scripts/dialogo_good.gd" id="1_1m4v6"]
+[ext_resource type="Script" path="res://scripts/dialogo_good.gd" id="1_1m4v6"]
 [ext_resource type="Texture2D" uid="uid://bpd4a64bu2i5i" path="res://ASSETS/PETALOS_VERDES.png" id="1_l07bd"]
 [ext_resource type="AudioStream" uid="uid://cgsiy2guatvxj" path="res://ASSETS/EFECTOS_DE_SONIDO/CORRECTO1.mp3" id="2_y5osx"]
 
@@ -24,6 +24,7 @@ scale_max = 3.0
 anim_offset_max = 1.0
 
 [node name="efecto_brillos" type="GPUParticles2D" unique_id=330267844]
+z_index = 2
 material = SubResource("CanvasItemMaterial_c2l5p")
 position = Vector2(1004, 496)
 emitting = false
