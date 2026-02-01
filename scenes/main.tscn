@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="6_tefeu"]
 [ext_resource type="AudioStream" uid="uid://csofjh6xvupqx" path="res://ASSETS/EFECTOS_DE_SONIDO/SUELA2.mp3" id="7_85g3d"]
 [ext_resource type="AudioStream" uid="uid://cejk7kd0836rj" path="res://ASSETS/EFECTOS_DE_SONIDO/SUSURROS.mp3" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://bmxnj5fsq2m2b" path="res://DIALOGO/caja_dialogo_labels.tscn" id="10_choun"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
 
@@ -442,6 +443,16 @@ grow_vertical = 2
 texture = ExtResource("3_o6xl0")
 
 [node name="dialogo_labels" parent="." unique_id=1587499215 instance=ExtResource("2_sugp2")]
+anchor_left = 0.257
+anchor_top = 0.804
+anchor_right = 0.882
+anchor_bottom = 1.0
+offset_left = -0.44000244
+offset_top = -0.32000732
+offset_right = -0.44006348
+offset_bottom = -12.0
+
+[node name="CajaDialogoLabels" parent="." unique_id=1643803413 instance=ExtResource("10_choun")]
 anchor_left = 0.257
 anchor_top = 0.804
 anchor_right = 0.882
