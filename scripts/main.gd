@@ -91,7 +91,6 @@ func send_change_scene_to_dialogue_signal():
 	AudioServer.set_bus_effect_enabled(1, 0, true)
 	Global.change_scene_to_dialogue.emit()
 	AudioServer.set_bus_mute(2,true)
-	$BarkLabel.visible = false
 
 
 func send_change_scene_to_dance_signal():
