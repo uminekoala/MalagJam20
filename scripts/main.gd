@@ -15,6 +15,7 @@ func _ready() -> void:
 	Global.connect("transition_to_dance", on_transition_to_dance)
 	Global.connect("dialogue_feedback", on_dialogue_feedback)
 	$pulso.play("pulso")
+	print(AudioServer.get_bus_index("FX"))
 	AudioServer.set_bus_mute(2,true)
 	Global.connect("finish", on_finish_game)
 	$susurros.play()

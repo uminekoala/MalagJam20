@@ -495,8 +495,12 @@ scale = Vector2(1.92, 1.92)
 [node name="Sprite2D" parent="MinijuegoBaile/PJbaile" index="0" unique_id=1441209124]
 scale = Vector2(4.1, 4.1)
 
+[node name="AudioStreamPlayer2D" parent="MinijuegoBaile/PJbaile" index="8" unique_id=714600341]
+bus = &"FX"
+
 [node name="AudioStreamPlayer2D2" parent="MinijuegoBaile/PJbaile" index="9" unique_id=1338234348]
 stream = ExtResource("8_choun")
+bus = &"FX"
 
 [node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="11" unique_id=2006634766]
 position = Vector2(0, 0)
