@@ -220,18 +220,18 @@ _data = {
 script = ExtResource("1_ekxnf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1682949456]
-offset_left = 134.0
-offset_top = 47.0
-offset_right = 2090.0
-offset_bottom = 1150.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 1949.0
+offset_bottom = 1100.0
 color = Color(0.43137255, 0.19607843, 0.14901961, 1)
 
 [node name="Label" type="Label" parent="." unique_id=344284517]
 texture_filter = 1
-offset_left = 430.0
-offset_top = 228.0
-offset_right = 1477.0
-offset_bottom = 538.0
+offset_left = 481.0
+offset_top = 199.0
+offset_right = 1381.0
+offset_bottom = 509.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 2
@@ -252,8 +252,8 @@ theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_rtw2f")
 theme_override_font_sizes/font_size = 70
-text = "Y aún asi
-¿Quieres bailar?"
+text = "¿Y aún asi
+Quieres bailar?"
 horizontal_alignment = 1
 
 [node name="PanelbotonesPrincipales" type="Panel" parent="." unique_id=275460533]
@@ -269,11 +269,14 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_wu84c")
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = -123.0
-offset_top = 170.0
-offset_right = 7.0
-offset_bottom = 201.0
+offset_left = -115.0
+offset_top = 180.0
+offset_right = 41.0
+offset_bottom = 212.0
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_rtw2f")
+theme_override_font_sizes/font_size = 25
 text = "Por supuesto"
 flat = true
 
@@ -286,20 +289,26 @@ offset_top = 445.0
 offset_right = -303.0
 offset_bottom = 476.0
 theme_override_fonts/font = ExtResource("2_rtw2f")
+theme_override_font_sizes/font_size = 25
 text = "Tutorial
 "
+flat = true
 
 [node name="btnSalir" type="Button" parent="PanelbotonesPrincipales" unique_id=2072437338]
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 272.0
-offset_top = 175.0
-offset_right = 451.0
-offset_bottom = 206.0
+offset_left = 261.0
+offset_top = 182.0
+offset_right = 440.0
+offset_bottom = 214.0
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_rtw2f")
-text = "SAL DE AQUI TRAIDOR
+theme_override_font_sizes/font_size = 25
+text = "Huir
 "
+flat = true
 
 [node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
 modulate = Color(1, 1, 1, 0.5882353)
@@ -387,7 +396,6 @@ theme_override_fonts/font = ExtResource("2_rtw2f")
 text = "TRIGGER WARNINGS"
 
 [node name="fundidoNegro" type="ColorRect" parent="." unique_id=898226042]
-visible = false
 z_index = 2
 offset_right = 1932.0
 offset_bottom = 1090.0
@@ -398,13 +406,11 @@ libraries/ = SubResource("AnimationLibrary_bqqt6")
 autoplay = &"blackout"
 
 [node name="Telon" type="Sprite2D" parent="." unique_id=1501062602]
-visible = false
 z_index = 2
 position = Vector2(1351, 572)
 texture = ExtResource("4_wu84c")
 
 [node name="Telon2" type="Sprite2D" parent="." unique_id=1105778588]
-visible = false
 z_index = 2
 position = Vector2(446, 565)
 texture = ExtResource("4_wu84c")
