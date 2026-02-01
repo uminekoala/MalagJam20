@@ -417,11 +417,10 @@ scale = Vector2(3.2152267, 1.9111235)
 texture = ExtResource("1_l6cm7")
 
 [node name="PanelbotonesPrincipales2" type="Panel" parent="." unique_id=656709545]
-visible = false
 z_index = 1
-offset_left = 18.0
+offset_left = -16.0
 offset_top = 2.0
-offset_right = 1917.0
+offset_right = 1944.0
 offset_bottom = 1096.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelbotonesPrincipales2" unique_id=1977871413]
