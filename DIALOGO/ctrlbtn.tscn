@@ -6,12 +6,21 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53h0m"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nunm5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gag0t"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oria"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oe7xb"]
 
 [sub_resource type="Theme" id="Theme_53h0m"]
 Button/font_sizes/font_size = 32
 Button/styles/hover = SubResource("StyleBoxEmpty_53h0m")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_nunm5")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gag0t")
 Button/styles/normal = SubResource("StyleBoxEmpty_6oria")
+Button/styles/pressed = SubResource("StyleBoxEmpty_oe7xb")
 
 [sub_resource type="Animation" id="Animation_ahrur"]
 length = 0.001
