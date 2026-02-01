@@ -12,42 +12,44 @@ signal noTeMuevas
 var moverse:bool = false
 
 func _physics_process(delta: float) -> void:
-	if p_jbaile.visible == true:
-		if Input.is_action_just_pressed("tilemapArriba"):
-			if global_position.y > 300 && moverse:
-				position.y -= 224
-				moverse = false
-				pisada.play()
-			else:
-				error.play("Error")
-				emit_signal("noTeMuevas")
-		if Input.is_action_just_pressed("tilemapAbajo"):
-			if global_position.y < 580 && moverse:
-				position.y += 224
-				moverse = false
-				pisada.play()
-			else:
-				error.play("Error")
-				emit_signal("noTeMuevas")
-		if Input.is_action_just_pressed("tilemapDerecha"):
-			if global_position.x < 580 && moverse:
-				position.x += 224
-				moverse = false
-				pisada.play()
-			else:
-				error.play("Error")
-				emit_signal("noTeMuevas")
-		if Input.is_action_just_pressed("tilemapIzquierda"):
-			if global_position.x > 280 && moverse:
-				position.x -= 224
-				moverse = false
-				pisada.play()
-			else:
-				error.play("Error")
-				emit_signal("noTeMuevas")
-		if Input.is_action_just_pressed("espacio"):
-			pisoton.play()
-			$Timer.start()
+	if DialogoController.puedes_moverte_don_jugador:
+		if p_jbaile.visible == true:
+			if Input.is_action_just_pressed("tilemapArriba"):
+				if global_position.y > 300 && moverse:
+					position.y -= 224
+					moverse = false
+					pisada.play()
+				else:
+					error.play("Error")
+					emit_signal("noTeMuevas")
+			if Input.is_action_just_pressed("tilemapAbajo"):
+				if global_position.y < 580 && moverse:
+					position.y += 224
+					moverse = false
+					pisada.play()
+				else:
+					error.play("Error")
+					emit_signal("noTeMuevas")
+			if Input.is_action_just_pressed("tilemapDerecha"):
+				if global_position.x < 580 && moverse:
+					position.x += 224
+					moverse = false
+					pisada.play()
+				else:
+					error.play("Error")
+					emit_signal("noTeMuevas")
+			if Input.is_action_just_pressed("tilemapIzquierda"):
+				if global_position.x > 280 && moverse:
+					position.x -= 224
+					moverse = false
+					pisada.play()
+				else:
+					error.play("Error")
+					emit_signal("noTeMuevas")
+			if Input.is_action_just_pressed("espacio"):
+				pisoton.play()
+				$Timer.start()
+	
 	
 
 	# Add the gravity.
