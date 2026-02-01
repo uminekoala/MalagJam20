@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bq1ywsuahngiw" path="res://scenes/minijuego_baile.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="6_tefeu"]
-[ext_resource type="AudioStream" uid="uid://csofjh6xvupqx" path="res://ASSETS/EFECTOS_DE_SONIDO/SUELA2.mp3" id="7_85g3d"]
+[ext_resource type="AudioStream" uid="uid://djytr2lqb0625" path="res://ASSETS/EFECTOS_DE_SONIDO/STOMP3.mp3" id="8_choun"]
 [ext_resource type="AudioStream" uid="uid://cejk7kd0836rj" path="res://ASSETS/EFECTOS_DE_SONIDO/SUSURROS.mp3" id="8_tipki"]
-[ext_resource type="PackedScene" uid="uid://bmxnj5fsq2m2b" path="res://DIALOGO/caja_dialogo_labels.tscn" id="10_choun"]
+[ext_resource type="PackedScene" path="res://DIALOGO/caja_dialogo_labels.tscn" id="10_choun"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
 
@@ -437,7 +437,7 @@ scale = Vector2(1.92, 1.92)
 scale = Vector2(4.1, 4.1)
 
 [node name="AudioStreamPlayer2D2" parent="MinijuegoBaile/PJbaile" index="9" unique_id=1338234348]
-stream = ExtResource("7_85g3d")
+stream = ExtResource("8_choun")
 
 [node name="CollisionShape2D" parent="MinijuegoBaile/PJbaile" index="11" unique_id=2006634766]
 position = Vector2(0, 0)
