@@ -16,7 +16,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("tilemapArriba"):
 			if global_position.y > 400 && moverse:
 				position.y -= 256
-				moverse = false				
+				moverse = false
+				pisada.play()
 			else:
 				error.play("Error")
 				emit_signal("noTeMuevas")
