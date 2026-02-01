@@ -1,12 +1,34 @@
 extends Control
-@onready var pun=Global.puntos
-@onready var sprite=$Luna
-func _ready():
+var finished_sentence = false
+@onready var final1="El verdadero arte reside en mentir y que te crean. Tú y yo podemos reescribir la historia."
+@onready var final2="El verdadero arte reside en mentir y que te crean. Tus palabras me seducen, pero tu máscara es cristalina."
+@onready var final3="El verdadero arte reside en mentir y que te crean. Por desgracia, has bailado a mi son."
+@onready var final4="Una persona como tú no merece llevar la luna. Una patética excusa de artista."
+@onready var pun=30
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	finale_t()
+	pun=Global.puntos
+	print("pun:")
+	print(pun)
+	$AudioStreamPlayer.play()
+	$ScrollContainer/finale/AnimationPlayerfin.play("new_animation")
+	
+func finale_t():
+	
 	if pun>=20:
-		sprite.texture=load("res://ASSETS/LUNA_FASE_4.png")
+		$ScrollContainer/finale.text = final1
+		$Luna.texture = load("res://ASSETS/LUNA_FASE_4.png")
 	elif 20>pun && pun>15:
-		sprite.texture=load("res://ASSETS/LUNA_FASE_3.png")
-	elif 15>pun&& pun>12:
-		sprite.texture=load("res://ASSETS/LUNA_FASE_2.png")
+		print(" final??")
+		$ScrollContainer/finale.text = final2
+		$Luna.texture = load("res://ASSETS/LUNA_FASE_3.png")
+	elif 15>pun && pun>12:
+		$ScrollContainer/finale.text = final3
+		$Luna.texture = load("res://ASSETS/LUNA_FASE_2.png")
 	elif pun<10:
-		sprite.texture=load("res://ASSETS/LUNA_FASE_1.png")
+		$ScrollContainer/finale.text = final4
+		$Luna.texture = load("res://ASSETS/LUNA_FASE_1.png")
+	$ScrollContainer/finale/AnimationPlayerfin.play("texto")

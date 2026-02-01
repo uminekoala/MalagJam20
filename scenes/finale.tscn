@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://88pw6xhn0dsm"]
 
 [ext_resource type="Texture2D" uid="uid://7cio5ryfyprc" path="res://ASSETS/FONDO.png" id="1_kaf1w"]
-[ext_resource type="Script" uid="uid://bj4be5r46ijth" path="res://scripts/finale.gd" id="1_kh2f6"]
 [ext_resource type="Script" uid="uid://bgn7gc3it6pb6" path="res://scripts/sprite.gd" id="1_nwj6o"]
 [ext_resource type="Texture2D" uid="uid://b8opqg8orcu3y" path="res://ASSETS/ARCOS.png" id="2_780xw"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_28ree"]
-[ext_resource type="Script" uid="uid://00ruqrb867u1" path="res://scripts/scroll_containerfin.gd" id="3_37bed"]
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="4_kh2f6"]
 [ext_resource type="AudioStream" uid="uid://xdrwhb1hqnkg" path="res://ASSETS/MUSICA/FASE 4.mp3" id="8_tnm2q"]
 
@@ -91,6 +89,43 @@ default_font_size = 30
 
 [sub_resource type="Theme" id="Theme_tnm2q"]
 
+[sub_resource type="Animation" id="Animation_okvcj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_thyo6"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mud52"]
+_data = {
+&"RESET": SubResource("Animation_okvcj"),
+&"new_animation": SubResource("Animation_thyo6")
+}
+
 [node name="Control" type="Control" unique_id=788732252]
 texture_filter = 1
 layout_mode = 3
@@ -108,11 +143,14 @@ anchors_preset = -1
 anchor_left = 0.665
 anchor_right = 1.0
 anchor_bottom = 0.435
+offset_left = -33.400024
+offset_top = 106.0
+offset_right = 23.400024
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_kh2f6")
 horizontal_scroll_mode = 0
-script = ExtResource("1_kh2f6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerpunt" unique_id=1334178856]
 custom_minimum_size = Vector2(700, 0)
@@ -146,19 +184,26 @@ libraries/ = SubResource("AnimationLibrary_tnm2q")
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1237124915]
 z_index = 2
 layout_mode = 0
-offset_right = 541.0
-offset_bottom = 406.0
+offset_left = 127.0
+offset_top = 78.0
+offset_right = 1827.0
+offset_bottom = 484.0
 theme = SubResource("Theme_nwj6o")
-script = ExtResource("3_37bed")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
 
 [node name="finale" type="RichTextLabel" parent="ScrollContainer" unique_id=625489620]
 z_index = 6
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(1700, 200)
 layout_mode = 2
 theme = SubResource("Theme_tnm2q")
 text = "Prueba del final"
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="AnimationPlayerfin" type="AnimationPlayer" parent="ScrollContainer/finale" unique_id=1204694857]
+libraries/ = SubResource("AnimationLibrary_mud52")
 
 [node name="fondo" type="TextureRect" parent="." unique_id=2117272456]
 layout_mode = 0
@@ -174,8 +219,12 @@ offset_bottom = 144.0
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("2_780xw")
 
-[node name="Luna" type="Sprite2D" parent="." unique_id=1401984394]
-position = Vector2(971.00006, 691)
+[node name="Luna" type="TextureRect" parent="." unique_id=1716110331]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 309.0
+offset_right = 712.0
+offset_bottom = 437.0
 scale = Vector2(6.025, 6.025)
 texture = ExtResource("4_kh2f6")
 
