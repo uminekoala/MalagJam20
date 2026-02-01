@@ -104,9 +104,11 @@ func move_luna(is_right):
 	if (is_right):
 		$TrailTimer.start()
 		$TrailAnimator.play("trail")
+		$CajaDialogoLabels/NameLuna/Derecha.play("pos")
 	else:
 		$TrailLeftTimer.start()
 		$TrailAnimatorLeft.play("trail_left")
+		$CajaDialogoLabels/NameLuna/Izquierda.play("pos")
 		
 
 func _on_button_pressed() -> void:

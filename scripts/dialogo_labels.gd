@@ -35,7 +35,6 @@ func on_purge_dialogue_labels():
 func on_first_response():
 	is_first_scene = true
 	finished_sentence = true
-	$VBoxContainer/MoonNameLabel.visible_characters = -1
 	$VBoxContainer/MoonDialogueLabel.text = "... Por supuesto."
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 
@@ -44,7 +43,6 @@ func on_response(line, final, finish):
 	is_final = final
 	finished_sentence = true
 	is_finish = finish
-	$VBoxContainer/MoonNameLabel.visible_characters = -1
 	$VBoxContainer/MoonDialogueLabel.text = line
 	$VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
 

@@ -79,17 +79,6 @@ script = ExtResource("2_brfdx")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MoonNameLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1875214008]
-layout_mode = 2
-theme_override_colors/default_color = Color(1, 0.94066465, 0.99953514, 1)
-theme_override_font_sizes/normal_font_size = 60
-text = "La Luna
-"
-fit_content = true
-scroll_active = false
-visible_characters = 0
-visible_ratio = 0.0
-
 [node name="MoonDialogueLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1833080175]
 layout_mode = 2
 text = "
