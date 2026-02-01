@@ -7,6 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://bdenlqe0jy8tm" path="res://ASSETS/LUNA_FASE_1.png" id="4_kh2f6"]
 [ext_resource type="AudioStream" uid="uid://xdrwhb1hqnkg" path="res://ASSETS/MUSICA/FASE 4.mp3" id="8_tnm2q"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37bed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwj6o"]
+
+[sub_resource type="Theme" id="Theme_okvcj"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("3_28ree")
+Button/styles/hover = SubResource("StyleBoxEmpty_37bed")
+Button/styles/normal = SubResource("StyleBoxEmpty_nwj6o")
+
 [sub_resource type="Theme" id="Theme_kh2f6"]
 default_font = ExtResource("3_28ree")
 default_font_size = 60
@@ -150,6 +160,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_okvcj")
 script = ExtResource("1_nwj6o")
 
 [node name="ScrollContainerpunt" type="ScrollContainer" parent="." unique_id=1985001648]
@@ -247,3 +258,13 @@ texture = ExtResource("4_kh2f6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2055451923]
 stream = ExtResource("8_tnm2q")
+
+[node name="Button" type="Button" parent="." unique_id=809770011]
+layout_mode = 0
+offset_left = 1538.0
+offset_top = 919.0
+offset_right = 1815.0
+offset_bottom = 1033.0
+text = "Menú Principal"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -40,3 +40,7 @@ func finale_t():
 		$ScrollContainer/finale.text = final4
 		$Luna.texture = load("res://ASSETS/LUNA_FASE_1.png")
 	$ScrollContainer/finale/AnimationPlayerfin.play("texto")
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
