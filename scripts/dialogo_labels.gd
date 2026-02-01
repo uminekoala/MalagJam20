@@ -17,15 +17,18 @@ func _process(delta: float) -> void:
 		Global.transition_to_dance.emit()
 		is_first_scene = false
 		is_final = false
-	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && finished_sentence && !is_first_scene && !is_final:
+	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_finish && Input.is_action_just_pressed("accion"):
+		DialogoController.launch_buttons_flag = false
+		print("parando aqui")
+		Global.finish.emit(Global.puntos)
+	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && finished_sentence && !is_first_scene && !is_final && !is_finish:
 		finished_sentence = false
 		DialogoController.launch_buttons_flag = true
+		print("claramente parando aqui")
 	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_final && Input.is_action_just_pressed("accion"):
 		is_final = false
 		Global.transition_to_dance.emit()
-	elif $VBoxContainer/MoonDialogueLabel.visible_ratio == 1 && is_finish && Input.is_action_just_pressed("accion"):
-		is_finish = false
-		Global.finish.emit(Global.puntos)
+	
 
 
 func on_purge_dialogue_labels():
