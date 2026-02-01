@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmxnj5fsq2m2b"]
 
+[ext_resource type="Texture2D" uid="uid://b675ca6f0p081" path="res://ASSETS/CAJA_DE_TEXTO44.png" id="1_otdms"]
 [ext_resource type="PackedScene" uid="uid://1wdjlpsyyf36" path="res://DIALOGO/dialogo_labels.tscn" id="1_toole"]
-[ext_resource type="Texture2D" uid="uid://63848g1cjiok" path="res://ASSETS/CAJA_DE_TEXTO.png" id="2_vouhn"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="3_otdms"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vouhn"]
@@ -100,7 +100,7 @@ offset_bottom = -39.760025
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_vouhn")
+texture = ExtResource("1_otdms")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1431499802]
 layout_mode = 1
