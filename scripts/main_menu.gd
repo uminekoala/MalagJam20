@@ -15,6 +15,7 @@ extends Node2D
 func _ready() -> void:
 	var eq = AudioServer.get_bus_effect(1, 0)
 	
+	AudioServer.set_bus_mute(2,true)
 	AudioServer.set_bus_effect_enabled(1, 0, false)
 	animation_player.autoplay
 	Global.puntos = 0
