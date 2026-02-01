@@ -10,6 +10,8 @@ var finished_sentence = false
 func _ready() -> void:
 	finale_t()
 	pun=Global.puntos
+	print(pun)
+	print(pun)
 func finale_t():
 	
 	if pun>=20:
