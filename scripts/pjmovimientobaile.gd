@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("tilemapArriba"):
 			if global_position.y > 300 && moverse:
 				position.y -= 224
-				moverse = false		
+				moverse = false
 				pisada.play()
 			else:
 				error.play("Error")
@@ -71,6 +71,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_paso_animation_finished(anim_name: StringName) -> void:
 	moverse = true
+	$AnimatedSprite2D.visible = false
+	$AnimatedSprite2D2.visible = false
+	$AnimatedSprite2D3.visible = false
+	$AnimatedSprite2D4.visible = false
 	$Paso.play()
 
 
@@ -80,3 +84,7 @@ func _on_timer_timeout() -> void:
 	$AnimatedSprite2D3.visible = false
 	$AnimatedSprite2D4.visible = false
 	$AnimationPlayer.stop()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	pass # Replace with function body.
