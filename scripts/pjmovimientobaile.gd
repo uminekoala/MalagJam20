@@ -46,15 +46,6 @@ func _physics_process(delta: float) -> void:
 				emit_signal("noTeMuevas")
 		if Input.is_action_just_pressed("espacio"):
 			pisoton.play()
-			$AnimatedSprite2D.visible = true
-			$AnimatedSprite2D2.visible = true
-			$AnimatedSprite2D3.visible = true
-			$AnimatedSprite2D4.visible = true
-			$AnimatedSprite2D.play("default")
-			$AnimatedSprite2D2.play("default")
-			$AnimatedSprite2D3.play("default")
-			$AnimatedSprite2D4.play("default")
-			$AnimationPlayer.play("MOVE")
 			$Timer.start()
 	
 

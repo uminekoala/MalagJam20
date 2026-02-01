@@ -27,16 +27,31 @@ func _process(delta: float) -> void:
 			print(" mi amor por ti")
 			print("SUPER NICE COCK")
 			if $CasillaBaile/AnimationPlayer/Timer.time_left < 1.0:
-				feedback.text = "OMEGA GIGA NICE COCK"
 				Global.puntos += 2
+				$PJbaile/AnimatedSprite2D.visible = true
+				$PJbaile/AnimatedSprite2D2.visible = true
+				$PJbaile/AnimatedSprite2D3.visible = true
+				$PJbaile/AnimatedSprite2D4.visible = true
+				$PJbaile/AnimatedSprite2D/AnimatedSprite2D5.visible = true
+				$PJbaile/AnimatedSprite2D2/AnimatedSprite2D6.visible = true
+				$PJbaile/AnimatedSprite2D3/AnimatedSprite2D7.visible = true
+				$PJbaile/AnimatedSprite2D4/AnimatedSprite2D8.visible = true
+				$PJbaile/AnimationPlayer.play("MOVE_GREAT")
 			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 2.0 && $CasillaBaile/AnimationPlayer/Timer.time_left > 1.0:
 				Global.puntos += 1
-				feedback.text = "Only little GIGA NICE COCK"
+				$PJbaile/AnimatedSprite2D.visible = true
+				$PJbaile/AnimatedSprite2D2.visible = true
+				$PJbaile/AnimatedSprite2D3.visible = true
+				$PJbaile/AnimatedSprite2D4.visible = true
+				$PJbaile/AnimatedSprite2D/AnimatedSprite2D5.visible = false
+				$PJbaile/AnimatedSprite2D2/AnimatedSprite2D6.visible = false
+				$PJbaile/AnimatedSprite2D3/AnimatedSprite2D7.visible = false
+				$PJbaile/AnimatedSprite2D4/AnimatedSprite2D8.visible = false
+				$PJbaile/AnimationPlayer.play("MOVE")
 				print("only little GIGA NICE COCK")
 			$CasillaBaile/AnimationPlayer/Timer.stop()
 		else:
 			print("jauja")
-			feedback.text = "SAD COCK"
 			$CasillaBaile/AnimationPlayer/Timer.stop()
 			
 		%CasillaBaile.visible = false
