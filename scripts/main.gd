@@ -90,6 +90,7 @@ func on_transition_to_dance():
 
 func send_change_scene_to_dialogue_signal():
 	print("CAMBIAR ESCENA DIALOGO")
+	DialogoController.puedes_moverte_don_jugador = false
 	AudioServer.set_bus_effect_enabled(1, 0, true)
 	Global.change_scene_to_dialogue.emit()
 	AudioServer.set_bus_mute(2,true)
@@ -97,6 +98,7 @@ func send_change_scene_to_dialogue_signal():
 
 func send_change_scene_to_dance_signal():
 	print("CAMBIAR ESCENA BAILE")
+	DialogoController.puedes_moverte_don_jugador = true
 	AudioServer.set_bus_effect_enabled(1, 0, false)
 	Global.change_scene_to_dance.emit()
 	AudioServer.set_bus_mute(2,false)
