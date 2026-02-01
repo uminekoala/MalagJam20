@@ -125,4 +125,5 @@ func _on_p_jbaile_no_te_muevas() -> void:
 	var tam = fail_barks.size()
 	var rnd = randi_range(0,tam-1)
 	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel.text = fail_barks[rnd]
-	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("texto")
+	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/AnimationPlayer.play("bark")
+	$CajaDialogoLabels/PanelContainer/dialogo_labels/VBoxContainer/MoonDialogueLabel/Timer.start()
