@@ -73,10 +73,10 @@ func on_option_pressed(option_id):
 	if (final && !finish):
 		Global.response.emit(respuesta, true, false)
 		final = false
-	elif (!final && !finish):
-		Global.response.emit(respuesta, false, false)
-	else:
+	elif (finish):
 		Global.response.emit(respuesta,false,true)
+	else:
+		Global.response.emit(respuesta, false, false)
 	
 		
 

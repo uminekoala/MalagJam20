@@ -38,7 +38,7 @@ func on_dialogue_feedback(value):
 	$LunaPositionLeft.add_child(feedback)
 
 func on_finish_game(puntuacion):
-	pass
+	get_tree().change_scene_to_file("res://scenes/finale.tscn")
 
 func check_change_fase_skin():
 	var points = Global.puntos
