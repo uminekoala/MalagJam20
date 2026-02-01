@@ -178,21 +178,17 @@ scale = Vector2(1.75, 1.75)
 scale = Vector2(4, 4)
 
 [node name="AnimatedSprite2D" parent="PJbaile" index="2" unique_id=1482702703]
-visible = true
 rotation = 0.0
 frame_progress = 0.0
 flip_h = false
 
 [node name="AnimatedSprite2D2" parent="PJbaile" index="3" unique_id=1220457260]
-visible = true
 rotation = 0.0
 
 [node name="AnimatedSprite2D3" parent="PJbaile" index="4" unique_id=910974928]
-visible = true
 rotation = 0.0
 
 [node name="AnimatedSprite2D4" parent="PJbaile" index="5" unique_id=1819857426]
-visible = true
 rotation = 0.0
 flip_h = false
 
@@ -201,6 +197,10 @@ wait_time = 1.0
 
 [node name="AudioStreamPlayer2D" parent="PJbaile" index="8" unique_id=714600341]
 stream = ExtResource("6_38hs4")
+bus = &"Master"
+
+[node name="AudioStreamPlayer2D2" parent="PJbaile" index="9" unique_id=1338234348]
+bus = &"Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PJbaile" unique_id=2006634766]
 position = Vector2(0.25, 3.9999695)
@@ -251,6 +251,7 @@ offset_bottom = 310.0
 
 [node name="AudioPJ" type="AudioStreamPlayer2D" parent="." unique_id=1876835820]
 
+[connection signal="animation_finished" from="PJbaile/AnimationPlayer" to="PJbaile" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="CasillaBaile/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
 [connection signal="body_shape_entered" from="CasillaBaile/Area2D" to="." method="_on_area_2d_body_shape_entered"]
