@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6qeo1kjooj0c"]
 
 [ext_resource type="Texture2D" uid="uid://bsbl7tivq8q57" path="res://ASSETS/PETALOS_AMARILLOS.png" id="1_0x83n"]
-[ext_resource type="Script" uid="uid://bk2w0qsfrn6mr" path="res://scripts/dialogo_good.gd" id="2_v8emk"]
+[ext_resource type="Script" path="res://scripts/dialogo_good.gd" id="2_v8emk"]
 [ext_resource type="AudioStream" uid="uid://cgsiy2guatvxj" path="res://ASSETS/EFECTOS_DE_SONIDO/CORRECTO1.mp3" id="3_0b73j"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c2l5p"]
@@ -24,6 +24,7 @@ scale_max = 3.0
 anim_offset_max = 1.0
 
 [node name="efecto_brillosm" type="GPUParticles2D" unique_id=330267844]
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_c2l5p")
 position = Vector2(1004, 496)
 emitting = false
