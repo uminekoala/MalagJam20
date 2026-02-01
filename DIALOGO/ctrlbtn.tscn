@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://r4f3k7epbiva" path="res://DIALOGO/ctrlbtn.gd" id="1_ahrur"]
 [ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="2_6oria"]
+[ext_resource type="Theme" uid="uid://baquvosns5dwo" path="res://ASSETS/temaDialogos.tres" id="2_53h0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53h0m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oria"]
 
 [sub_resource type="Theme" id="Theme_53h0m"]
 Button/font_sizes/font_size = 32
+Button/styles/hover = SubResource("StyleBoxEmpty_53h0m")
 Button/styles/normal = SubResource("StyleBoxEmpty_6oria")
 
 [sub_resource type="Animation" id="Animation_ahrur"]
@@ -142,8 +146,9 @@ anchor_right = 0.15400001
 anchor_bottom = 0.268
 offset_left = 43.62
 offset_top = 83.0
-offset_right = 43.670635
+offset_right = 196.17
 offset_bottom = 83.00319
+theme = ExtResource("2_53h0m")
 theme_override_fonts/font = ExtResource("2_6oria")
 theme_override_font_sizes/font_size = 46
 
@@ -160,8 +165,9 @@ anchor_right = 0.40600002
 anchor_bottom = 0.40800002
 offset_left = 20.080002
 offset_top = 8.999992
-offset_right = 20.078735
+offset_right = 172.62999
 offset_bottom = 8.998291
+theme = ExtResource("2_53h0m")
 theme_override_fonts/font = ExtResource("2_6oria")
 theme_override_font_sizes/font_size = 46
 
@@ -178,8 +184,9 @@ anchor_right = 0.289
 anchor_bottom = 0.67
 offset_left = 413.98
 offset_top = -15.000015
-offset_right = 364.87454
-offset_bottom = -15.000366
+offset_right = 1415.845
+offset_bottom = -7.0
+theme = ExtResource("2_53h0m")
 theme_override_fonts/font = ExtResource("2_6oria")
 theme_override_font_sizes/font_size = 46
 

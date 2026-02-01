@@ -1,0 +1,28 @@
+[gd_resource type="Theme" format=3 uid="uid://baquvosns5dwo"]
+
+[ext_resource type="FontFile" uid="uid://mh07mbt76cx2" path="res://ASSETS/FONT/Alagard_esp.ttf" id="1_bbyxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyhfs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tefeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbgi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+bg_color = Color(0.9529412, 0.9529412, 0.9529412, 0.05882353)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.8392157, 0.2627451, 0.1882353, 1)
+Button/colors/font_hover_color = Color(0.84050715, 0.26452312, 0.18764716, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 22
+Button/fonts/font = ExtResource("1_bbyxc")
+Button/styles/disabled = SubResource("StyleBoxEmpty_o6xl0")
+Button/styles/focus = SubResource("StyleBoxEmpty_jyhfs")
+Button/styles/hover = SubResource("StyleBoxEmpty_tefeu")
+Button/styles/normal = SubResource("StyleBoxEmpty_tbgi4")
+Button/styles/pressed = SubResource("StyleBoxFlat_sugp2")
