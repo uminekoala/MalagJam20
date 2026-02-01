@@ -37,6 +37,18 @@ text = "TUTORIAL DIALOGO"
 
 [node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("2_laqf1")]
 
+[node name="AnimatedSprite2D" parent="MinijuegoBaile/PJbaile" parent_id_path=PackedInt32Array(1772075878, 581735157) index="2" unique_id=1482702703]
+visible = false
+
+[node name="AnimatedSprite2D2" parent="MinijuegoBaile/PJbaile" parent_id_path=PackedInt32Array(1772075878, 581735157) index="3" unique_id=1220457260]
+visible = false
+
+[node name="AnimatedSprite2D3" parent="MinijuegoBaile/PJbaile" parent_id_path=PackedInt32Array(1772075878, 581735157) index="4" unique_id=910974928]
+visible = false
+
+[node name="AnimatedSprite2D4" parent="MinijuegoBaile/PJbaile" parent_id_path=PackedInt32Array(1772075878, 581735157) index="5" unique_id=1819857426]
+visible = false
+
 [node name="Button" type="Button" parent="." unique_id=293709227]
 texture_filter = 1
 offset_left = 1650.0
