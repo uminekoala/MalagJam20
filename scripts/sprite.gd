@@ -13,14 +13,21 @@ func _ready() -> void:
 	pun=Global.puntos
 	print("pun:")
 	print(pun)
-	$AudioStreamPlayer.play()
-	$ScrollContainer/finale/AnimationPlayerfin.play("new_animation")
-	
+	punt()
+	puntuacion()
+func punt():
+	print("puntuacion")
+	$ScrollContainerpunt/VBoxContainer/textpunt.text = "Tu puntuación es:"
+	$ScrollContainerpunt/VBoxContainer/textpunt/AnimationPlayerpunt.play("texto")
+func puntuacion():
+	$ScrollContainerpunt/VBoxContainer/punt.text = str(Global.puntos)
+	$ScrollContainerpunt/VBoxContainer/punt/AnimationPlayerpuntu.play("texto")
 func finale_t():
-	
+	print("finale")
 	if pun>=20:
 		$ScrollContainer/finale.text = final1
 		$Luna.texture = load("res://ASSETS/LUNA_FASE_4.png")
+		print("final1")
 	elif 20>pun && pun>15:
 		print(" final??")
 		$ScrollContainer/finale.text = final2

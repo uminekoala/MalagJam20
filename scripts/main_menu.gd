@@ -4,7 +4,8 @@ extends Node2D
 @onready var panelbotones_principales: Panel = $PanelbotonesPrincipales
 @onready var panelbotones_principales_2: Panel = $PanelbotonesPrincipales2
 @onready var blackout: AnimationPlayer = $blackout
-@onready var texture_button: TextureButton = $TextureButton
+@onready var btn_triggers: Button = $PanelbotonesPrincipales/btnTriggers
+
 @onready var fundido_negro: ColorRect = $fundidoNegro
 @onready var telon: Sprite2D = $Telon
 @onready var telon_2: Sprite2D = $Telon2
@@ -28,7 +29,7 @@ func _process(delta: float) -> void:
 	if !blackout.is_playing():
 		panelbotones_principales.z_index =5
 		panelbotones_principales_2.z_index =5
-		texture_button.z_index = 5
+		btn_triggers.z_index = 5
 		fundido_negro.visible = false
 		telon.visible = false
 		telon_2.visible = false
@@ -47,8 +48,7 @@ func _on_btn_volver_pressed() -> void:
 
 func _on_texture_button_pressed() -> void:
 	
-	panelbotones_principales.visible = false
-	panelbotones_principales_2.visible= true
+
 	pass # Replace with function body.
 
 
@@ -61,4 +61,10 @@ func _on_button_pressed() -> void:
 func _on_btn_controles_pressed() -> void:
 	
 	get_tree().change_scene_to_file("res://scenes/tutorialBaile.tscn")
+	pass # Replace with function body.
+
+
+func _on_btn_triggers_pressed() -> void:
+	panelbotones_principales.visible = false
+	panelbotones_principales_2.visible= true
 	pass # Replace with function body.
