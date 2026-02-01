@@ -379,6 +379,7 @@ Quieres bailar?"
 horizontal_alignment = 1
 
 [node name="LuzFoco2" type="Line2D" parent="." unique_id=699705919]
+visible = false
 modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 points = PackedVector2Array(109, 65, 110, 64)
@@ -392,6 +393,7 @@ sharp_limit = 30.0
 round_precision = 24
 
 [node name="LuzFoco" type="Line2D" parent="." unique_id=1557391889]
+visible = false
 modulate = Color(1, 1, 1, 0.5882353)
 z_index = 4
 position = Vector2(1762, 953)
@@ -417,11 +419,10 @@ scale = Vector2(3.2152267, 1.9111235)
 texture = ExtResource("1_l6cm7")
 
 [node name="PanelbotonesPrincipales2" type="Panel" parent="." unique_id=656709545]
-visible = false
 z_index = 1
-offset_left = 18.0
+offset_left = -16.0
 offset_top = 2.0
-offset_right = 1917.0
+offset_right = 1944.0
 offset_bottom = 1096.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelbotonesPrincipales2" unique_id=1977871413]
