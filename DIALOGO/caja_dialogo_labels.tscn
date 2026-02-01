@@ -111,6 +111,7 @@ anchor_right = 0.91400003
 anchor_bottom = 0.84000003
 offset_left = 0.3999939
 offset_right = 0.19995117
+pivot_offset = Vector2(15, 15)
 theme = SubResource("Theme_otdms")
 
 [node name="dialogo_labels" parent="PanelContainer" unique_id=1587499215 instance=ExtResource("1_toole")]
