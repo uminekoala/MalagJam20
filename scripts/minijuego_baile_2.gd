@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 				$PJbaile/AnimatedSprite2D3/AnimatedSprite2D7.visible = true
 				$PJbaile/AnimatedSprite2D4/AnimatedSprite2D8.visible = true
 				$PJbaile/AnimationPlayer.play("MOVE_GREAT")
+				$Correcto2.play()
 			elif $CasillaBaile/AnimationPlayer/Timer.time_left < 2.0 && $CasillaBaile/AnimationPlayer/Timer.time_left > 1.0:
 				Global.puntos += 1
 				$PJbaile/AnimatedSprite2D.visible = true
@@ -49,6 +50,7 @@ func _process(delta: float) -> void:
 				$PJbaile/AnimatedSprite2D4/AnimatedSprite2D8.visible = false
 				$PJbaile/AnimationPlayer.play("MOVE")
 				print("only little GIGA NICE COCK")
+				$Correcto.play()
 			$CasillaBaile/AnimationPlayer/Timer.stop()
 		else:
 			print("jauja")
