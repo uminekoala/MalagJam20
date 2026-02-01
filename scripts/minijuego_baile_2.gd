@@ -64,7 +64,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		print(%PJbaile.global_position)
 		dondeAndaras = tuMovimiento(%PJbaile.global_position)
 		print("a veer : " + str(dondeAndaras))
-		%CasillaBaile.global_position = Vector2((dondeAndaras.x * 256)+128, (dondeAndaras.y * 256)+ 156)
+		%CasillaBaile.global_position = Vector2((dondeAndaras.x * 224) + 112, (dondeAndaras.y * 224) + 96)
 		print("a veer transformao: " + str(%CasillaBaile.global_position))
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
@@ -84,7 +84,7 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 		$CasillaBaile/Area2D/CollisionShape2D.disabled = false
 		
 func tuMovimiento(movimiento: Vector2):
-	movimiento = Vector2((movimiento.x + 2) / 256, (movimiento.y - 28) / 256) - Vector2(1,1)
+	movimiento = Vector2((movimiento.x + 2) / 224, (movimiento.y + 16 ) / 224) - Vector2(1,1)
 	print("este es el mov: " + str(movimiento))
 	if movimiento == Vector2(2,2):
 		movimiento = [Vector2(1,2),Vector2(2,1),Vector2(2,0),Vector2(1,1),Vector2(0,2)].pick_random()
