@@ -7,7 +7,7 @@
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 3
-RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 42
 RichTextLabel/fonts/normal_font = ExtResource("1_brfdx")
 VBoxContainer/constants/separation = 15
 
@@ -65,7 +65,7 @@ size_flags_horizontal = 3
 [node name="MoonNameLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1875214008]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.94066465, 0.99953514, 1)
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 60
 text = "La Luna
 "
 fit_content = true

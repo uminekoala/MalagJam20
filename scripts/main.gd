@@ -6,7 +6,7 @@ var timer
 var botones
 
 
-@onready var fail_barks = ["¿Tienes alguna prisa?", "Al compás, cariño", "¡Me has pisado!", "Es evidente que tu alma no reposa en alta cuna."]
+@onready var fail_barks = ["¿Tienes alguna prisa?", "Al compás, cariño.", "¡Me has pisado!", "Es evidente que tu alma no reposa en alta cuna."]
 
 
 # Called when the node enters the scene tree for the first time.
