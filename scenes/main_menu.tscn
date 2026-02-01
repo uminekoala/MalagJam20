@@ -321,6 +321,18 @@ _data = {
 &"movertitulo": SubResource("Animation_oa1go")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="MainMenu" type="Node2D" unique_id=1085622922]
 script = ExtResource("1_ekxnf")
 
@@ -467,6 +479,7 @@ offset_left = -16.0
 offset_top = 2.0
 offset_right = 1944.0
 offset_bottom = 1096.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelbotonesPrincipales2" unique_id=1977871413]
 texture_filter = 1
@@ -477,7 +490,7 @@ offset_right = 1145.0
 offset_bottom = 684.0
 theme_override_fonts/normal_font = ExtResource("2_rtw2f")
 theme_override_font_sizes/normal_font_size = 39
-text = "Odio, discriminación y Poresión.
+text = "Odio, discriminación y opresión.
 
 Guerra y genocidio"
 horizontal_alignment = 1

@@ -45,6 +45,7 @@ func _on_btn_volver_pressed() -> void:
 	panelbotones_principales_2.visible= false
 	$Label.visible = true
 	$Label2.visible = true
+	$PanelbotonesPrincipales.visible = true
 	pass # Replace with function body.
 
 
