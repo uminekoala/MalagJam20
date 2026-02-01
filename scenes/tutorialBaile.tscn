@@ -14,18 +14,6 @@ offset_right = 1996.0
 offset_bottom = 1240.0
 color = Color(0, 0, 0, 1)
 
-[node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("2_laqf1")]
-position = Vector2(0, -32)
-
-[node name="Button" type="Button" parent="." unique_id=86668513]
-texture_filter = 1
-offset_left = 1636.0
-offset_top = 936.0
-offset_right = 1849.0
-offset_bottom = 1070.0
-theme_override_fonts/font = ExtResource("3_laqf1")
-text = "VOLVER"
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1189824939]
 texture_filter = 1
 offset_left = 1031.0
@@ -47,8 +35,19 @@ offset_bottom = 1066.0
 theme_override_fonts/font = ExtResource("3_laqf1")
 text = "TUTORIAL DIALOGO"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="MinijuegoBaile" parent="." unique_id=1772075878 instance=ExtResource("2_laqf1")]
+
+[node name="Button" type="Button" parent="." unique_id=293709227]
+texture_filter = 1
+offset_left = 1650.0
+offset_top = 932.0
+offset_right = 1863.0
+offset_bottom = 1066.0
+theme_override_fonts/font = ExtResource("3_laqf1")
+text = "VOLVER"
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
 [editable path="MinijuegoBaile"]
 [editable path="MinijuegoBaile/PJbaile"]
