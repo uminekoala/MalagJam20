@@ -85,12 +85,13 @@ func calculos(vectorCalc: Vector2) -> void:
 		
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	print("OH NO??")
+	%Escenario.tile_set
 	if posicion < casillasPrimeraFase:
 		print("la global" + str(%PJbaile.global_position))
 		print("la local " + str(%PJbaile.position))
 		dondeAndaras = tuMovimiento(%PJbaile.global_position)
 		print("a veer : " + str(dondeAndaras))
-		%CasillaBaile.global_position = Vector2((dondeAndaras.x * 224) + 112, (dondeAndaras.y * 224) + 96)
+		%CasillaBaile.global_position = Vector2((dondeAndaras.x * %PJbaile.twoStep) + %Escenario.tile_set.tile_size.x*7, (dondeAndaras.y * %PJbaile.twoStep) + %Escenario.tile_set.tile_size.x*6)
 		print("a veer transformao: " + str(%CasillaBaile.global_position))
 		posicion += 1
 		$CasillaBaile/AnimationPlayer.play("fade_in")
@@ -110,7 +111,7 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 		$CasillaBaile/Area2D/CollisionShape2D.disabled = false
 		
 func tuMovimiento(movimiento: Vector2):
-	movimiento = Vector2((movimiento.x + 2) / 224, (movimiento.y + 16 ) / 224) - Vector2(1,1)
+	movimiento = Vector2((movimiento.x) / %PJbaile.twoStep, (movimiento.y) / %PJbaile.twoStep) - Vector2(1,1)
 	print("este es el mov: " + str(movimiento))
 	var radius = movimiento.distance_to(Vector2(movimiento.x,movimiento.y+2))
 	for i in range(0, 8):

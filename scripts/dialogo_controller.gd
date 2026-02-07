@@ -106,7 +106,7 @@ func load_dialogues():
 		var respuesta3 = config.get_value(section,"respuesta3")
 		var final = config.get_value(section,"final")
 		var finish = config.get_value(section,"finish")
-		print("uno")
+		
 
 		all_dialogue[i] = [option1,option2,option3,valor1,valor2,valor3,respuesta1,respuesta2,respuesta3,final,finish]
 		i += 1

@@ -9,8 +9,8 @@
 script = ExtResource("1_nbt8l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1337615712]
-offset_left = 6.0
-offset_top = 2.0
+offset_left = -33.0
+offset_top = -25.0
 offset_right = 1996.0
 offset_bottom = 1240.0
 color = Color(0, 0, 0, 1)

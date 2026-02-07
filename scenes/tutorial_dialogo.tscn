@@ -437,8 +437,8 @@ animations = [{
 script = ExtResource("1_mxhct")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1361301318]
-offset_left = 6.0
-offset_top = 2.0
+offset_left = -19.0
+offset_top = -19.0
 offset_right = 1996.0
 offset_bottom = 1240.0
 color = Color(0, 0, 0, 1)

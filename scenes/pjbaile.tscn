@@ -6,13 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://ux4k56c1m65j" path="res://ASSETS/EFECTOS_DE_SONIDO/PISADON.mp3" id="4_abq34"]
 [ext_resource type="Texture2D" uid="uid://dc2q18x1p1n66" path="res://ASSETS/brilli_brilli.png" id="4_p8b6x"]
 [ext_resource type="AudioStream" uid="uid://c611nyq0v46he" path="res://ASSETS/EFECTOS_DE_SONIDO/SUELA.mp3" id="5_uhjvr"]
+[ext_resource type="Texture2D" uid="uid://cqjsy33oo8ijp" path="res://ASSETS/ANIMACION_EFECTO_FALLO.png" id="7_6ccdm"]
 
 [sub_resource type="Animation" id="Animation_ujnbw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Pasos:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +28,7 @@ resource_name = "new_animation"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Pasos:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -455,8 +456,8 @@ resource_name = "Error"
 length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/enabled = false
+tracks/0/path = NodePath("Pasos:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -465,13 +466,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(2, 0), Vector2(-2, 0), Vector2(4, 0), Vector2(-6, 0), Vector2(4, 0), Vector2(-2, 0), Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pasos:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 0), Vector2(-2, 0), Vector2(4, 0), Vector2(-4, 0), Vector2(2, 0), Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6ccdm"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Pasos:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -480,6 +493,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pasos:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57at5"]
 _data = {
@@ -487,10 +512,53 @@ _data = {
 &"RESET": SubResource("Animation_6ccdm")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oajg2"]
+atlas = ExtResource("7_6ccdm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhjt3"]
+atlas = ExtResource("7_6ccdm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njir6"]
+atlas = ExtResource("7_6ccdm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wkvg"]
+atlas = ExtResource("7_6ccdm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13a83"]
+atlas = ExtResource("7_6ccdm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo2jj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oajg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhjt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njir6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wkvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13a83")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PJbaile" type="CharacterBody2D" unique_id=1069341549]
 script = ExtResource("1_ujnbw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441209124]
+[node name="Pasos" type="Sprite2D" parent="." unique_id=1441209124]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 position = Vector2(1, 0)
@@ -576,5 +644,14 @@ bus = &"FX"
 [node name="Error" type="AnimationPlayer" parent="." unique_id=1547414417]
 libraries/ = SubResource("AnimationLibrary_57at5")
 
+[node name="ErrorPolvo" type="AnimatedSprite2D" parent="." unique_id=1373127485]
+visible = false
+texture_filter = 1
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_fo2jj")
+frame = 4
+frame_progress = 1.0
+
 [connection signal="animation_finished" from="Paso" to="." method="_on_paso_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="ErrorPolvo" to="." method="_on_error_polvo_animation_finished"]

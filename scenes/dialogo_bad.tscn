@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://v4uke1lu6mch"]
 
 [ext_resource type="Texture2D" uid="uid://dpxm2l8d3f3ha" path="res://ASSETS/PETALOS_ROJOS.png" id="1_qbvgt"]
-[ext_resource type="Script" path="res://scripts/dialogo_bad.gd" id="1_wtwdv"]
+[ext_resource type="Script" uid="uid://swatctur8dbb" path="res://scripts/dialogo_bad.gd" id="1_wtwdv"]
 [ext_resource type="AudioStream" uid="uid://b4r30dby36up6" path="res://ASSETS/EFECTOS_DE_SONIDO/ERROR1.mp3" id="2_b7bl3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bml66"]
